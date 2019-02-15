@@ -17,3 +17,40 @@ constituents to search for relevant issues, keep tabs on
 their congresspeople, get voter information, and hopefully
 inspire the desire to hold our politicians accountable.
 
+### Project Technologies/Techniques 
+
+* Security/Authentication
+  * Tomcat's JDBC Realm Authentication
+  * Admin role: 
+  * User role: 
+  * All:
+* Database
+  * MySQL
+  * Store users and favorites
+  * 
+* ORM Framework
+  * Hibernate 5
+* Dependency Management
+  * Maven
+* Web Services consumed using Java
+  * 
+* CSS 
+  * Bootstrap or Materialize
+* Data Validation
+  * Bootstrap Validator for front end
+  * Explore Hibernate's validation
+* Logging
+  * Configurable logging using Log4J2. In production, only errors will normally be logged, but logging at a debug level can be turned on to facilitate trouble-shooting. 
+* Hosting
+  * AWS
+* Independent Research Topic/s
+  * CI tools in AWS
+  * Materialize
+  * Google Maps API
+  * Hibernate Validation
+  * Hibernat Search
+* Project Lombok to eliminate boilerplate code like getters/setters/equals
+* Unit Testing
+  * JUnit tests to achieve 80%+ code coverage 
+* IDE: IntelliJ IDEA
+

@@ -6,10 +6,11 @@
 - [x] Add link to list of indie projects in student repo.
 - [ ] Complete Problem Statement
 - [ ] Determine possible Web Services or APIs to use
+        --ProPublica Congress
+        --Hoaxy?
 - [ ] List technologies, versions and how they will be used
-- [ ] Weekly journal entry
 - [ ] Write project plan
-- [ ] Document application flow in text and pictures - I'll use wireframes that have clickable links for the screen design. Use Balsamiq?
+- [x] Document application flow using wireframes
 - [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub.
 
 ### Week 4
@@ -26,21 +27,20 @@
 
 ### Week 5
 
-- [ ] Create the template for all jsps using bootstrap
-- [ ] Add the role table
-- [ ] Add the role entity
-- [ ] Create the role dao
-- [ ] Create the role dao unit tests
-- [ ] Add a jsp to display user and role
+- [ ] Create the template using bootstrap or find pre-made template
+- [ ] Add the user preferences table
+- [ ] Add the user preferences entity
+- [ ] Create user preferences dao
+- [ ] Create the user preferences unit tests
+- [ ] Add a jsp to display user and user preferred feed
 - [ ] Add jsp to add a user
 
 ### Week 6
 
 - [ ] Create db on AWS
 - [ ] Deploy to AWS for first time
-- [ ] Create user preferences table
-- [ ] Add the trail entity (test, dev and prod dbs)
-- [ ] Add update and delete functionality in jsp for user and role
+- [ ] Add another entity/table?
+- [ ] Add update and delete functionality in jsp for user preferences
 - [ ] Build the search jsp
 - [ ] Build the user preferences add/update/delete jsp
 - [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created.
@@ -50,18 +50,13 @@
 
 - [ ] Set up authentication locally
 - [ ] Set up authentication on AWS
-- [ ] Add the Trail Type and Grooming Tables, populate with data, (test, dev and prod dbs)
-- [ ] Update Trail and Trail report to use trail type and grooming
-- [ ] Update Trail and Trail report tests to be sure they work with the new relationships
+- [ ] Probably need more tables?
+- [ ] Make sure data is updating from api
 - [ ] Review and incorporate any feedback from Checkpoint 2.
 
 
 ### Week 8
 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
 - [ ] Create unit tests
 - [ ]
 - [ ]
