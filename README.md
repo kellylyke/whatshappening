@@ -5,7 +5,7 @@
 Do you know how many votes went down in Congress today? Me neither.
 So I googled it. On this particular day, there were <b>94</b>.
 
-So, who chooses which of these 94 issues are important? The news.
+So, who chooses which of these 94 issues are important? Well... The news.
 
 The problem is the news and you may have different ideas of
 what is important. And sometimes, let's face it, there is just
@@ -21,19 +21,18 @@ inspire the desire to hold our politicians accountable.
 
 * Security/Authentication
   * Tomcat's JDBC Realm Authentication
-  * Admin role: 
-  * User role: 
-  * All:
+  * Admin role: Make sure nothing is broken and info is accurate
+  * User role: Can add favorite/least favorite issues/candidates for a custom feed
+  * All: Can see latest votes
 * Database
   * MySQL
-  * Store users and favorites
-  * 
+  * Store user accounts and preferences
 * ORM Framework
   * Hibernate 5
 * Dependency Management
   * Maven
 * Web Services consumed using Java
-  * 
+  * SoapUI
 * CSS 
   * Bootstrap or Materialize
 * Data Validation
@@ -46,9 +45,9 @@ inspire the desire to hold our politicians accountable.
 * Independent Research Topic/s
   * CI tools in AWS
   * Materialize
-  * Google Maps API
   * Hibernate Validation
-  * Hibernat Search
+  * Hibernate Search
+  * Hoaxy API
 * Project Lombok to eliminate boilerplate code like getters/setters/equals
 * Unit Testing
   * JUnit tests to achieve 80%+ code coverage 
