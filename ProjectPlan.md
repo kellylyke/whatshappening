@@ -8,6 +8,7 @@
 - [ ] Determine possible Web Services or APIs to use
         --ProPublica Congress
         --Hoaxy?
+        --Google Civic Information API?
 - [ ] List technologies, versions and how they will be used
 - [ ] Write project plan
 - [x] Document application flow using wireframes
@@ -58,7 +59,7 @@
 ### Week 8
 
 - [ ] Create unit tests
-- [ ]
+- [ ] Research Google Civic Information API
 - [ ]
 - [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
 

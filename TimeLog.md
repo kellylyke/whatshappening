@@ -10,6 +10,7 @@
 | 2/10/19|Created mds for project, started problem statement/users stories | 1.5|  |
 |2/12/19|started project plan, played with tag libary |1| |
 |2/14/19|did tag library exercise|1| |
-|2/15/19| Made wireframes |.5| |
+|2/15/19| Made wireframes, worked on project plan |1| |
+|2/17/18|||
 
 

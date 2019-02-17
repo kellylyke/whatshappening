@@ -9,12 +9,12 @@ So, who chooses which of these 94 issues are important? Well... The news.
 
 The problem is the news and you may have different ideas of
 what is important. And sometimes, let's face it, there is just
-so much news(and frankly other political distractions always going on),
-that we miss the actual gears that make the country run.
+so much news(and frankly other distractions always going on),
+that we miss the actual gears that keep the country running.
 
 The goal of this project is to have a manageable way for
 constituents to search for relevant issues, keep tabs on
-their congresspeople, get voter information, and hopefully
+their congresspeople, get voter information, and
 inspire the desire to hold our politicians accountable.
 
 ### Project Technologies/Techniques 
@@ -45,10 +45,10 @@ inspire the desire to hold our politicians accountable.
 * Independent Research Topic/s
   * CI tools in AWS
   * Materialize
-  * Hibernate Validation
-  * Hibernate Search
+  * Hibernate Validation?
+  * Hibernate Search?
   * Hoaxy API
-* Project Lombok to eliminate boilerplate code like getters/setters/equals
+* Project Lombok to eliminate boilerplate code like getters/setters/equals -- this sounds nice
 * Unit Testing
   * JUnit tests to achieve 80%+ code coverage 
 * IDE: IntelliJ IDEA
