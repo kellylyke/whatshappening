@@ -4,19 +4,19 @@
 - [x] Create project repository on GitHub
 - [x] Create project structure in intellij and push
 - [x] Add link to list of indie projects in student repo.
-- [ ] Complete Problem Statement
-- [ ] Determine possible Web Services or APIs to use
+- [x] Complete Problem Statement
+- [x] Determine possible Web Services or APIs to use
         --ProPublica Congress
         --Hoaxy?
         --Google Civic Information API?
-- [ ] List technologies, versions and how they will be used
-- [ ] Write project plan
+- [x] List technologies, versions and how they will be used
+- [x] Write project plan
 - [x] Document application flow using wireframes
 - [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub.
 
 ### Week 4
 - [ ] Complete database design
-- [ ] Create the database and user table
+- [ ] Create the database and users table
 - [ ] Create the user entity class and annotate for hibernate
 - [ ] Create user dao
 - [ ] Create the test database
@@ -33,7 +33,8 @@
 - [ ] Add the user preferences entity
 - [ ] Create user preferences dao
 - [ ] Create the user preferences unit tests
-- [ ] Add a jsp to display user and user preferred feed
+- [ ] Add jsp to display user account
+- [ ] Add jsp to display user preferred feed
 - [ ] Add jsp to add a user
 
 ### Week 6
@@ -51,7 +52,6 @@
 
 - [ ] Set up authentication locally
 - [ ] Set up authentication on AWS
-- [ ] Probably need more tables?
 - [ ] Make sure data is updating from api
 - [ ] Review and incorporate any feedback from Checkpoint 2.
 
@@ -59,12 +59,13 @@
 ### Week 8
 
 - [ ] Create unit tests
-- [ ] Research Google Civic Information API
-- [ ]
+- [ ] Add the user block table
+- [ ] Add the user block entity
+- [ ] Create user block dao
+- [ ] Create the user block unit tests
 - [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
 
 ### Week 9
-- [ ]
 - [ ] Review and incorporate feedback from Checkpoint 3.
 - [ ] Carefully review code for standards and best practices - use a code quality tool?
 

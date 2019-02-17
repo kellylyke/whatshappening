@@ -21,7 +21,7 @@ inspire the desire to hold our politicians accountable.
 
 * Security/Authentication
   * Tomcat's JDBC Realm Authentication
-  * Admin role: Make sure nothing is broken and info is accurate
+  * Admin role: Make sure nothing is broken and info is accurate, add/remove users if necessary
   * User role: Can add favorite/least favorite issues/candidates for a custom feed
   * All: Can see latest votes
 * Database
