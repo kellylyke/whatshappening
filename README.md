@@ -53,3 +53,11 @@ inspire the desire to hold our politicians accountable.
   * JUnit tests to achieve 80%+ code coverage 
 * IDE: IntelliJ IDEA
 
+
+### [Time Log](TimeLog.md)
+
+### [User Stories](UserStories.md)
+
+### [Design Plan](DesignDocuments/wireframes)
+
+
