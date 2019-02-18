@@ -12,7 +12,7 @@
 - [x] List technologies, versions and how they will be used
 - [x] Write project plan
 - [x] Document application flow using wireframes
-- [ ] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub.
+- [x] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub.
 
 ### Week 4
 - [ ] Complete database design

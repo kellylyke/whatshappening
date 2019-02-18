@@ -11,6 +11,6 @@
 |2/12/19|started project plan, played with tag libary |1| |
 |2/14/19|did tag library exercise|1| |
 |2/15/19| Made wireframes, worked on project plan |1| |
-|2/17/18|Finished project plan, watched some week 4 videos|1| |
+|2/17/18|Finished project plan, watched some week 4 videos, did first part of activity|2.5| |
 
 
