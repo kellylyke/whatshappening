@@ -12,5 +12,7 @@
 |2/14/19|did tag library exercise|1| |
 |2/15/19| Made wireframes, worked on project plan |1| |
 |2/17/18|Finished project plan, watched some week 4 videos, did first part of activity|2.5| |
+|2/18/19|Watched second video, got hibernate to work with getUsers|1||
+|2/20/19|Watched rest of week 4 videos, starting setting up database|2|
 
 

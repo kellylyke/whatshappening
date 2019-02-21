@@ -16,7 +16,7 @@
 
 ### Week 4
 - [ ] Complete database design
-- [ ] Create the database and users table
+- [x] Create the database and users table
 - [ ] Create the user entity class and annotate for hibernate
 - [ ] Create user dao
 - [ ] Create the test database
@@ -29,6 +29,8 @@
 ### Week 5
 
 - [ ] Create the template using bootstrap or find pre-made template
+- [ ] Add the user role table
+- [ ] Add the user role entity
 - [ ] Add the user preferences table
 - [ ] Add the user preferences entity
 - [ ] Create user preferences dao
