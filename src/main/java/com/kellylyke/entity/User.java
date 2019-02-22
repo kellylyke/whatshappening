@@ -54,7 +54,7 @@ public class User {
      * @param email     the email address
      * @param password  user password
      */
-    public User(String firstName, String lastName, String userName, int id, int zipcode, String email, String password) {
+    public User(String firstName, String lastName, String userName, int zipcode, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
