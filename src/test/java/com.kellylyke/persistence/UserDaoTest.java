@@ -1,8 +1,6 @@
 package com.kellylyke.persistence;
 
-
 import com.kellylyke.entity.User;
-import com.kellylyke.persistence.UserDao;
 import java.util.List;
 import static org.junit.Assert.*;
 import com.kellylyke.test.util.*;
@@ -23,11 +21,10 @@ public class UserDaoTest {
     @BeforeEach
     void setUp() throws Exception {
 
-        dao = new UserDao();
-        System.out.println("Before Each initEach() method called");
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
+        dao = new UserDao();
     }
 
     /**
@@ -35,9 +32,9 @@ public class UserDaoTest {
      */
     @Test
     public void getAllUsersSuccess() {
-        dao = new UserDao();
+
         List<User> users = dao.getAllUsers();
-        assertEquals(5, users.size());
+        Assert.assertEquals(5, users.size());
     }
 
     /**
@@ -60,14 +57,14 @@ public class UserDaoTest {
      */
     @Test
     public void getByIdSuccess() {
-        dao = new UserDao();
-        User retrievedUser = dao.getById(3);
-        Assert.assertEquals("Monica", retrievedUser.getFirstName());
+
+        User retrievedUser = dao.getById(4);
+        Assert.assertEquals("Ross", retrievedUser.getFirstName());
         Assert.assertEquals("Geller", retrievedUser.getLastName());
-        Assert.assertEquals("mgeller", retrievedUser.getUserName());
-        assertEquals(10031, retrievedUser.getZipcode());
-        Assert.assertEquals("mgeller@yahoo.com", retrievedUser.getEmail());
-        Assert.assertEquals("ilovecooking", retrievedUser.getPassword());
+        Assert.assertEquals("drgeller", retrievedUser.getUserName());
+        assertEquals(10032, retrievedUser.getZipcode());
+        Assert.assertEquals("rgeller@phd.edu", retrievedUser.getEmail());
+        Assert.assertEquals("dinosrock", retrievedUser.getPassword());
 
     }
 
@@ -76,7 +73,7 @@ public class UserDaoTest {
      */
     @Test
     public void insertSuccess() {
-        User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramorayl@daysofourlives.com", "pizza");
+        User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
         int id = dao.insertUser(newUser);
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
@@ -91,8 +88,8 @@ public class UserDaoTest {
      */
     @Test
     public void deleteSuccess() {
-        dao.delete(dao.getById(6));
-        Assert.assertNull(dao.getById(6));
+        dao.delete(dao.getById(5));
+        Assert.assertNull(dao.getById(5));
     }
 
     /**
@@ -100,9 +97,9 @@ public class UserDaoTest {
      */
     @Test
     public void getByPropertyEqualSuccess() {
-        List<User> users = dao.getByPropertyLike("lastName", "Green");
-        assertEquals(1, users.size());
-        assertEquals(1, users.get(0).getId());
+        List<User> users = dao.getByPropertyEqual("lastName", "Green");
+        Assert.assertEquals(1, users.size());
+        Assert.assertEquals(1, users.get(0).getId());
     }
 
     /**
@@ -111,7 +108,7 @@ public class UserDaoTest {
     @Test
     public void getByPropertyLikeSuccess() {
         List<User> users = dao.getByPropertyLike("lastName", "g");
-        assertEquals(4, users.size());
+        Assert.assertEquals(4, users.size());
     }
 
 

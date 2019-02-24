@@ -3,26 +3,25 @@ package com.kellylyke.test.util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
+/**
+ * Provides access the database
+ * Created on 8/31/16.
+ *
+ * @author pwaite
+ */
 
 public class Database {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
-
-    //TODO add hard-coded values to props file
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-
-    static final String DB_URL = "jdbc:mysql://localhost/test_project";
-
-    static final String USER = "root";
-
-    static final String PASS = "student";
-
     // create an object of the class Database
     private static Database instance = new Database();
 
@@ -85,24 +84,21 @@ public class Database {
         connection = null;
     }
 
-
     /**
      * Run the sql.
      *
      * @param sqlFile the sql file to be read and executed line by line
      */
     public void runSQL(String sqlFile) {
-        Connection conn = null;
+
         Statement stmt = null;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
         InputStream inputStream = classloader.getResourceAsStream(sqlFile);
         try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
 
             Class.forName("com.mysql.jdbc.Driver");
-
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-
-            stmt = conn.createStatement();
+            connect();
+            stmt = connection.createStatement();
 
             while (true) {
                 String sql = br.readLine();
@@ -117,8 +113,9 @@ public class Database {
             logger.error(se);
         } catch (Exception e) {
             logger.error(e);
+        } finally {
+            disconnect();
         }
 
     }
 }
-
