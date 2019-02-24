@@ -9,12 +9,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Assert;
 
+
+/*
+ * Test class for the user dao
+ *
+ */
 public class UserDaoTest {
 
     UserDao dao;
 
     /**
-     * Sets up dao, recreates fresh database
+     * Sets up dao, creates fresh database
      *
      * @throws Exception the exception
      */
@@ -48,8 +53,6 @@ public class UserDaoTest {
         dao.saveOrUpdate(userToUpdate);
         User retrievedUser = dao.getById(3);
         Assert.assertEquals(newLastName, retrievedUser.getLastName());
-
-
     }
 
     /**
