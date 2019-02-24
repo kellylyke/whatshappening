@@ -16,8 +16,7 @@ import javax.persistence.criteria.Root;
 
 public class UserDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    private SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
-
+    protected SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
 
     /**
@@ -69,7 +68,9 @@ public class UserDao {
      */
     public void saveOrUpdate(User user) {
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(user);
+        transaction.commit();
         session.close();
     }
 
