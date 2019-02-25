@@ -3,6 +3,8 @@ package com.kellylyke.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -35,6 +37,9 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Preference> preferences = new HashSet<>();
 
 
     /**
@@ -180,6 +185,24 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Gets preferences.
+     *
+     * @return the preferences
+     */
+    public Set<Preference> getPreferences() {
+        return preferences;
+    }
+
+    /**
+     * Sets preferences.
+     *
+     * @param preferences the preferences
+     */
+    public void setPreferences(Set<Preference> preferences) {
+        this.preferences = preferences;
     }
 
 

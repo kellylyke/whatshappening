@@ -15,13 +15,13 @@
 - [x] Triple-check for Checkpoint 1: Problem statement, project plan, screen design and time log pushed to GitHub.
 
 ### Week 4
-- [ ] Complete database design
+- [x] Complete database design
 - [x] Create the database and users table
-- [ ] Create the user entity class and annotate for hibernate
-- [ ] Create user dao
-- [ ] Create the test database
-- [ ] Create user dao unit tests
-- [ ] Set up logging
+- [x] Create the user entity class and annotate for hibernate
+- [x] Create user dao
+- [x] Create the test database
+- [x] Create user dao unit tests
+- [x] Set up logging
 - [ ] Create class uml diagram
 - [ ] Prepare for Week 5 peer design/code review
 

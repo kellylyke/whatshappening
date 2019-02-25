@@ -10,9 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Assert;
 
 
-/*
+/**
  * Test class for the user dao
  *
+ *@author klyke
  */
 public class UserDaoTest {
 
@@ -81,9 +82,13 @@ public class UserDaoTest {
         assertNotEquals(0,id);
         User insertedUser = dao.getById(id);
         Assert.assertEquals("Joey", insertedUser.getFirstName());
-        // Could continue comparing all values, but
-        // it may make sense to use .equals()
-        // TODO review .equals recommendations http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#mapping-model-pojo-equalshashcode
+        Assert.assertEquals("Tribbiani", insertedUser.getLastName());
+        Assert.assertEquals("joe", insertedUser.getUserName());
+        Assert.assertEquals(90210, insertedUser.getZipcode());
+        Assert.assertEquals("drakeramoray@daysofourlives.com", insertedUser.getEmail());
+        Assert.assertEquals("pizza", insertedUser.getPassword());
+
+
     }
 
     /**

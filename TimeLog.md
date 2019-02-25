@@ -15,4 +15,4 @@
 |2/18/19|Watched second video, got hibernate to work with getUsers|1||
 |2/20/19|Watched rest of week 4 videos, starting setting up database, created users/dao|2.5|
 |2/22/19| Added rest of dao tests to project, need to create test db still|1||
-
+|2/24/19|finished dao tests and test database, updated presentation, started week 5|3||

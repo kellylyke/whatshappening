@@ -14,6 +14,12 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 
+/**
+* The data access object for User Class
+*
+* @author klyke
+*/
+
 public class UserDao {
     private final Logger logger = LogManager.getLogger(this.getClass());
     protected SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
