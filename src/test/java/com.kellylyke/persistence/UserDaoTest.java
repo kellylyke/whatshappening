@@ -1,5 +1,6 @@
 package com.kellylyke.persistence;
 
+import com.kellylyke.entity.Preference;
 import com.kellylyke.entity.User;
 import java.util.List;
 import static org.junit.Assert.*;
@@ -90,6 +91,30 @@ public class UserDaoTest {
 
 
     }
+
+    /**
+     * Verify successful insert of a user and an order
+     */
+    @Test
+    public void insertWithOrderSuccess() {
+
+        String show = "Washington";
+        User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
+        Preference preference = new Preference(show, newUser);
+        newUser.addPreference(preference);
+
+        int id = dao.insertUser(newUser);
+        assertNotEquals(0, id);
+
+        User insertedUser = dao.getById(id);
+        Assert.assertNotNull(insertedUser);
+
+        Assert.assertEquals("Joey", insertedUser.getFirstName());
+        assertEquals(1, insertedUser.getPreferences().size());
+
+
+    }
+
 
     /**
      * Verify successful delete of user

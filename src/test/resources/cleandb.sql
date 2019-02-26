@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS `user_preferences`;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (`first_name` varchar(50) DEFAULT NULL, `last_name` varchar(50) DEFAULT NULL, `username` varchar(50) DEFAULT NULL, `id` int(11) NOT NULL AUTO_INCREMENT, `zipcode` int(11) DEFAULT NULL, `email` varchar(75) DEFAULT NULL, `password` varchar(50) DEFAULT NULL, PRIMARY KEY (`id`));
 INSERT INTO `users` VALUES ('Rachel','Green','rgreen',1,10001,'rgreen3@hotmail.com','shopsalot'),('Chandler','Bing','cbing',2,10002,'cbing@yahoo.com','friends'),('Monica','Geller','mgeller',3,10031,'mgeller@yahoo.com','ilovecooking'),('Ross','Geller','drgeller',4,10032,'rgeller@phd.edu','dinosrock'),('Phoebe','Buffay','phoebs',5,10000,'guitargirl@msn.com','gladys');
+CREATE TABLE `user_preferences` ( `id` int(11) NOT NULL AUTO_INCREMENT, `user_id` int(11) NOT NULL, `show_me` varchar(100) DEFAULT NULL,  PRIMARY KEY (`id`),  KEY `user_preferences_users_id_fk` (`user_id`));

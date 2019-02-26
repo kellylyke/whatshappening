@@ -54,7 +54,7 @@ public class User {
      * @param firstName the first name
      * @param lastName  the last name
      * @param userName  the user name
-     * @param id        the id
+     * //@param id        the id
      * @param zipcode   the zipcode
      * @param email     the email address
      * @param password  user password
@@ -206,6 +206,26 @@ public class User {
     }
 
 
+    /**
+     * Add preference.
+     *
+     * @param preference the preference
+     */
+    public void addPreference(Preference preference) {
+        preferences.add(preference);
+        preference.setUser(this);
+    }
+
+    /**
+     * Remove preference.
+     *
+     * @param preference the preference
+     */
+    public void removePreference(Preference preference) {
+        preferences.remove(preference);
+        preference.setUser(null);
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -218,6 +238,7 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
 
 
 }

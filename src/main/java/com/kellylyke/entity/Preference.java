@@ -17,7 +17,26 @@ public class Preference {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    @Column(name = "show_me")
     private String show;
+
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @ManyToOne
     private User user;
