@@ -1,7 +1,13 @@
 package com.kellylyke.persistence;
 
 import com.kellylyke.entity.Preference;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.*;
+import java.util.prefs.Preferences;
+
 import static org.junit.Assert.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.test.util.*;
@@ -22,8 +28,8 @@ import javax.persistence.criteria.Root;
  */
 public class PreferenceDaoTest {
 
-    PreferenceDao dao;
-
+    GenericDao dao;
+    GenericDao userDao;
     /**
      * Sets up dao, creates fresh database
      *
@@ -35,7 +41,8 @@ public class PreferenceDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new PreferenceDao();
+        dao = new GenericDao(Preference.class);
+        userDao = new GenericDao(User.class);
     }
 
     /**
@@ -44,7 +51,7 @@ public class PreferenceDaoTest {
     @Test
     public void getAllPreferencesSuccess() {
 
-        List<Preference> preferences = dao.getAllPreferences();
+        List<Preference> preferences = dao.getAll();
         Assert.assertEquals(4, preferences.size());
     }
 
@@ -54,10 +61,10 @@ public class PreferenceDaoTest {
     @Test
     public void updateSuccess() {
         String newPreference =  "Lincoln";
-        Preference userToUpdate = dao.getById(3);
+        Preference userToUpdate = (Preference)dao.getById(3);
         userToUpdate.setShow(newPreference);
         dao.saveOrUpdate(userToUpdate);
-        Preference retrievedPreference = dao.getById(3);
+        Preference retrievedPreference = (Preference)dao.getById(3);
         Assert.assertEquals(newPreference, retrievedPreference.getShow());
     }
 
@@ -67,7 +74,7 @@ public class PreferenceDaoTest {
     @Test
     public void getByIdSuccess() {
 
-        Preference retrievedPreference = dao.getById(1);
+        Preference retrievedPreference = (Preference)dao.getById(1);
         Assert.assertEquals("Washington", retrievedPreference.getShow());
     }
 
@@ -76,15 +83,14 @@ public class PreferenceDaoTest {
      */
     @Test
     public void insertSuccess() {
-        UserDao userDao = new UserDao();
-        User user = userDao.getById(3);
+        User user = (User)userDao.getById(3);
         Preference newPreference = new Preference("Kennedy", user);
         user.addPreference(newPreference);
 
         int id = dao.insert(newPreference);
         assertNotEquals(0,id);
 
-        Preference insertedPreference = dao.getById(id);
+        Preference insertedPreference = (Preference)dao.getById(id);
 
         Assert.assertEquals("Kennedy", insertedPreference.getShow());
         Assert.assertEquals("Monica", insertedPreference.getUser().getFirstName());
@@ -112,16 +118,45 @@ public class PreferenceDaoTest {
     }
 
 
-    /**
+   /* *//**
      * Verify successful get by property (like match)
-     */
+     *//*
     @Test
     public void getByPropertyLikeSuccess() {
         List<Preference> preferences = dao.getByPropertyLike("show", "j");
         Assert.assertEquals(2, preferences.size());
     }
+*/
+    /**
+     * verifies removal of preference
+     */
+    @Test
+    public void removeSuccess() {
+        /*UserDao userDao = new UserDao();
+        User user  = new User();
+        user = userDao.getById(2);
+        Set<Preference> preferences = new HashSet<>();
+        Preference preference = dao.getById(2);
+        user.setPreferences(user.getPreferences());
+        user.removePreference(preference);
+
+        preferences = user.getPreferences();
+        Assert.assertNull(preferences);
 
 
+        //UserDao userDao = new UserDao();
+       // User user = userDao.getById(3);
+        Preference newPreference = new Preference("Kennedy", user);
+        user.addPreference(newPreference);
+
+        int id = dao.insert(newPreference);
+        assertNotEquals(0,id);
+
+        Preference insertedPreference = dao.getById(id);
+
+        Assert.assertEquals("null", insertedPreference.getShow()
+*/
+    }
 
 
 }

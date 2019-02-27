@@ -16,3 +16,5 @@
 |2/20/19|Watched rest of week 4 videos, starting setting up database, created users/dao|2.5|
 |2/22/19| Added rest of dao tests to project, need to create test db still|1||
 |2/24/19|finished dao tests and test database, updated presentation, started week 5|4||
+2/25/19 |created preferences dao, table, linked together|2||
+2/26/19|trying to figure out remove preference test, make generic dao|2||
