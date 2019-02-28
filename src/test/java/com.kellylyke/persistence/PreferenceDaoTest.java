@@ -2,9 +2,11 @@ package com.kellylyke.persistence;
 
 import com.kellylyke.entity.Preference;
 import java.util.List;
+
 import static org.junit.Assert.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.test.util.*;
+
 import org.hibernate.Session;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
