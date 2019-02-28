@@ -31,10 +31,10 @@
 - [ ] Create the template using bootstrap or find pre-made template
 - [ ] Add the user role table
 - [ ] Add the user role entity
-- [ ] Add the user preferences table
-- [ ] Add the user preferences entity
-- [ ] Create user preferences dao
-- [ ] Create the user preferences unit tests
+- [x] Add the user preferences table
+- [x] Add the user preferences entity
+- [x] Create user preferences dao
+- [x] Create the user preferences unit tests
 - [ ] Add jsp to display user account
 - [ ] Add jsp to display user preferred feed
 - [ ] Add jsp to add a user

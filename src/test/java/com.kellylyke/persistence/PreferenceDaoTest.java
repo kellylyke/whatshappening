@@ -1,13 +1,7 @@
 package com.kellylyke.persistence;
 
 import com.kellylyke.entity.Preference;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.*;
-import java.util.prefs.Preferences;
-
 import static org.junit.Assert.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.test.util.*;
@@ -97,7 +91,6 @@ public class PreferenceDaoTest {
 
     }
 
-
     /**
      * Verify successful delete of user
      */
@@ -105,6 +98,7 @@ public class PreferenceDaoTest {
     public void deleteSuccess() {
         dao.delete(dao.getById(2));
         Assert.assertNull(dao.getById(2));
+
     }
 
     /**
@@ -117,45 +111,15 @@ public class PreferenceDaoTest {
         Assert.assertEquals(2, preferences.get(0).getId());
     }
 
-
-   /* *//**
-     * Verify successful get by property (like match)
-     *//*
-    @Test
-    public void getByPropertyLikeSuccess() {
-        List<Preference> preferences = dao.getByPropertyLike("show", "j");
-        Assert.assertEquals(2, preferences.size());
-    }
-*/
     /**
      * verifies removal of preference
      */
     @Test
     public void removeSuccess() {
-        /*UserDao userDao = new UserDao();
-        User user  = new User();
-        user = userDao.getById(2);
-        Set<Preference> preferences = new HashSet<>();
-        Preference preference = dao.getById(2);
-        user.setPreferences(user.getPreferences());
-        user.removePreference(preference);
+        User user = (User)userDao.getById(3);
+        user.removePreference((Preference)dao.getById(1));
+        Assert.assertEquals(0, user.getPreferences().size());
 
-        preferences = user.getPreferences();
-        Assert.assertNull(preferences);
-
-
-        //UserDao userDao = new UserDao();
-       // User user = userDao.getById(3);
-        Preference newPreference = new Preference("Kennedy", user);
-        user.addPreference(newPreference);
-
-        int id = dao.insert(newPreference);
-        assertNotEquals(0,id);
-
-        Preference insertedPreference = dao.getById(id);
-
-        Assert.assertEquals("null", insertedPreference.getShow()
-*/
     }
 
 

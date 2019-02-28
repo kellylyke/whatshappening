@@ -18,3 +18,4 @@
 |2/24/19|finished dao tests and test database, updated presentation, started week 5|4||
 2/25/19 |created preferences dao, table, linked together|2||
 2/26/19|trying to figure out remove preference test, make generic dao|2||
+2/27/19|watched Aws intro, played with postman and api|1| |
