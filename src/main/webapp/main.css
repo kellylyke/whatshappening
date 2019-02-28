@@ -1,0 +1,28 @@
+.nav-wrapper {
+    margin-top: 0em;
+}
+
+img {
+    margin: 0em !important;
+
+    position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+}
+
+.nav-wrapper {
+
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.no-margin {
+    margin: 0em;
+    padding: 0em;
+}
+
+.container{
+    width: 100%;
+    max-width:initial;
+}

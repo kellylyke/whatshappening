@@ -25,6 +25,7 @@ public class PreferenceDaoTest {
 
     GenericDao<Preference> dao;
     GenericDao<User> userDao;
+
     /**
      * Sets up dao, creates fresh database
      *
