@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
  */
 public class UserDaoTest {
 
-    GenericDao dao;
+    GenericDao<User> dao;
 
     /**
      * Sets up dao, creates fresh database
@@ -32,7 +32,7 @@ public class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-       dao = new GenericDao(User.class);
+       dao = new GenericDao<>(User.class);
     }
 
     /**
@@ -51,10 +51,10 @@ public class UserDaoTest {
     @Test
     public void userUpdateSuccess() {
         String newLastName =  "Geller-Bing";
-        User userToUpdate = (User)dao.getById(3);
+        User userToUpdate = dao.getById(3);
         userToUpdate.setLastName(newLastName);
         dao.saveOrUpdate(userToUpdate);
-        User retrievedUser = (User)dao.getById(3);
+        User retrievedUser = dao.getById(3);
         assertEquals(userToUpdate, retrievedUser);
     }
 
@@ -64,7 +64,7 @@ public class UserDaoTest {
     @Test
     public void getByIdSuccess() {
 
-        User retrievedUser = (User)dao.getById(4);
+        User retrievedUser = dao.getById(4);
         assertEquals("Ross", retrievedUser.getFirstName());
         assertEquals("Geller", retrievedUser.getLastName());
         assertEquals("drgeller", retrievedUser.getUserName());
@@ -82,7 +82,7 @@ public class UserDaoTest {
         User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
-        User insertedUser = (User)dao.getById(id);
+        User insertedUser = dao.getById(id);
         assertEquals(newUser, insertedUser);
 
     }
@@ -101,7 +101,7 @@ public class UserDaoTest {
         int id = dao.insert(newUser);
         assertNotEquals(0, id);
 
-        User insertedUser = (User)dao.getById(id);
+        User insertedUser = dao.getById(id);
         assertNotNull(insertedUser);
 
         assertEquals(newUser, insertedUser);
