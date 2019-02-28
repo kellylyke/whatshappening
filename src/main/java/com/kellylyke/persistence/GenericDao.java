@@ -3,18 +3,16 @@ package com.kellylyke.persistence;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.criteria.*;
 
-import com.kellylyke.entity.User;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * A generic DAO complete inspired by Paula's video somewhat inspired by http://rodrigouchoa.wordpress.com
+ * A generic DAO completely inspired by Paula's video somewhat inspired by http://rodrigouchoa.wordpress.com
  *
  */
 public class GenericDao<T> {
@@ -100,28 +98,6 @@ public class GenericDao<T> {
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
         query.select(root).where(builder.equal(root.get(propertyName),value));
-
-        return session.createQuery(query).getResultList();
-    }
-
-    /**
-     * Finds entities by multiple properties.
-     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
-     * @param propertyMap property and value pairs
-     * @return entities with properties equal to those passed in the map
-     *
-     *
-     */
-    public List<T> getByPropertyEqual(Map<String, Object> propertyMap) {
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        List<Predicate> predicates = new ArrayList<Predicate>();
-        for (Map.Entry entry: propertyMap.entrySet()) {
-            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
-        }
-        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
 
         return session.createQuery(query).getResultList();
     }

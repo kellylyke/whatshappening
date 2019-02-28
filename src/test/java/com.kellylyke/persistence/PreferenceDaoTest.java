@@ -18,7 +18,7 @@ import javax.persistence.criteria.Root;
 
 
 /**
- * Test class for the user dao
+ * Test class for the preference dao
  *
  *@author klyke
  */
