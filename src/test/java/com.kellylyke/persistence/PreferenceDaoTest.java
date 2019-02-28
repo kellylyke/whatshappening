@@ -42,7 +42,7 @@ public class PreferenceDaoTest {
     }
 
     /**
-     * Tests get all users success.
+     * Tests get all preferences success.
      */
     @Test
     public void getAllPreferencesSuccess() {
@@ -52,7 +52,7 @@ public class PreferenceDaoTest {
     }
 
     /**
-     * Tests get all users success.
+     * Tests update user preferences success.
      */
     @Test
     public void updateSuccess() {
@@ -65,7 +65,7 @@ public class PreferenceDaoTest {
     }
 
     /**
-     * Verify successful retrieval of a user by id
+     * Verify successful retrieval of a preference by id
      */
     @Test
     public void getByIdSuccess() {
@@ -75,7 +75,7 @@ public class PreferenceDaoTest {
     }
 
     /**
-     * Verify successful insert of a user
+     * Verify successful insert of a preference
      */
     @Test
     public void insertSuccess() {
@@ -94,7 +94,7 @@ public class PreferenceDaoTest {
     }
 
     /**
-     * Verify successful delete of user
+     * Verify successful delete of preference
      */
     @Test
     public void deleteSuccess() {
