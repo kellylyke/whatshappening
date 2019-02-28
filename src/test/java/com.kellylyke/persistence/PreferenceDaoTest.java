@@ -10,7 +10,6 @@ import com.kellylyke.test.util.*;
 import org.hibernate.Session;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.Assert;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -48,7 +47,7 @@ public class PreferenceDaoTest {
     public void getAllPreferencesSuccess() {
 
         List<Preference> preferences = dao.getAll();
-        Assert.assertEquals(4, preferences.size());
+        assertEquals(4, preferences.size());
     }
 
     /**
@@ -61,7 +60,7 @@ public class PreferenceDaoTest {
         userToUpdate.setShow(newPreference);
         dao.saveOrUpdate(userToUpdate);
         Preference retrievedPreference = (Preference)dao.getById(3);
-        Assert.assertEquals(newPreference, retrievedPreference.getShow());
+        assertEquals(newPreference, retrievedPreference.getShow());
     }
 
     /**
@@ -71,7 +70,7 @@ public class PreferenceDaoTest {
     public void getByIdSuccess() {
 
         Preference retrievedPreference = (Preference)dao.getById(1);
-        Assert.assertEquals("Washington", retrievedPreference.getShow());
+        assertEquals("Washington", retrievedPreference.getShow());
     }
 
     /**
@@ -88,8 +87,8 @@ public class PreferenceDaoTest {
 
         Preference insertedPreference = (Preference)dao.getById(id);
 
-        Assert.assertEquals("Kennedy", insertedPreference.getShow());
-        Assert.assertEquals("Monica", insertedPreference.getUser().getFirstName());
+        assertEquals("Kennedy", insertedPreference.getShow());
+        assertEquals("Monica", insertedPreference.getUser().getFirstName());
 
     }
 
@@ -99,7 +98,7 @@ public class PreferenceDaoTest {
     @Test
     public void deleteSuccess() {
         dao.delete(dao.getById(2));
-        Assert.assertNull(dao.getById(2));
+        assertNull(dao.getById(2));
 
     }
 
@@ -109,8 +108,8 @@ public class PreferenceDaoTest {
     @Test
     public void getByPropertyEqualSuccess() {
         List<Preference> preferences = dao.getByPropertyEqual("show", "Lincoln");
-        Assert.assertEquals(1, preferences.size());
-        Assert.assertEquals(2, preferences.get(0).getId());
+        assertEquals(1, preferences.size());
+        assertEquals(2, preferences.get(0).getId());
     }
 
     /**
@@ -120,7 +119,7 @@ public class PreferenceDaoTest {
     public void removeSuccess() {
         User user = (User)userDao.getById(3);
         user.removePreference((Preference)dao.getById(1));
-        Assert.assertEquals(0, user.getPreferences().size());
+        assertEquals(0, user.getPreferences().size());
 
     }
 

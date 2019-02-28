@@ -3,6 +3,7 @@ package com.kellylyke.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type Preference.
@@ -101,5 +102,20 @@ public class Preference {
                 ", show='" + show + '\'' +
                 ", user=" + user +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Preference that = (Preference) o;
+        return id == that.id &&
+                Objects.equals(show, that.show) &&
+                Objects.equals(user, that.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, show, user);
     }
 }
