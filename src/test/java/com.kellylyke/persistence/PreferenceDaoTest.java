@@ -118,7 +118,10 @@ public class PreferenceDaoTest {
     @Test
     public void removeSuccess() {
         User user = userDao.getById(3);
-        user.removePreference(dao.getById(1));
+        Preference preferenceToRemove = dao.getById(1);
+        user.removePreference(preferenceToRemove);
+        dao.delete(preferenceToRemove);
+        assertNull(dao.getById(1));
         assertEquals(0, user.getPreferences().size());
 
     }
