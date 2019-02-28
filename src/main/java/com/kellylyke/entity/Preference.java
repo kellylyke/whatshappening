@@ -22,6 +22,24 @@ public class Preference {
     private String show;
 
     /**
+     * Empty constructor
+     */
+    public Preference() {
+
+    }
+
+    /**
+     * Instantiates a new Preference.
+     *
+     * @param show the show
+     * @param user the user
+     */
+    public Preference(String show, User user) {
+        this.user = user;
+        this.show = show;
+    }
+
+    /**
      * Gets user.
      *
      * @return the user
@@ -42,22 +60,6 @@ public class Preference {
     @ManyToOne
     private User user;
 
-    /**
-     * Empty constructor
-     */
-    public Preference() {
-    }
-
-    /**
-     * Instantiates a new Preference.
-     *
-     * @param show the show
-     * @param user the user
-     */
-    public Preference(String show, User user) {
-        this.user = user;
-        this.show = show;
-    }
 
     /**
      * Gets id.
