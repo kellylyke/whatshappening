@@ -1,5 +1,6 @@
 package com.kellylyke.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Objects;
  */
 @Entity(name = "Preference")
 @Table(name = "user_preferences")
+@Data
 public class Preference {
 
 

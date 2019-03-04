@@ -19,3 +19,6 @@
 | 2/25/19 |created preferences dao, table, linked together|2||
 | 2/26/19|trying to figure out remove preference test, make generic dao|2||
 | 2/27/19|watched Aws first 3 videos, played with postman and api, finished week 5 exercise|2.5| |
+| 2/28/19|put some css on project |1 | |
+| 3/3/19|finished week 6 videos, set up AWS, deployed almost successfully|2.5| |
+| 3/4/19|added Lombok, trying to figure out why mysql doesnt work||

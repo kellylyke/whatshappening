@@ -5,8 +5,15 @@
     <title>what's happening</title>
     <c:import url="header.jsp"/>
 </head>
-<div class="container">
+
 <c:import url="banner.jsp"/>
-<a href="userAccount.jsp">My Account</a>
+<body>
+    <div class="container">
+    <ul>
+        <li><a href="">My Account</a></li>
+        <li><a href="allUsers">See All Users</a></li>
+    </ul>
+
 </div>
+</body>
 </html>
