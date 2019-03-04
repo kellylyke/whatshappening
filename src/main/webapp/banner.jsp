@@ -6,19 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<div class="center-align col l12">
+<div class="center-align banner">
     <img src="images/banner.jpg" class="responsive-img" alt="banner"/>
 </div>
 <nav>
     <div class="nav-wrapper">
+        <a href="index.jsp">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="signUp.jsp">Sign Up</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="allUsers">View Users</a></li>
+            <li><a href="#">Coming Soon</a></li>
 
        </ul>
     </div>
-
+<!--
     <div class="nav-wrapper">
         <form>
             <div class="input-field right">
@@ -27,5 +28,5 @@
                 <i class="material-icons">close</i>
             </div>
         </form>
-    </div>
+    </div> -->
 </nav>

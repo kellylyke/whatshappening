@@ -4,10 +4,10 @@
 
 img {
     margin: 0em !important;
-
     position: relative;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    width: 100%;
 
 }
 
@@ -17,6 +17,7 @@ img {
     margin-right: .5em;
 }
 
+
 .no-margin {
     margin: 0em;
     padding: 0em;
@@ -24,5 +25,16 @@ img {
 
 .container{
     width: 100%;
-    max-width:initial;
+
 }
+
+body {
+    padding: 1em;
+}
+
+.banner {
+    width: 100%;
+}
+
+
+
