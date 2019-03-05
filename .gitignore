@@ -2,7 +2,6 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 *.iml
-database.properties
 
 ## Directory-based project format:
 .idea/
@@ -43,6 +42,9 @@ database.properties
 /log/
 /lib/
 /logs/
+
+# Hibernate
+hibernate.cfg.xml
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
