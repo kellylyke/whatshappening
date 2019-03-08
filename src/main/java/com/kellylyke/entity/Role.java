@@ -29,5 +29,4 @@ public class Role {
     private User user;
 
 
-
 }

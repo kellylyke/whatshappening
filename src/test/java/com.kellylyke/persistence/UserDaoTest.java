@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Test;
 public class UserDaoTest {
 
     GenericDao dao;
+    List<User> users;
 
     /**
      * Sets up dao, creates fresh database
@@ -37,7 +38,9 @@ public class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
+
        dao = new GenericDao(User.class);
+       users = dao.getAll();
     }
 
     /**
@@ -55,12 +58,27 @@ public class UserDaoTest {
      */
     @Test
     public void userUpdateSuccess() {
-        String newLastName =  "Geller-Bing";
+        /*String newLastName =  "Geller-Bing";
         User userToUpdate = (User)dao.getById(3);
         userToUpdate.setLastName(newLastName);
         dao.saveOrUpdate(userToUpdate);
         User retrievedUser = (User)dao.getById(3);
-        assertEquals(userToUpdate, retrievedUser);
+        assertEquals(userToUpdate, retrievedUser);*/
+
+        User user = new User();
+        user = users.get(2);
+        int id = user.getId();
+        String newLastName = "Geller-Bing";
+
+
+        user.setLastName(newLastName);
+
+        dao.saveOrUpdate(user);
+
+        //User updatedUser = (User) dao.getById(id);
+        User retrievedUser = (User)dao.getById(3);
+
+        assertEquals(user, retrievedUser);
     }
 
     /**
@@ -68,8 +86,8 @@ public class UserDaoTest {
      */
     @Test
     public void getByIdSuccess() {
-
-        User retrievedUser = (User)dao.getById(4);
+        User retrievedUser = new User();
+        retrievedUser = (User)dao.getById(4);
         assertEquals("Ross", retrievedUser.getFirstName());
         assertEquals("Geller", retrievedUser.getLastName());
         assertEquals("drgeller", retrievedUser.getUsername());
@@ -102,6 +120,8 @@ public class UserDaoTest {
         assertTrue(insertedUser.getRoles().contains(role));
 
 
+
+
     }
 
     /**
@@ -112,6 +132,11 @@ public class UserDaoTest {
 
         String show = "Washington";
         User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
+        Role role = new Role();
+        role.setRole("admin");
+        role.setDateCreated(new Date());
+        role.setUser(newUser);
+        newUser.addRole(role);
         Preference preference = new Preference(show, newUser);
         newUser.addPreference(preference);
 
@@ -133,8 +158,21 @@ public class UserDaoTest {
      */
     @Test
     public void deleteSuccess() {
+       /* User userToDelete = new User();
+        userToDelete.setUser(dao.getById(5));
         dao.delete(dao.getById(5));
-        assertNull(dao.getById(5));
+        User deletedUser = new User();
+        deletedUser = (User)dao.getById(5);
+        assertNull(deletedUser);*/
+
+        int sizeBeforeDelete = users.size();
+        User userToDelete = users.get(4);
+        int id = userToDelete.getId();
+        dao.delete(userToDelete);
+        int sizeAfterDelete = dao.getAll().size();
+        User deletedUser = (User) dao.getById(id);
+        assertEquals(sizeBeforeDelete - 1, sizeAfterDelete);
+        assertNull(deletedUser);
     }
 
     /**
