@@ -21,4 +21,6 @@
 | 2/27/19|watched Aws first 3 videos, played with postman and api, finished week 5 exercise|2.5| |
 | 2/28/19|put some css on project |1 | |
 | 3/3/19|finished week 6 videos, set up AWS, deployed almost successfully|2.5| |
-| 3/4/19|added Lombok, trying to figure out why mysql doesnt work||
+| 3/4/19|added Lombok, trying to figure out why mysql doesnt work|1| |
+| 3/5/19|fought with instance for a bit, bounced server to fix eventually|1| added link to student repo |
+| 3/6/19|created roles entity, started working on tests, watched 1st video of week 7|1| |

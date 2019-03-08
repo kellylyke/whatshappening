@@ -1,7 +1,11 @@
 package com.kellylyke.persistence;
 
 import com.kellylyke.entity.Preference;
+import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
+import java.lang.Integer;
+
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -12,14 +16,15 @@ import org.junit.jupiter.api.Test;
 
 
 
-/**
+
+/**user_id
  * Test class for the user dao
  *
  *@author klyke
  */
 public class UserDaoTest {
 
-    GenericDao<User> dao;
+    GenericDao dao;
 
     /**
      * Sets up dao, creates fresh database
@@ -32,7 +37,7 @@ public class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-       dao = new GenericDao<>(User.class);
+       dao = new GenericDao(User.class);
     }
 
     /**
@@ -41,7 +46,7 @@ public class UserDaoTest {
     @Test
     public void getAllUsersSuccess() {
 
-        List<User> users = dao.getAll(); //is this okay?
+        List<User> users = dao.getAll();
         assertEquals(5, users.size());
     }
 
@@ -51,10 +56,10 @@ public class UserDaoTest {
     @Test
     public void userUpdateSuccess() {
         String newLastName =  "Geller-Bing";
-        User userToUpdate = dao.getById(3);
+        User userToUpdate = (User)dao.getById(3);
         userToUpdate.setLastName(newLastName);
         dao.saveOrUpdate(userToUpdate);
-        User retrievedUser = dao.getById(3);
+        User retrievedUser = (User)dao.getById(3);
         assertEquals(userToUpdate, retrievedUser);
     }
 
@@ -64,10 +69,10 @@ public class UserDaoTest {
     @Test
     public void getByIdSuccess() {
 
-        User retrievedUser = dao.getById(4);
+        User retrievedUser = (User)dao.getById(4);
         assertEquals("Ross", retrievedUser.getFirstName());
         assertEquals("Geller", retrievedUser.getLastName());
-        assertEquals("drgeller", retrievedUser.getUserName());
+        assertEquals("drgeller", retrievedUser.getUsername());
         assertEquals(10032, retrievedUser.getZipcode());
         assertEquals("rgeller@phd.edu", retrievedUser.getEmail());
         assertEquals("dinosrock", retrievedUser.getPassword());
@@ -79,19 +84,31 @@ public class UserDaoTest {
      */
     @Test
     public void insertSuccess() {
-        User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
+        User newUser = new User("Joey", "Tribbiani", "joey", 90210, "drakeramoray@daysofourlives.com", "pizza");
+        Role role = new Role();
+        role.setRole("admin");
+        role.setDateCreated(new Date());
+        role.setUser(newUser);
+        newUser.addRole(role);
+
         int id = dao.insert(newUser);
         assertNotEquals(0,id);
-        User insertedUser = dao.getById(id);
+        User insertedUser = (User)dao.getById(id);
+
+        assertTrue(insertedUser.getId() > 0);
+
         assertEquals(newUser, insertedUser);
+        assertEquals(1, insertedUser.getRoles().size());
+        assertTrue(insertedUser.getRoles().contains(role));
+
 
     }
 
     /**
-     * Verify successful insert of a user and an order
+     * Verify successful insert of a user and an preference
      */
     @Test
-    public void insertWithOrderSuccess() {
+    public void insertWithPreferenceSuccess() {
 
         String show = "Washington";
         User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
@@ -101,7 +118,7 @@ public class UserDaoTest {
         int id = dao.insert(newUser);
         assertNotEquals(0, id);
 
-        User insertedUser = dao.getById(id);
+        User insertedUser = (User)dao.getById(id);
         assertNotNull(insertedUser);
 
         assertEquals(newUser, insertedUser);
