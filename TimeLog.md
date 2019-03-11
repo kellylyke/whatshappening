@@ -27,3 +27,4 @@
 | 3/8/19|got role table to work peacefully with user/tests pass again, watched 2nd video|2| |
 | 3/9/19|finished week 7 videos, tried to fix my weird errors |3||
 | 3/10/19| got authorization working locally, made sign in jsp, created diagram |3.5 |
+| 3/11/19|set up sign in page to work, added different navbar|1||
