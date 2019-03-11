@@ -42,6 +42,7 @@ public class SignUp extends HttpServlet {
         user.setPassword(req.getParameter("password"));
         user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
         logger.debug("User to be added: " + user);
+
         Role role = new Role();
         role.setUser(user);
         role.setRole("user");
