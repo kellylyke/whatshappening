@@ -44,13 +44,14 @@ public class User implements Serializable {
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private Set<Preference> preferences = new HashSet<>();
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Set<Role> roles = new HashSet<>();
-
 
 
 
@@ -85,171 +86,6 @@ public class User implements Serializable {
     }
 
 
-
-/**
-     * Gets first name.
-     *
-     * @return the first name
-     *//*
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    */
-/**
-     * Sets first name.
-     *
-     * @param firstName the first name
-     *//*
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    */
-/**
-     * Gets last name.
-     *
-     * @return the last name
-     *//*
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    */
-/**
-     * Sets last name.
-     *
-     * @param lastName the last name
-     *//*
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    */
-/**
-     * Gets user name.
-     *
-     * @return the user name
-     *//*
-
-    public String getUsername() {
-        return username;
-    }
-
-    */
-/**
-     * Sets user name.
-     *
-     * @param username the user name
-     */
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-
-/**
-     * Gets id.
-     *
-     * @return the id
-     *//*
-
-    public int getId() {
-        return id;
-    }
-
-    */
-/**
-     * Sets id.
-     *
-     * @param id the id
-     *//*
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    */
-/**
-     * Gets zipcode.
-     *
-     * @return the zipcode
-     *//*
-
-    public int getZipcode() {
-        return zipcode;
-    }
-
-
-    */
-/**
-     * Sets zipcode.
-     *
-     * @param zipcode the zipcode
-     *//*
-
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
-    }
-
-    */
-/**
-     * Gets email.
-     *
-     * @return the email
-     *//*
-
-    public String getEmail() {
-        return email;
-    }
-
-    */
-/**
-     * Sets email.
-     *
-     * @param email the email
-     *//*
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    */
-/**
-     * Gets preferences.
-     *
-     * @return the preferences
-     *//*
-
-    public Set<Preference> getPreferences() {
-        return preferences;
-    }
-
-    */
-/**
-     * Sets preferences.
-     *
-     * @param preferences the preferences
-     *//*
-
-    public void setPreferences(Set<Preference> preferences) {
-        this.preferences = preferences;
-    }
-
-*/
-
     /**
      * Add preference.
      *
@@ -282,8 +118,7 @@ public class User implements Serializable {
 
     }
 
-
-    @Override
+    /*@Override
     public String toString() {
         return "User{" +
                 "firstName='" + firstName + '\'' +
@@ -294,7 +129,7 @@ public class User implements Serializable {
                 ", zipcode='" + zipcode + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -310,10 +145,10 @@ public class User implements Serializable {
                 Objects.equals(email, user.email);
     }
 
-    @Override
+   /* @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, username, id, zipcode, password, email);
-    }
+    }*/
 }
 
 

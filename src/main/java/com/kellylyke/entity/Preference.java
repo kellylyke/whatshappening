@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.Objects;
 
 /**
@@ -23,6 +24,9 @@ public class Preference {
     @Column(name = "show_me")
     private String show;
 
+    @ManyToOne
+    private User user;
+
     /**
      * Empty constructor
      */
@@ -41,64 +45,8 @@ public class Preference {
         this.show = show;
     }
 
-    /**
-     * Gets user.
-     *
-     * @return the user
-     */
-    public User getUser() {
-        return user;
-    }
 
-    /**
-     * Sets user.
-     *
-     * @param user the user
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @ManyToOne
-    private User user;
-
-
-    /**
-     * Gets id.
-     *
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Sets id.
-     *
-     * @param id the id
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * Gets show.
-     *
-     * @return the show
-     */
-    public String getShow() {
-        return show;
-    }
-
-    /**
-     * Sets show.
-     *
-     * @param show the show
-     */
-    public void setShow(String show) {
-        this.show = show;
-    }
-
+/*
     @Override
     public String toString() {
         return "Preference{" +
@@ -106,7 +54,7 @@ public class Preference {
                 ", show='" + show + '\'' +
                 ", user=" + user +
                 '}';
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
@@ -118,8 +66,8 @@ public class Preference {
                 Objects.equals(user, that.user);
     }
 
-    @Override
+   /* @Override
     public int hashCode() {
         return Objects.hash(id, show, user);
-    }
+    }*/
 }

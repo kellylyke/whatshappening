@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 
 
 
-/**user_id
+/**
  * Test class for the user dao
  *
  *@author klyke
@@ -65,8 +65,8 @@ public class UserDaoTest {
         User retrievedUser = (User)dao.getById(3);
         assertEquals(userToUpdate, retrievedUser);*/
 
-        User user = new User();
-        user = users.get(2);
+      ;
+        User  user = users.get(2);
         int id = user.getId();
         String newLastName = "Geller-Bing";
 
@@ -75,7 +75,7 @@ public class UserDaoTest {
 
         dao.saveOrUpdate(user);
 
-        //User updatedUser = (User) dao.getById(id);
+
         User retrievedUser = (User)dao.getById(3);
 
         assertEquals(user, retrievedUser);
@@ -116,8 +116,8 @@ public class UserDaoTest {
         assertTrue(insertedUser.getId() > 0);
 
         assertEquals(newUser, insertedUser);
-        assertEquals(1, insertedUser.getRoles().size());
-        assertTrue(insertedUser.getRoles().contains(role));
+        //assertEquals(1, insertedUser.getRoles().size());
+       // assertTrue(insertedUser.getRoles().contains(role));
 
 
 
