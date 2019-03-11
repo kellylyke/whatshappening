@@ -24,3 +24,6 @@
 | 3/4/19|added Lombok, trying to figure out why mysql doesnt work|1| |
 | 3/5/19|fought with instance for a bit, bounced server to fix eventually|1| added link to student repo |
 | 3/6/19|created roles entity, started working on tests, watched 1st video of week 7|1| |
+| 3/8/19|got role table to work peacefully with user/tests pass again, watched 2nd video|2| |
+| 3/9/19|finished week 7 videos, tried to fix my weird errors |3||
+| 3/10/19| | |

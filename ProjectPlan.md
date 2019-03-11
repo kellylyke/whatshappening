@@ -22,40 +22,38 @@
 - [x] Create the test database
 - [x] Create user dao unit tests
 - [x] Set up logging
-- [ ] Create class uml diagram
-- [ ] Prepare for Week 5 peer design/code review
+- [x] Create class uml diagram
+- [x] Prepare for Week 5 peer design/code review
 
 
 ### Week 5
 
-- [ ] Create the template using bootstrap or find pre-made template
-- [ ] Add the user role table
-- [ ] Add the user role entity
+- [x] Create the template using bootstrap or find pre-made template
+- [x] Add the user role table
+- [x] Add the user role entity
 - [x] Add the user preferences table
 - [x] Add the user preferences entity
 - [x] Create user preferences dao
 - [x] Create the user preferences unit tests
-- [ ] Add jsp to display user account
-- [ ] Add jsp to display user preferred feed
-- [ ] Add jsp to add a user
+
 
 ### Week 6
 
-- [ ] Create db on AWS
-- [ ] Deploy to AWS for first time
-- [ ] Add another entity/table?
-- [ ] Add update and delete functionality in jsp for user preferences
-- [ ] Build the search jsp
-- [ ] Build the user preferences add/update/delete jsp
-- [ ] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created.
-
+- [x] Create db on AWS
+- [x] Deploy to AWS for first time
+- [x] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created.
+- [ ] Create admin directory
 
 ### Week 7
 
-- [ ] Set up authentication locally
+- [x] Set up authentication locally
 - [ ] Set up authentication on AWS
 - [ ] Make sure data is updating from api
 - [ ] Review and incorporate any feedback from Checkpoint 2.
+- [ ] Add update and delete functionality in jsp for user preferences
+- [ ] Build the search jsp
+- [ ] Build the user preferences add/update/delete jsp
+
 
 
 ### Week 8
