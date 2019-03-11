@@ -36,7 +36,7 @@
             <td>${user.id}</td>
             <td>${user.firstName}</td>
             <td>${user.lastName}</td>
-            <td>${user.userName}</td>
+            <td>${user.username}</td>
             <td>${user.email}</td>
             <td>${user.zipcode}</td>
 
