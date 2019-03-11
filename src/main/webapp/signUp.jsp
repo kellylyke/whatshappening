@@ -19,15 +19,15 @@
 <h3 class="center-align">Register</h3>
 <br/>
 
-    <form id="signUpForm" class="col s12 center-align" action="signUpUser" method="post">
+    <form id="signUpForm" class="col s12 center-align" action="signUp" method="post">
         <div class="row center-align">
             <div class="input-field col s5 offset-s1">
             <label class="control-label" for="firstName">First Name</label>
-            <input type="text" id="firstName" name="first_name" required="required">
+            <input type="text" id="firstName" name="firstName" required="required">
             </div>
             <div class="input-field col s5">
                 <label class="control-label" for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="last_name" required="required">
+                <input type="text" id="lastName" name="lastName" required="required">
             </div>
         </div>
         <div class="row">
@@ -52,6 +52,13 @@
             <div class="input-field col s7 offset-s1">
                 <label class="control-label" for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required="required">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s7 offset-s1">
+                <label class="control-label" for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode">
             </div>
         </div>
         <br/>
