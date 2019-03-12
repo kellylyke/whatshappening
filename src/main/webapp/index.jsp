@@ -10,7 +10,7 @@
 <body>
     <div class="container">
     <ul>
-        <li><a href="">My Account</a></li>
+        <li><a href="myAccount">My Account</a></li>
         <li><a href="allUsers">See All Users</a></li>
     </ul>
 
