@@ -15,8 +15,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-
-
 /**
  * Test class for the user dao
  *
@@ -58,27 +56,22 @@ public class UserDaoTest {
      */
     @Test
     public void userUpdateSuccess() {
-        /*String newLastName =  "Geller-Bing";
+        String newLastName =  "Geller-Bing";
         User userToUpdate = (User)dao.getById(3);
         userToUpdate.setLastName(newLastName);
         dao.saveOrUpdate(userToUpdate);
         User retrievedUser = (User)dao.getById(3);
-        assertEquals(userToUpdate, retrievedUser);*/
-
-      ;
+        assertEquals(userToUpdate, retrievedUser);
+/*
         User  user = users.get(2);
         int id = user.getId();
         String newLastName = "Geller-Bing";
-
-
         user.setLastName(newLastName);
 
         dao.saveOrUpdate(user);
 
-
-        User retrievedUser = (User)dao.getById(3);
-
-        assertEquals(user, retrievedUser);
+        User retrievedUser = (User)dao.getById(id);
+        assertEquals(user, retrievedUser);*/
     }
 
     /**
@@ -114,13 +107,9 @@ public class UserDaoTest {
         User insertedUser = (User)dao.getById(id);
 
         assertTrue(insertedUser.getId() > 0);
-
+        //assertTrue(insertedUser.getRoles().contains(role)); //this does not work with eager, but correct data shows up in table
         assertEquals(newUser, insertedUser);
-        //assertEquals(1, insertedUser.getRoles().size());
-       // assertTrue(insertedUser.getRoles().contains(role));
-
-
-
+        //assertEquals(1, insertedUser.getRoles().size()); //this works if eager loaded
 
     }
 
@@ -175,6 +164,29 @@ public class UserDaoTest {
         assertNull(deletedUser);
     }
 
+
+    /**
+     * Verify successful delete of user
+     */
+    @Test
+    public void deleteSuccessWithPreference() {
+       /* User userToDelete = new User();
+        userToDelete.setUser(dao.getById(5));
+        dao.delete(dao.getById(5));
+        User deletedUser = new User();
+        deletedUser = (User)dao.getById(5);
+        assertNull(deletedUser);*/
+
+        User userToDelete = users.get(4);
+        int id = userToDelete.getId();
+        //dao.delete(userToDelete);
+        Set<Preference> userPreferences = userToDelete.getPreferences();
+        dao.delete(userToDelete);
+        User deletedUser = (User) dao.getById(id);
+        assertNull(deletedUser);
+    }
+
+
     /**
      * Verify successful get by property (equal match)
      */
@@ -184,6 +196,7 @@ public class UserDaoTest {
         assertEquals(1, users.size());
         assertEquals(1, users.get(0).getId());
     }
+
 
 
 

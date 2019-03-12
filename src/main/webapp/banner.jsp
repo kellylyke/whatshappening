@@ -26,7 +26,7 @@
                 </c:when>
                 <c:otherwise>
                     <li><a href="signUp.jsp">Sign Up</a></li>
-                    <li><a href="">Log In</a></li>
+                    <li><a href="login.jsp">Log In</a></li>
                     <br />
                 </c:otherwise>
             </c:choose>

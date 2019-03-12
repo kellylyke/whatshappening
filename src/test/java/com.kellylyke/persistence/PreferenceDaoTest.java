@@ -70,6 +70,7 @@ public class PreferenceDaoTest {
         dao.saveOrUpdate(userToUpdate);
         Preference retrievedPreference = (Preference)dao.getById(3);
         assertEquals(newPreference, retrievedPreference.getShow());
+
     }
 
     /**
@@ -96,9 +97,9 @@ public class PreferenceDaoTest {
 
         Preference insertedPreference = (Preference)dao.getById(id);
 
-        assertEquals("Kennedy", insertedPreference.getShow());
-        assertEquals("Monica", insertedPreference.getUser().getFirstName());
-
+        /*assertEquals("Kennedy", insertedPreference.getShow());
+        assertEquals("Monica", insertedPreference.getUser().getFirstName());*/
+        assertEquals(newPreference,insertedPreference);
     }
 
     /**

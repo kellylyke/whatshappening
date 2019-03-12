@@ -20,6 +20,7 @@
       <web-resource-name>admin</web-resource-name>
       <url-pattern>/allUsers.jsp</url-pattern>
       <url-pattern>/allUsers</url-pattern>
+      <url-pattern>/login.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
         <role-name>admin</role-name>

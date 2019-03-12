@@ -27,22 +27,20 @@ public class Role {
     @EqualsAndHashCode.Exclude
     private Date dateCreated;
 
-
     @ManyToOne
-    @JoinColumn(name="username", referencedColumnName = "username", nullable = false)    // referenceColumnName if not primary key
+    @JoinColumn(name="username", referencedColumnName = "username", nullable = false)
     @EqualsAndHashCode.Exclude
-    @ToString.Exclude
     private User user;
 
-    /*@Override
+    @Override
     public String toString() {
         return "Role{" +
                 "id=" + id +
                 ", role='" + role + '\'' +
                 ", dateCreated=" + dateCreated +
-                //", user=" + user +
+                ", user=" + user +
                 '}';
-    }*/
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -55,10 +53,10 @@ public class Role {
                 //&& user.equals(role1.user);
     }
 
-    /*@Override
+    @Override
     public int hashCode() {
         return Objects.hash(id, role, dateCreated);
-    }*/
+    }
 
 
 }

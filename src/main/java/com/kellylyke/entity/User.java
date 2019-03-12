@@ -54,16 +54,14 @@ public class User implements Serializable {
     private Set<Role> roles = new HashSet<>();
 
 
-
-/**
+    /**
      * Instantiates a new User.
      */
 
     public User() {
     }
 
-
-/**
+    /**
      * Instantiates a new User.
      *
      * @param firstName the first name
@@ -84,6 +82,7 @@ public class User implements Serializable {
         this.email = email;
         this.password = password;
     }
+
 
 
     /**
@@ -118,7 +117,7 @@ public class User implements Serializable {
 
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "User{" +
                 "firstName='" + firstName + '\'' +
@@ -129,7 +128,7 @@ public class User implements Serializable {
                 ", zipcode='" + zipcode + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-    }*/
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -145,10 +144,10 @@ public class User implements Serializable {
                 Objects.equals(email, user.email);
     }
 
-   /* @Override
+   @Override
     public int hashCode() {
         return Objects.hash(firstName, lastName, username, id, zipcode, password, email);
-    }*/
+    }
 }
 
 
