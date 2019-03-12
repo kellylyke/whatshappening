@@ -23,10 +23,11 @@
             <label class="control-label" for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required="required" value="${user.firstName}">
             </div>
-            <div class="input-field col s5 offset-s1">
+            <div class="input-field col s5">
                 <label class="control-label" for="lastName">Last Name</label>
                 <input type="text" id="lastName" name="lastName" required="required" value="${user.lastName}">
             </div>
+        </div>
             <div class="row">
                 <div class="input-field col s5 offset-s1">
                     <label class="control-label" for="email">Email</label>
@@ -52,15 +53,13 @@
                     <input type="password" id="confirmPassword" name="confirmPassword" required="required">
                 </div>
             </div>
-        </div>
+
         <br/>
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
         <button type="submit" class="btn btn-default ">Update</button>
     </form>
-
-
 
 </div>
 </body>
