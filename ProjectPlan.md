@@ -42,15 +42,14 @@
 - [x] Create db on AWS
 - [x] Deploy to AWS for first time
 - [x] Prepare for Checkpoint 2: Database designed and created, at least one DAO implemented with Hibernate, DAO is unit tested, Log4J is implemented (no System.out.printlns), class design and any other diagrams you plan to use have been created.
-- [ ] Create admin directory
+
 
 ### Week 7
 
 - [x] Set up authentication locally
-- [ ] Set up authentication on AWS
-- [ ] Make sure data is updating from api
+- [x] Set up authentication on AWS
 - [ ] Review and incorporate any feedback from Checkpoint 2.
-- [ ] Add update and delete functionality in jsp for user preferences
+- [x] Add update functionality in jsp for user data
 - [ ] Build the search jsp
 - [ ] Build the user preferences add/update/delete jsp
 
@@ -59,19 +58,21 @@
 ### Week 8
 
 - [ ] Create unit tests
-- [ ] Add the user block table
-- [ ] Add the user block entity
-- [ ] Create user block dao
-- [ ] Create the user block unit tests
+- [ ] Create admin directory
+- [ ] Add delete functionality in jsp for user preferences
+- [ ] Set up API
 - [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
 
 ### Week 9
 - [ ] Review and incorporate feedback from Checkpoint 3.
 - [ ] Carefully review code for standards and best practices - use a code quality tool?
-
+- [ ] Add the user block table
+- [ ] Add the user block entity
+- [ ] Create the user block unit tests
 ### Week 8
 - [ ] Implement paging of search results
 - [ ] Code review
+- [ ] Make sure data is updating from api
 
 ### Week 9
 - [ ] Add password reset/reminder functionality
