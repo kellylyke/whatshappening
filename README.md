@@ -20,7 +20,7 @@ inspire the desire to hold our politicians accountable.
 ### Project Technologies/Techniques 
 
 * Security/Authentication
-  * Tomcat's JDBC Realm Authentication
+  * Tomcat's JDBC Realm Authentication with sha256
   * Admin role: Make sure nothing is broken and info is accurate, add/remove users if necessary
   * User role: Can add favorite/least favorite issues/candidates for a custom feed
   * All: Can see latest votes
@@ -34,7 +34,7 @@ inspire the desire to hold our politicians accountable.
 * Web Services consumed using Java
   * SoapUI
 * CSS 
-  * Bootstrap or Materialize
+  * Materialize
 * Data Validation
   * Bootstrap Validator for front end
   * Explore Hibernate's validation
