@@ -9,10 +9,7 @@
 <c:import url="banner.jsp"/>
 <body>
     <div class="container">
-    <ul>
-        <li><a href="myAccount">My Account</a></li>
-        <li><a href="allUsers">See All Users</a></li>
-    </ul>
+    <h3 class="center-align">What happened today?</h3>
 
 </div>
 </body>
