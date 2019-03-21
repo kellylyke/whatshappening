@@ -97,8 +97,6 @@ public class PreferenceDaoTest {
 
         Preference insertedPreference = (Preference)dao.getById(id);
 
-        /*assertEquals("Kennedy", insertedPreference.getShow());
-        assertEquals("Monica", insertedPreference.getUser().getFirstName());*/
         assertEquals(newPreference,insertedPreference);
     }
 

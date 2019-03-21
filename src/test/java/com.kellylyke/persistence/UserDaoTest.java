@@ -3,14 +3,17 @@ package com.kellylyke.persistence;
 import com.kellylyke.entity.Preference;
 import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
-import java.lang.Integer;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.*;
 import com.kellylyke.test.util.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,6 +27,10 @@ public class UserDaoTest {
 
     GenericDao dao;
     List<User> users;
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
+
+
 
     /**
      * Sets up dao, creates fresh database
@@ -94,11 +101,14 @@ public class UserDaoTest {
      * Verify successful insert of a user
      */
     @Test
-    public void insertSuccess() {
-        User newUser = new User("Joey", "Tribbiani", "joey", 90210, "drakeramoray@daysofourlives.com", "pizza");
+    public void insertSuccess()  {
+        User newUser = new User("Joey", "Tribbiani", "joey", 90210, "drakeramoray@daysofourlives.com", sha256("ilovepizza"));
+       // newUser.setPassword(sha256("ilovepizza"));
         Role role = new Role();
         role.setRole("admin");
-        role.setDateCreated(new Date());
+
+
+       // role.setDateCreated(new Date());
         role.setUser(newUser);
         newUser.addRole(role);
 
@@ -107,11 +117,35 @@ public class UserDaoTest {
         User insertedUser = (User)dao.getById(id);
 
         assertTrue(insertedUser.getId() > 0);
-        //assertTrue(insertedUser.getRoles().contains(role)); //this does not work with eager, but correct data shows up in table
         assertEquals(newUser, insertedUser);
-        //assertEquals(1, insertedUser.getRoles().size()); //this works if eager loaded
+        assertEquals(1, insertedUser.getRoles().size());
+        logger.debug(insertedUser.getRoles());
+        Set<Role> userRoles = insertedUser.getRoles();
+        assertTrue(userRoles.contains(role));
+        //assertTrue(insertedUser.getRoles().contains(role)); //this does not work with eager, but correct data shows up in table
+
 
     }
+
+
+    public static String sha256(String base) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(base.getBytes("UTF-8"));
+            StringBuffer hexString = new StringBuffer();
+
+            for (int i = 0; i < hash.length; i++) {
+                String hex = Integer.toHexString(0xff & hash[i]);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
 
     /**
      * Verify successful insert of a user and an preference

@@ -3,6 +3,7 @@ package com.kellylyke.controller;
 import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
+import com.kellylyke.persistence.PasswordHash;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,13 +34,15 @@ public class SignUp extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User user = new User();
+        PasswordHash ph = new PasswordHash();
         //String password = req.getParameter("password");
        // String confirmPassword = req.getParameter("confirmPassword");
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
         user.setUsername(req.getParameter("username"));
         user.setEmail(req.getParameter("email"));
-        user.setPassword(req.getParameter("password"));
+        String hashedPassword = ph.sha256(req.getParameter("password"));
+        user.setPassword(hashedPassword);
         user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
         logger.debug("User to be added: " + user);
 

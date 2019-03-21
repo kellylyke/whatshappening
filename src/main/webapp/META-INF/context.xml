@@ -4,5 +4,15 @@
            connectionURL="jdbc:mysql://localhost:3306/project?user=tomcat&amp;password=tomcat"
            userTable="users" userNameCol="username" userCredCol="password"
            userRoleTable="user_roles" roleNameCol="role" >
-    </Realm>
+
+
+        <CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+                           algorithm="SHA-256"
+                           iterations="1000"
+                           keyLength="256"
+                           saltLength="8"
+        />
+
+</Realm>
+
 </Context>

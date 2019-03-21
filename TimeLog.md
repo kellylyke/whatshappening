@@ -27,4 +27,8 @@
 | 3/8/19|got role table to work peacefully with user/tests pass again, watched 2nd video|2| |
 | 3/9/19|finished week 7 videos, tried to fix my weird errors |3||
 | 3/10/19| got authorization working locally, made sign in jsp, created diagram |3.5 |
-| 3/11/19|set up sign in page to work, added different navbar|1||
+| 3/11/19|set up sign in page to work, added different navbar, created update jsp|3||
+| 3/13/19|watched first week 8 video, created role tests|.5|
+| 3/18/19|set up auth on aws, failed at week 8 jaxp|1||
+| 3/19/19|still failing at jaxp problem|.5||
+| 3/21/19|set up sha256 locally for passwords|1|||
