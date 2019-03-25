@@ -12,10 +12,10 @@
 <div class="container">
 <div class="center-align banner">
     <%--<img src="images/banner.jpg" class="responsive-img" alt="banner"/>--%>
-    <img src="images/banner5.png" class="responsive-img" alt="banner"/>
+    <img src="images/banner2.png" class="responsive-img" alt="banner"/>
 
 </div>
-<nav class="deep-purple darken-2">
+<nav class="">
     <div class="nav-wrapper">
         <a href="index.jsp">&nbsp;Home</a>
 <%--
