@@ -15,6 +15,9 @@
 </head>
 <c:import url="banner.jsp"/>
 <body>
+<h3 class="center-align">Log In</h3>
+<div class="row">
+    <div class="col s4 offset-s4">
 <FORM ACTION="j_security_check" METHOD="POST">
     <TABLE>
         <TR><TD>Username: <INPUT TYPE="TEXT" NAME="j_username">
@@ -22,6 +25,8 @@
         <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
     </TABLE>
 </FORM>
+    </div>
+</div>
 </body>
 </html>
 

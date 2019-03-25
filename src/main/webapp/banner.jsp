@@ -12,39 +12,37 @@
 <div class="container">
 <div class="center-align banner">
     <%--<img src="images/banner.jpg" class="responsive-img" alt="banner"/>--%>
-    <img src="images/banner2.png" class="responsive-img" alt="banner"/>
+    <img src="images/banner5.png" class="responsive-img" alt="banner"/>
 
 </div>
-<nav>
+<nav class="deep-purple darken-2">
     <div class="nav-wrapper">
-        <a href="index.jsp">Home</a>
+        <a href="index.jsp">&nbsp;Home</a>
+<%--
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+--%>
+        <ul class="right">
 
-            <c:choose>
+           <c:choose>
                 <c:when test="${sessionScope.user != null}">
                     <li><a href="myAccount">My Account</a></li>
                     <li><a href="allUsers">View Users</a></li>
                     <li><a href="logout.jsp">Log Out</a></li>
-                    <br />
                 </c:when>
                 <c:otherwise>
                     <li><a href="signUp.jsp">Sign Up</a></li>
                     <li><a href="login.jsp">Log In</a></li>
-                    <br />
+
                 </c:otherwise>
             </c:choose>
-
+            <li><form id="searchForm" action="search" method="post">
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form></li>
        </ul>
     </div>
-<!--
-    <div class="nav-wrapper">
-        <form>
-            <div class="input-field right">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
-    </div> -->
 </nav>
 </div>

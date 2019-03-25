@@ -49,7 +49,13 @@ public class MyAccount extends HttpServlet {
         user.setLastName(req.getParameter("lastName"));
         //user.setUsername(req.getParameter("username"));
         user.setEmail(req.getParameter("email"));
-        user.setPassword(req.getParameter("password"));
+        String newPassword = req.getParameter("password");
+        String confirmPassword = req.getParameter("confirmPassword");
+       if (newPassword.equals(confirmPassword)) {
+           user.setPassword(newPassword);
+       } else {
+           //session.setAttribute("passwordError", )
+       }
        // user.setPassword(req.getParameter("id"));
 
         userDao.saveOrUpdate(user);

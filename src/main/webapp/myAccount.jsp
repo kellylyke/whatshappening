@@ -43,8 +43,8 @@
 
             <div class="row">
                 <div class="input-field col s7 offset-s1">
-                    <label class="control-label" for="password">Password</label>
-                    <input type="password" id="password" name="password" required="required" value="${user.password}">
+                    <label class="control-label" for="password"> New Password</label>
+                    <input type="password" id="password" name="password" required="required">
                 </div>
             </div>
             <div class="row">

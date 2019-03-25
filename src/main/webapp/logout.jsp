@@ -15,10 +15,21 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page session="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-User <%=request.getRemoteUser()%> has been logged out.
+
+<head>
+    <title>Log Out</title>
+    <c:import url="header.jsp"/>
+</head>
+<c:import url="banner.jsp"/>
+<body>
+<br/>
+<br/>
+<%=request.getRemoteUser()%> has been logged out.
+<br/><br/>
+
+<a href="index.jsp">Click here to go to the home page</a>
+</body>
 
 <% session.invalidate(); %>
-
-<br/><br/>
-<a href="index.jsp">Click here to go to the home page</a>

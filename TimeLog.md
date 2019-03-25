@@ -31,4 +31,4 @@
 | 3/13/19|watched first week 8 video, created role tests|.5|
 | 3/18/19|set up auth on aws, failed at week 8 jaxp|1||
 | 3/19/19|still failing at jaxp problem|.5||
-| 3/21/19|set up sha256 locally for passwords|1|||
+| 3/21/19|set up sha256 for passwords, added fav icon |1|||
