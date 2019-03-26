@@ -32,4 +32,4 @@
 | 3/18/19|set up auth on aws, failed at week 8 jaxp|1||
 | 3/19/19|still failing at jaxp problem|.5||
 | 3/21/19|set up sha256 for passwords, added fav icon |1|||
-| 3/23/19|screwed with a lot of css that actually looked worse so in the end nothing was accomplished, fixed jaxp problem with week 8, did act 2|2.5||
+| 3/23/19|screwed with a lot of css that actually looked worse so in the end nothing was accomplished, fixed jaxp problem with week 8, did act 2, added search|2.5||

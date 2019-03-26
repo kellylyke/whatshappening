@@ -54,8 +54,8 @@ public class SignUp extends HttpServlet {
 
         userDao.insert(user);
 
-       /* RequestDispatcher dispatcher = req.getRequestDispatcher("/confirmation.jsp");
+       RequestDispatcher dispatcher = req.getRequestDispatcher("/signUp.jsp");
 
-        dispatcher.forward(req, resp);*/
+        dispatcher.forward(req, resp);
     }
 }
