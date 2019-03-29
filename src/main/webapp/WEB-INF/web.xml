@@ -17,10 +17,12 @@
   <!-- Protect everything within the "admin" directory. -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>admin</web-resource-name>
+      <web-resource-name>user</web-resource-name>
       <url-pattern>/allUsers.jsp</url-pattern>
       <url-pattern>/allUsers</url-pattern>
       <url-pattern>/redirect</url-pattern>
+      <url-pattern>/myAccount.jsp</url-pattern>
+      <url-pattern>/myAccount</url-pattern>
     </web-resource-collection>
     <auth-constraint>
         <role-name>admin</role-name>
