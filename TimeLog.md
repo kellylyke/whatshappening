@@ -30,6 +30,9 @@
 | 3/11/19|set up sign in page to work, added different navbar, created update jsp|3||
 | 3/13/19|watched first week 8 video, created role tests|.5|
 | 3/18/19|set up auth on aws, failed at week 8 jaxp|1||
-| 3/19/19|still failing at jaxp problem|.5||
+| 3/19/19|still failing at jaxp problem|.5|update: it was stupid|
 | 3/21/19|set up sha256 for passwords, added fav icon |1|||
 | 3/23/19|screwed with a lot of css that actually looked worse so in the end nothing was accomplished, fixed jaxp problem with week 8, did act 2, added search|2.5||
+| 3/24/19|did activity 3, added template|1||
+| 3/29/19|finished act 2, piecing home screen back together with template |1.5 | |
+| 3/31/19| | |

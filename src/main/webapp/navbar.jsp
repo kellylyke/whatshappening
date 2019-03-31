@@ -17,14 +17,14 @@
 <%
     session.setAttribute("user", request.getRemoteUser());
 %>
-<header id="header">
+<%--<header id="header">
     <div class="container">
 
         <div id="logo" class="pull-left">
             <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
             <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="#hero">Regna</a></h1>-->
-        </div>
+            <h1><a href="#hero">Regna</a></h1>
+        </div>--%>
 
     <nav id="nav-menu-container">
 
@@ -42,14 +42,28 @@
 
                     </c:otherwise>
                 </c:choose>
-                <li><form id="searchForm" action="search" method="post">
+               <%-- <li><form id="searchForm" action="search" method="post">
                     <div class="input-field">
                         <input id="search" type="search" required>
                         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                         <i class="material-icons">close</i>
                     </div>
-                </form></li>
+                </form></li>--%>
             </ul>
     </nav>
-</div>
-</header>
+<%--</div>
+</header>--%>
+
+
+<%--
+<nav id="nav-menu-container">
+    <ul class="nav-menu">
+        <li class="menu-active"><a href="#hero">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="signUp">Sign Up</a></li>
+        <li><a href="redirect">Log In</a></li>
+        <li><a href="#team">Team</a></li>
+
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+</nav><!-- #nav-menu-container -->--%>

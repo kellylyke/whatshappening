@@ -52,11 +52,11 @@ Header
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <a href="#hero"><img src="img/logo.png" alt="" title="" /></a>
+            <%--<a href="#hero"><img src="img/logo.png" alt="" title="" /></a>--%>
             <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="#hero">Regna</a></h1>-->
+            <h1><a href="#hero">what's happening</a></h1>
         </div>
-
+<%--
         <nav id="nav-menu-container">
             <ul class="nav-menu">
                 <li class="menu-active"><a href="#hero">Home</a></li>
@@ -67,7 +67,8 @@ Header
 
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
-        </nav><!-- #nav-menu-container -->
+        </nav><!-- #nav-menu-container -->--%>
+        <c:import url="navbar.jsp"/>
     </div>
 </header><!-- #header -->
 
@@ -83,6 +84,10 @@ Header
 </section><!-- #hero -->
 
 <main id="main">
+    <%--<div class="container">
+        <c:import url="login.jsp"/>
+    </div>
+--%>
 
     <!--==========================
       About Us Section
@@ -194,7 +199,7 @@ Header
                     <div class="member">
                         <div class="pic"><img src="images/aoc.jpg" alt=""></div>
                         <h4>Alexandria Ocasio-Cortez</h4>
-                        <span>U.S. House of Representative - New York 14th District</span>
+                        <span>House of Representatives - New York 14th District</span>
                         <div class="social">
                             <a href="https://twitter.com/AOC"><i class="fa fa-twitter"></i></a>
                             <br/>
@@ -209,7 +214,8 @@ Header
                         <h4>Kamala Harris</h4>
                         <span>Senator - California</span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>
+                            <br/>
                             <a href=""><i class=""></i>Voting Record</a>
                         </div>
                     </div>
@@ -221,7 +227,7 @@ Header
                         <h4>Rob Portman</h4>
                         <span>Senator - Ohio</span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/senrobportman"><i class="fa fa-twitter"></i></a>
                             <br/>
                             <a href=""><i class="">Voting Record</i></a>
                         </div>
@@ -234,8 +240,9 @@ Header
                         <h4>Mark Pocan</h4>
                         <span>House of Representatives - Wisconsin 2nd District </span>
                         <div class="social">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-linkedin">Voting Record</i></a>
+                            <a href="https://twitter.com/repmarkpocan"><i class="fa fa-twitter"></i></a>
+                            <br/>
+                            <a href=""><i class="">Voting Record</i></a>
                         </div>
                     </div>
                 </div>
@@ -256,7 +263,7 @@ Header
         </div>
 
         <!-- Uncomment below if you wan to use dynamic maps -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1Diz3RFbrt9DDRsLcakSDaLOT61g&hl=en" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         <div class="container wow fadeInUp mt-5">
             <section class="row justify-content-center">
@@ -266,17 +273,17 @@ Header
                     <div class="info">
                         <div>
                             <i class="fa fa-map-marker"></i>
-                            <p>A108 Adam Street<br>New York, NY 535022</p>
+                            <p>1600 Pennsylvania Avenue NW<br>Washington, DC 20500</p>
                         </div>
 
                         <div>
                             <i class="fa fa-envelope"></i>
-                            <p>info@example.com</p>
+                            <p>president@whitehouse.gov</p>
                         </div>
 
                         <div>
                             <i class="fa fa-phone"></i>
-                            <p>+1 5589 55488 55s</p>
+                            <p>202-456-1111</p>
                         </div>
                     </div>
 
@@ -285,9 +292,13 @@ Header
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="https://www.instagram.com/kelly.lyke/" class="instagram"><i class="fa fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/kelly-lyke" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.github.com/kellylyke" class="github"><i class="fa fa-github"></i></a>
+
                     </div>
 
                 </div>
+
+            </section>
 
 <!--==========================
   Footer
@@ -313,6 +324,7 @@ Header
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
     </div>
+
 </footer><!-- #footer -->
 
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
@@ -333,7 +345,7 @@ Header
 
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
-            </section>
+
 </div>
     </section>
 </main>
