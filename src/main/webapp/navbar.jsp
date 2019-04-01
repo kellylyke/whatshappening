@@ -17,19 +17,31 @@
 <%
     session.setAttribute("user", request.getRemoteUser());
 %>
-<%--<header id="header">
+
+<header id="header" class="header-fixed">
     <div class="container">
 
         <div id="logo" class="pull-left">
-            <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
+            <%--<a href="#hero"><img src="img/logo.png" alt="" title="" /></a>--%>
             <!-- Uncomment below if you prefer to use a text logo -->
-            <h1><a href="#hero">Regna</a></h1>
-        </div>--%>
+            <h1><a href="index.jsp">what's happening</a></h1>
+        </div>
+        <%--
+                <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                        <li class="menu-active"><a href="#hero">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="signUp">Sign Up</a></li>
+                        <li><a href="redirect">Log In</a></li>
+                        <li><a href="#team">Team</a></li>
+
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav><!-- #nav-menu-container -->--%>
 
     <nav id="nav-menu-container">
 
             <ul class="nav-menu">
-
                 <c:choose>
                     <c:when test="${sessionScope.user != null}">
                         <li><a href="myAccount">My Account</a></li>
@@ -51,6 +63,8 @@
                 </form></li>--%>
             </ul>
     </nav>
+    </div>
+</header>
 <%--</div>
 </header>--%>
 

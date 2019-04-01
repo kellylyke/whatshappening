@@ -8,60 +8,95 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>My Account</title>
-    <c:import url="header.jsp"/>
-</head>
-<c:import url="banner.jsp"/>
+
+<c:import url="header.jsp"/>
+
+<c:import url="navbar.jsp"/>
+<br/>
+<br/>
+<br/>
+<br/>
 <body>
 <div class="container">
-    <h3 class="center-align">Update Your Account</h3>
+    <h3 class="center-align after-heading">Update Your Account</h3>
     <br/>
-    <form id="updateUser" class="col s12 center-align" action="myAccount" method="post">
+   <%-- <div class="d-flex justify-content-center h-100">
+        <div class="card-form">
+
+            <div class="card-body">--%>
+    <form id="updateUser" action="myAccount" method="post">
+        <div class="col-md-8">
         <div class="row">
-            <div class="input-field col s5 offset-s1">
-            <label class="control-label" for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required="required" value="${user.firstName}">
+            <div class="col-3">
+                <label class="control-label" for="firstName">First Name</label>&nbsp;&nbsp;
             </div>
-            <div class="input-field col s5">
-                <label class="control-label" for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required="required" value="${user.lastName}">
+            <div class="col-5">
+                <input class="form-control"  type="text" id="firstName" name="firstName" required="required" value="${user.firstName}">
             </div>
         </div>
+        </div>
+        <div class="col-md-8">
             <div class="row">
-                <div class="input-field col s5 offset-s1">
-                    <label class="control-label" for="email">Email</label>
-                    <input type="text" id="email" name="email" required="required" value="${user.email}">
+                <div class="col-3">
+                     <label class="control-label" for="lastName">Last Name</label>&nbsp;&nbsp;
+                </div>
+                <div class="col-5">
+                    <input class="form-control" type="text" id="lastName" name="lastName" required="required" value="${user.lastName}">
+                 </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+              <div class="row">
+                   <div class="col-3">
+                    <label class="control-label" for="email">Email</label>&nbsp;&nbsp;
+                   </div>
+                  <div class="col-5">
+                    <input class="form-control"  type="text" id="email" name="email" required="required" value="${user.email}">
+                </div>
+              </div>
+            </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-3">
+                    <label class="form-check-label" for="zipcode">Zipcode</label>&nbsp;&nbsp;
+                </div>
+                <div class="col-5">
+                    <input class="form-control"  type="text" id="zipcode" name="zipcode" required="required" value="${user.zipcode}">
                 </div>
             </div>
+           </div>
+        <div class="col-md-8">
             <div class="row">
-                <div class="input-field col s5 offset-s1">
-                    <label class="control-label" for="zipcode">Zipcode</label>
-                    <input type="text" id="zipcode" name="zipcode" required="required" value="${user.zipcode}">
+                <div class="col-3">
+                    <label class="form-check-label" for="password"> New Password</label>&nbsp;&nbsp;
+                </div>
+                <div class="col-5">
+                    <input class="form-control"  type="password" id="password" name="password" required="required">
                 </div>
             </div>
-
-            <div class="row">
-                <div class="input-field col s7 offset-s1">
-                    <label class="control-label" for="password"> New Password</label>
-                    <input type="password" id="password" name="password" required="required">
+        </div>
+        <div class="col-md-8">
+        <div class="row">
+                <div class="col-3">
+                    <label class="control-label" for="confirmPassword">Confirm Password</label>&nbsp;&nbsp;
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s7 offset-s1">
-                    <label class="control-label" for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required="required">
+            <div class="col-5">
+                    <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required="required">
                 </div>
-            </div>
+        </div>
+        </div>
 
         <br/>
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
-        <button type="submit" class="btn btn-default ">Update</button>
+        <button type="submit" class="btn btn-default">Update</button>
     </form>
+            </div>
+   <%--     </div>
 
 </div>
+</div>--%>
 </body>
 
 </html>

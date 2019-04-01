@@ -8,17 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>My Account</title>
-    <c:import url="header.jsp"/>
-</head>
-<c:import url="banner.jsp"/>
+
+<c:import url="header.jsp"/>
+
+<c:import url="navbar.jsp"/>
 <body>
 
-<div class="container">
+<div class="container after-heading">
 <h3>All Registered Users</h3>
 
-     <table class="striped centered">
+     <table class="table table-striped">
         <thead>
         <tr>
             <th>ID</th>

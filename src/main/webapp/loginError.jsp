@@ -8,11 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <c:import url="header.jsp"/>
-    <title>Login Failed</title>
-</head>
-<c:import url="banner.jsp"/>
+<c:import url="header.jsp"/>
+
+<c:import url="navbar.jsp"/>
 <body>
 <p>Log in failed - Try again</p>
 <a href="login.jsp">Log In</a>

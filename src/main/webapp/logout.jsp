@@ -19,10 +19,9 @@
 
 
 <head>
-    <title>Log Out</title>
     <c:import url="header.jsp"/>
 </head>
-<c:import url="banner.jsp"/>
+<c:import url="navbar.jsp"/>
 <body>
 <br/>
 <br/>

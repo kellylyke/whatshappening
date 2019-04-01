@@ -9,13 +9,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
+
     <title>Sign Up</title>
     <c:import url="header.jsp"/>
-</head>
-<c:import url="banner.jsp"/>
+
+<c:import url="navbar.jsp"/>
 <body>
-<div class="container">
+<div class="container after-heading">
 <h3 class="center-align">Register</h3>
 <br/>
 

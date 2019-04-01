@@ -8,69 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<head>
-    <title>what's happening</title>
- <%--   <c:import url="header.jsp"/>--%>
-
-    <meta charset="utf-8">
-    <title>what's happening</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicons -->
-    <link href="favicon.ico" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
-
-    <!-- Bootstrap CSS File -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-      Theme Name: Regna
-      Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
-      Author: BootstrapMade.com
-      License: https://bootstrapmade.com/license/
-    ======================================================= -->
-</head>
+<c:import url="header.jsp"/>
 
 <body>
 
-<!--==========================
-Header
-============================-->
-<header id="header">
-    <div class="container">
 
-        <div id="logo" class="pull-left">
-            <%--<a href="#hero"><img src="img/logo.png" alt="" title="" /></a>--%>
-            <!-- Uncomment below if you prefer to use a text logo -->
-            <h1><a href="#hero">what's happening</a></h1>
-        </div>
-<%--
-        <nav id="nav-menu-container">
-            <ul class="nav-menu">
-                <li class="menu-active"><a href="#hero">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="signUp">Sign Up</a></li>
-                <li><a href="redirect">Log In</a></li>
-                <li><a href="#team">Team</a></li>
+<c:import url="navbar.jsp"/>
 
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav><!-- #nav-menu-container -->--%>
-        <c:import url="navbar.jsp"/>
-    </div>
-</header><!-- #header -->
 
 <!--==========================
   Hero Section
@@ -216,7 +160,7 @@ Header
                         <div class="social">
                             <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>
                             <br/>
-                            <a href=""><i class=""></i>Voting Record</a>
+                            <a href=""><i class="">Voting Record</i></a>
                         </div>
                     </div>
                 </div>
@@ -312,7 +256,7 @@ Header
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong>Regna</strong>. All Rights Reserved
+            &copy; Copyright <strong>2019</strong>. All Rights Reserved
         </div>
         <div class="credits">
             <!--

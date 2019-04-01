@@ -17,7 +17,16 @@
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: #878b96;
+}
+
+.card-form {
+  height: 500px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 700px;
+  color: black;
+  background-color: #878283;
 }
 
 .social_icon span{
@@ -580,7 +589,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #about .about-container .background {
   min-height: 300px;
-  background: url(../img/about-img.jpg) center top no-repeat;
+  background: url(../images/capitol.png) center top no-repeat;
   margin-bottom: 10px;
 }
 
@@ -1057,4 +1066,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-align: center;
   font-size: 13px;
   color: #ccc;
+}
+
+.row {
+  padding: 1em;
+}
+
+.after-heading {
+  margin-top: 80px;
 }
