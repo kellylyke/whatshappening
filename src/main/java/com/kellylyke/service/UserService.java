@@ -48,20 +48,13 @@ public class UserService {
       users = userDao.getAll();
       logger.debug(users);
 
- /*     Gson gson = new Gson();
-      String usersString = gson.toJson(users);*/
-
-
-      //String jsonInString = mapper.writeValueAsString(users);
-
       ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
       String json = ow.writeValueAsString(users);
 
-
       return Response.status(200).entity(users).build();
   } catch (Exception e) {
-            logger.error("Error getting all users" + e);
-            return Response.status(500).entity(e).build();
+        logger.error("Error getting all users" + e);
+        return Response.status(500).entity(e).build();
   }
 
         //return Response.status(200).entity(output).build();
