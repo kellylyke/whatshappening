@@ -1,5 +1,6 @@
 package com.kellylyke.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,6 +25,7 @@ public class Preference {
     @Column(name = "show_me")
     private String show;
 
+    @JsonIgnore
     @ManyToOne
     private User user;
 

@@ -35,4 +35,5 @@
 | 3/23/19|screwed with a lot of css that actually looked worse so in the end nothing was accomplished, fixed jaxp problem with week 8, did act 2, added search|2.5||
 | 3/24/19|did activity 3, added template|1||
 | 3/29/19|finished act 2, piecing home screen back together with template |1.5 | |
-| 3/31/19| redid template to work| |
+| 3/31/19| redid template to work| 2.5||
+| 4/3/19|finished week 9 activities/videos, started making skeleton of team project |2| |

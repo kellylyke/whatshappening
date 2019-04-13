@@ -1,5 +1,6 @@
 package com.kellylyke.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -28,6 +29,7 @@ public class Role {
     private Date dateCreated;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name="username", referencedColumnName = "username", nullable = false)
     @EqualsAndHashCode.Exclude
     private User user;
