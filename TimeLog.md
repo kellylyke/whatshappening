@@ -37,3 +37,5 @@
 | 3/29/19|finished act 2, piecing home screen back together with template |1.5 | |
 | 3/31/19| redid template to work| 2.5||
 | 4/3/19|finished week 9 activities/videos, started making skeleton of team project |2| |
+| 4/7/19| set up user service returning json| 2| |
+| 4/13/19| set up api to retrieve all members | 1.5 | |
