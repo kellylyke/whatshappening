@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Path("/user")
+@Path("/users")
 public class UserService {
     GenericDao<User> userDao = new GenericDao<>(User.class);
     private final Logger logger = LogManager.getLogger(this.getClass());

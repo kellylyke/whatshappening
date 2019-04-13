@@ -25,6 +25,7 @@ public class UserApplication extends Application {
         HashSet h = new HashSet<Class<?>>();
         h.add(JacksonFeature.class);
         h.add(UserService.class );
+        h.add(MemberService.class);
         return h;
     }
 }
