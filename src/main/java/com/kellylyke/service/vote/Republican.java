@@ -1,10 +1,10 @@
-package com.kellylyke.service;
+package com.kellylyke.service.vote;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Democratic{
+public class Republican{
 
 	@JsonProperty("no")
 	private int no;
@@ -64,7 +64,7 @@ public class Democratic{
 	@Override
  	public String toString(){
 		return 
-			"Democratic{" + 
+			"Republican{" + 
 			"no = '" + no + '\'' + 
 			",not_voting = '" + notVoting + '\'' + 
 			",majority_position = '" + majorityPosition + '\'' + 

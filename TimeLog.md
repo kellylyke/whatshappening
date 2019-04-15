@@ -39,3 +39,5 @@
 | 4/3/19|finished week 9 activities/videos, started making skeleton of team project |2| |
 | 4/7/19| set up user service returning json| 2| |
 | 4/13/19| set up api to retrieve all members | 1.5 | |
+| 4/14/19| watched week 1 videos, did exercise, trying to sift out api data|1||
+| 4/15/19|dug far enough into API to get the right results and the test passes|1| |

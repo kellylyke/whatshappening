@@ -1,12 +1,9 @@
 package com.kellylyke.service;
 
-import com.kellylyke.entity.User;
+import com.kellylyke.service.com.kellylyke.service.user.UserService;
+import com.kellylyke.service.congress.MemberService;
+import com.kellylyke.service.vote.VoteService;
 import org.glassfish.jersey.jackson.JacksonFeature;
-
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -26,6 +23,7 @@ public class UserApplication extends Application {
         h.add(JacksonFeature.class);
         h.add(UserService.class );
         h.add(MemberService.class);
+        h.add(VoteService.class);
         return h;
     }
 }

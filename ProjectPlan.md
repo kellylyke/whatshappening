@@ -48,11 +48,10 @@
 
 - [x] Set up authentication locally
 - [x] Set up authentication on AWS
-- [ ] Review and incorporate any feedback from Checkpoint 2.
+- [x] Review and incorporate any feedback from Checkpoint 2.
 - [x] Add update functionality in jsp for user data
-- [ ] Build the search jsp
+- [x] Build the search jsp
 - [ ] Build the user preferences add/update/delete jsp
-
 
 
 ### Week 8
@@ -61,33 +60,33 @@
 - [ ] Create admin directory
 - [ ] Add delete functionality in jsp for user preferences
 - [ ] Set up API
-- [ ] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
+- [x] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
+- [x] Code review
 
-### Week 9
-- [ ] Review and incorporate feedback from Checkpoint 3.
-- [ ] Carefully review code for standards and best practices - use a code quality tool?
-- [ ] Add the user block table
-- [ ] Add the user block entity
-- [ ] Create the user block unit tests
-### Week 8
-- [ ] Implement paging of search results
-- [ ] Code review
-- [ ] Make sure data is updating from api
 
 ### Week 9
 - [ ] Add password reset/reminder functionality
+- [ ] Review and incorporate feedback from Checkpoint 3.
+
 
 ### Week 10
 - [ ] Unit test all api integrations
+- [ ] Carefully review code for standards and best practices - use a code quality tool?
+
 
 ### Week 11 - Team project work week
 - [ ] Review indie project and create list of todos
+- [ ] Make sure data is updating from api
+- [ ] Implement paging of search results
 
 ### Week 12 - Team project due
 - [ ] Complete todos identified in week 11
 - [ ] Prepare for week 13 peer code reviews
 - [ ] Code quality check
 - [ ] Review rubric to make sure I'm on target
+- [ ] Add the user block table
+- [ ] Add the user block entity
+- [ ] Create the user block unit tests
 
 
 ### Week 13

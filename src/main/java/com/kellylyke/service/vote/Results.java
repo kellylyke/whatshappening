@@ -1,11 +1,11 @@
-package com.kellylyke.service;
+package com.kellylyke.service.vote;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class ResultsItem{
+public class Results{
 
 	@JsonProperty("chamber")
 	private String chamber;
@@ -13,11 +13,8 @@ public class ResultsItem{
 	@JsonProperty("offset")
 	private int offset;
 
-	@JsonProperty("congress")
-	private String congress;
-
-	@JsonProperty("members")
-	private List<MembersItem> members;
+	@JsonProperty("votes")
+	private List<VotesItem> votes;
 
 	@JsonProperty("num_results")
 	private int numResults;
@@ -38,20 +35,12 @@ public class ResultsItem{
 		return offset;
 	}
 
-	public void setCongress(String congress){
-		this.congress = congress;
+	public void setVotes(List<VotesItem> votes){
+		this.votes = votes;
 	}
 
-	public String getCongress(){
-		return congress;
-	}
-
-	public void setMembers(List<MembersItem> members){
-		this.members = members;
-	}
-
-	public List<MembersItem> getMembers(){
-		return members;
+	public List<VotesItem> getVotes(){
+		return votes;
 	}
 
 	public void setNumResults(int numResults){
@@ -65,11 +54,10 @@ public class ResultsItem{
 	@Override
  	public String toString(){
 		return 
-			"ResultsItem{" + 
+			"Results{" + 
 			"chamber = '" + chamber + '\'' + 
 			",offset = '" + offset + '\'' + 
-			",congress = '" + congress + '\'' + 
-			",members = '" + members + '\'' + 
+			",votes = '" + votes + '\'' + 
 			",num_results = '" + numResults + '\'' + 
 			"}";
 		}

@@ -1,4 +1,4 @@
-package com.kellylyke.service;
+package com.kellylyke.service.com.kellylyke.service.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;

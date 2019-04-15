@@ -1,21 +1,30 @@
 package com.kellylyke.service;
 
-import java.io.*;
-import java.util.*;
+
+import java.io.IOException;
+import java.util.Properties;
 
 /**
- * handles properties files -- yes this is taken from last semester ¯\_(ツ)_/¯
- * @author Eric Knapp
+ * An interface that loads a properties object
+ * using a properties file path as input.
  *
+ * @author Eric Knapp
  */
-public interface PropertiesLoader{
+public interface PropertiesLoader {
+
     /**
-     * loads properties file
-     *@param propertiesFilePath to file with properties
-     *@return properties from file
-     *@throws Exception any failure
-     **/
+     * Loads a properties file into a Properties
+     *  instance and returns it.
+     *
+     * @param propertiesFilePath a path a file on the java classpath list
+     * @return a populated Properties instance or an empty Properties instance
+     * if the file path was not found
+     * @throws Exception if there is a problem loading the properties file
+     */
     default Properties loadProperties(String propertiesFilePath) throws Exception {
+        // TODO I just used the red lightbulb to switch language to level 8 --- will that mess anything up??
+        //  The application seems to work...
+
         Properties properties = new Properties();
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));

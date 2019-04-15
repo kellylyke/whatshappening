@@ -1,10 +1,19 @@
-package com.kellylyke.service;
+package com.kellylyke.service.congress;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
 public class MembersItem{
+
+	@JsonIgnore
+	@JsonProperty("status")
+	private String status;
+
+	@JsonIgnore
+	@JsonProperty("copyright")
+	private String copyright;
 
 	@JsonProperty("dw_nominate")
 	private double dwNominate;

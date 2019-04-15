@@ -1,20 +1,25 @@
-package com.kellylyke.service;
+package com.kellylyke.service.congress;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
 public class Results{
 
+	@JsonIgnore
 	@JsonProperty("copyright")
 	private String copyright;
 
 	@JsonProperty("results")
 	private List<ResultsItem> results;
 
+	@JsonIgnore
 	@JsonProperty("status")
 	private String status;
+
 
 	public void setCopyright(String copyright){
 		this.copyright = copyright;
