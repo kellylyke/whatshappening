@@ -18,6 +18,10 @@ public class MembersItem{
 	@JsonProperty("dw_nominate")
 	private double dwNominate;
 
+
+	@JsonProperty("district")
+	private String district;
+
 	@JsonProperty("gender")
 	private String gender;
 
@@ -126,6 +130,9 @@ public class MembersItem{
 	@JsonProperty("url")
 	private String url;
 
+	@JsonProperty("at_large")
+	private String atLarge;
+
 	@JsonProperty("total_votes")
 	private int totalVotes;
 
@@ -134,6 +141,9 @@ public class MembersItem{
 
 	@JsonProperty("phone")
 	private String phone;
+
+	@JsonProperty("geoid")
+	private String geoID;
 
 	@JsonProperty("votesmart_id")
 	private String votesmartId;
@@ -165,6 +175,14 @@ public class MembersItem{
 
 	public void setDateOfBirth(String dateOfBirth){
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
 	}
 
 	public String getDateOfBirth(){
