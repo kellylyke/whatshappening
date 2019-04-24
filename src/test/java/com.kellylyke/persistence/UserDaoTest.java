@@ -119,7 +119,7 @@ public class UserDaoTest {
         assertTrue(insertedUser.getId() > 0);
         assertEquals(newUser, insertedUser);
         assertEquals(1, insertedUser.getRoles().size());
-        logger.debug(insertedUser.getRoles());
+        //logger.debug(insertedUser.getRoles());
         Set<Role> userRoles = insertedUser.getRoles();
         assertTrue(userRoles.contains(role));
         //assertTrue(insertedUser.getRoles().contains(role)); //this does not work with eager, but correct data shows up in table

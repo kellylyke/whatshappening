@@ -1,43 +1,39 @@
-package com.kellylyke.service.congress;
+package com.kellylyke.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
+import com.kellylyke.service.congress.MembersItem;
+import com.kellylyke.service.congress.Results;
+import com.kellylyke.service.congress.ResultsItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.client.*;
 import javax.ws.rs.core.Response;
-
 import java.io.FileInputStream;
 import java.io.InputStream;
-
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-
-public class MemberServiceTest {
-
+public class MemberService {
     private String key;
     private String senateMembersLink;
     private String houseMembersLink;
     private Properties prop = new Properties();
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    public static void main(String[] args) throws Exception {
+      MemberService please= new MemberService();
+       please.getSpecificMember("Baldwin");
+    }
 
-
-    @BeforeEach
-    private void getKey() {
-        String propFile = "src/main/resources/apiKey.properties";
+    private void getKey() { //TODO:refactor to take param of prop name and return link
+        String propFile = "/home/klyke/student/IdeaProjects/whatshappening/src/main/resources/apiKey.properties"; //obivously change this
 
         try (InputStream input = new FileInputStream(propFile)) {
             prop.load(input);
@@ -47,17 +43,14 @@ public class MemberServiceTest {
             houseMembersLink = prop.getProperty("house_members_link");
 
         } catch (Exception exception) {
-            exception.printStackTrace();
-
+            logger.error("There was an error getting properties. " + exception);
         }
 
     }
 
-
-    @Test
-    public void getSenateMembersJSON() throws Exception { //TODO: handle this
+    public List<MembersItem> getSenateMembersJSON() throws Exception { //TODO: handle this
         Client client = ClientBuilder.newClient();
-
+        getKey();
         WebTarget target =
                 client.target(senateMembersLink);
 
@@ -74,15 +67,24 @@ public class MemberServiceTest {
         resultsItem = results.getResults();
         List<MembersItem> members = new ArrayList<MembersItem>();
         members = resultsItem.get(0).getMembers();
-        int size = resultsItem.get(0).getNumResults();
-
-        assertEquals(105, size);
-        //fun fact: it's 105 and not 100 because it includes those who resigned (or died) during their term (i.e. Al Franken, John McCain)
+        return members;
 
     }
 
+    public MembersItem getSpecificMember(String searchTerm) throws Exception{
+        searchTerm = "Baldwin";
+        MembersItem chosenMember = null;
+        List<MembersItem> membersList = getSenateMembersJSON();
 
-    @Test
+        for(MembersItem member : membersList) {
+            if(searchTerm.equals(member.getLastName())) {
+                chosenMember = member;
+            }
+        }
+        logger.info(chosenMember);
+        return chosenMember;
+    }
+
     public void getHouseMembersJSON() throws Exception { //TODO: handle this and reuse code
 
         Client client = ClientBuilder.newClient();
@@ -103,13 +105,9 @@ public class MemberServiceTest {
         resultsItem = results.getResults();
         List<MembersItem> members = new ArrayList<MembersItem>();
         members = resultsItem.get(0).getMembers();
-        int size = resultsItem.get(0).getNumResults();
 
-        assertEquals(456, size);
+
 
     }
 
 }
-
-
-

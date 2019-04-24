@@ -41,3 +41,5 @@
 | 4/13/19| set up api to retrieve all members | 1.5 | |
 | 4/14/19| watched week 1 videos, did exercise, trying to sift out api data|1||
 | 4/15/19|dug far enough into API to get the right results and the test passes|1| |
+| 4/22/19| starting setting up member display jsp with json data from api|2| |
+| 4/24/19| displays member to jsp page, looked at other apis, building search |2.5| cannot link properties file relatively, wasted a lot of time |

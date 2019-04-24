@@ -1,8 +1,5 @@
 package com.kellylyke.service;
 
-import com.kellylyke.service.com.kellylyke.service.user.UserService;
-import com.kellylyke.service.congress.MemberService;
-import com.kellylyke.service.vote.VoteService;
 import org.glassfish.jersey.jackson.JacksonFeature;
 
 import javax.ws.rs.ApplicationPath;

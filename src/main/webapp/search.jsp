@@ -12,9 +12,13 @@
     <title>Search</title>
     <c:import url="header.jsp"/>
 </head>
-<c:import url="banner.jsp"/>
+<c:import url="navbar.jsp"/>
 <body>
-<h3 class="center-align">What do you care about?</h3>
+<div class="container after-heading">
+
+<br/>
+<h3 class="center-align">Track candidates by searching below</h3>
+
 <form id="searchForm" class="col s10 center-align" action="search" method="post">
     <div class="row">
         <div class="input-field col s4 offset-s4">
@@ -24,5 +28,7 @@
        <button type="submit" class="btn blue darken-4">Search<i class="material-icons">search</i></button>
 
 </form>
+</div>
 </body>
+
 </html>
