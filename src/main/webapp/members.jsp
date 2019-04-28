@@ -18,9 +18,14 @@
 <body>
 
 <div class="container after-heading">
-    <h3>${member.firstName} ${member.lastName} </h3>
+    <h3>${member.shortTitle} ${member.firstName}  ${member.lastName} - ${member.party}  </h3>
+    <ul>
+        <li>State: ${member.state} </li>
+        <li>Votes with Party: ${member.votesWithPartyPct}% </li>
+        <li>Next Election: ${member.nextElection} </li>
+        <li><a href="http://twitter.com/${member.twitterAccount}" alt="twitter" target="_blank">Twitter</a></li>
+    </ul>
 
-<p>${member.getLastName()}</p>
-<p>hi</p>
+</div>
 </body>
 </html>
