@@ -1,10 +1,15 @@
 package com.kellylyke.service.finance;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
 public class Attributes{
+
+	@JsonIgnore
+	@JsonProperty("response")
+	private String response;
 
 	@JsonProperty("origin")
 	private String origin;
@@ -38,6 +43,14 @@ public class Attributes{
 
 	public void setOrigin(String origin){
 		this.origin = origin;
+	}
+
+	public String getResponse() {
+		return response;
+	}
+
+	public void setResponse(String response) {
+		this.response = response;
 	}
 
 	public String getOrigin(){

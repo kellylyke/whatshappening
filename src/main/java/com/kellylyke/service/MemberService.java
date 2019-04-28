@@ -27,10 +27,10 @@ public class MemberService {
     private Properties prop = new Properties();
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    public static void main(String[] args) throws Exception {
-      MemberService please= new MemberService();
-       please.getSpecificMember("Baldwin");
-    }
+//    public static void main(String[] args) throws Exception {
+//      MemberService please= new MemberService();
+//       please.getSpecificMember("Baldwin");
+//    }
 
     private void getKey() { //TODO:refactor to take param of prop name and return link
         String propFile = "/home/klyke/student/IdeaProjects/whatshappening/src/main/resources/apiKey.properties"; //obivously change this
@@ -72,7 +72,8 @@ public class MemberService {
     }
 
     public MembersItem getSpecificMember(String searchTerm) throws Exception{
-        searchTerm = "Baldwin";
+        //searchTerm = "Baldwin";
+        logger.info(searchTerm);
         MembersItem chosenMember = null;
         List<MembersItem> membersList = getSenateMembersJSON();
 
