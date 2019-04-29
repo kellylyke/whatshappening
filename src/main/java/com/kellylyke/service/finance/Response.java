@@ -32,7 +32,7 @@ public class Response{
  	public String toString(){
 		return 
 			"Response{" + 
-			"response = '" + response + '\'' +
+			"response = '" + response + '\'' + 
 			",contributors = '" + contributors + '\'' + 
 			"}";
 		}

@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.kellylyke.service.FinanceService;
 import com.kellylyke.service.MemberService;
 import com.kellylyke.service.congress.MembersItem;
+import com.kellylyke.service.finance.Contributors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,7 +28,9 @@ public class Search extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String searchTerm = req.getParameter("searchTerm");
+        String unformattedTerm = req.getParameter("searchTerm");
+        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1);
+
 
         logger.info(searchTerm);
         loadProperties();
@@ -36,6 +40,17 @@ public class Search extends HttpServlet {
         try {
             member = service.getSpecificMember(searchTerm);
             req.setAttribute("member", member);
+            if (member != null) {
+                //get recent votes
+                //finance used fec_id
+                String id = member.getCrpId();
+
+                FinanceService financeService = new FinanceService();
+                Contributors contributors =  financeService.getFinancialDataForCandidate(id);
+                // List<Contributors> c = contributors.getContributors();
+                req.setAttribute("contributors", contributors.getContributor());
+
+            }
         } catch (Exception e) {
             logger.error("Error getting member" + e);
             //probably say no results found or something??

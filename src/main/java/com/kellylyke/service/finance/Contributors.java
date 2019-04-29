@@ -1,17 +1,11 @@
 package com.kellylyke.service.finance;
 
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
 public class Contributors{
-
-//
-//	@JsonProperty("response")
-//	private Response response;
 
 	@JsonProperty("contributor")
 	private List<ContributorItem> contributor;

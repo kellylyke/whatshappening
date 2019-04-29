@@ -43,7 +43,7 @@ public class MemberDisplay extends HttpServlet {
         VotesItem votes = new VotesItem();
         try {
             member = memberService.getSpecificMember("Baldwin");
-            logger.info(member);
+           // logger.info(member);
             req.setAttribute("member", member);
         } catch (Exception e) {
             logger.error("Error getting member " + e);
@@ -54,9 +54,10 @@ public class MemberDisplay extends HttpServlet {
             //finance used fec_id
             String id = member.getCrpId();
 
-            Response contributors =  financeService.getFinancialDataForCandidate(id);
-            logger.info(contributors);
-            req.setAttribute("contributors", contributors);
+            Contributors contributors =  financeService.getFinancialDataForCandidate(id);
+           // List<Contributors> c = contributors.getContributors();
+            logger.info(contributors.getContributor());
+            req.setAttribute("contributors", contributors.getContributor());
 
         }
 

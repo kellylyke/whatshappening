@@ -1,6 +1,7 @@
 package com.kellylyke.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kellylyke.service.finance.Contributors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +38,7 @@ public class FinanceService {
 
     }
 
-    public com.kellylyke.service.finance.Response getFinancialDataForCandidate(String id) throws IOException {
+    public Contributors getFinancialDataForCandidate(String id) throws IOException {
        // String hardid = "N00007360";
         Client client = ClientBuilder.newClient();
         getKey();
@@ -60,8 +61,11 @@ public class FinanceService {
 
         com.kellylyke.service.finance.Response results = mapper.readValue(responseData, com.kellylyke.service.finance.Response.class);
 
+        //results.getResponse() people = results.getContributors();
+       // List<ContributorItem> list = people.getContributor();
+        //logger.info(results.getResponse().getContributors());
         //logger.info(results);
-        return results;
+        return results.getResponse().getContributors();
 
     }
 }

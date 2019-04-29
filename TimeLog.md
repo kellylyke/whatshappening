@@ -43,4 +43,5 @@
 | 4/15/19|dug far enough into API to get the right results and the test passes|1| |
 | 4/22/19| starting setting up member display jsp with json data from api|2| |
 | 4/24/19| displays member to jsp page, looked at other apis, building search |2.5| cannot link properties file relatively, wasted a lot of time |
-| 4/28/19| working on member jsp, trying to get finance data | 2 | debating about using xml for finance |
+| 4/28/19| working on member jsp, trying to get finance data | 4.5 | the json coming back from api is a mess|
+| 4/29/19 | delighted to get my financial json data to display on the members page | 1| |

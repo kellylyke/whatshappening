@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Congress Members</title>
@@ -26,6 +27,23 @@
         <li><a href="http://twitter.com/${member.twitterAccount}" alt="twitter" target="_blank">Twitter</a></li>
     </ul>
 
+    <table class="table-striped">
+        <tr><th class="p-4 m-4">Contributor</th><th class="p-4 m-4" >PACs</th><th class="p-4 m-4">Individuals</th><th class="p-4 m-4">Total Amount</th></tr>
+        <c:forEach items="${contributors}" var="contributor">
+            <%--<c:forEach items="${contributor.getAttributes()}" var="org">&ndash;%&gt;--%>
+                <tr class="p-3 m-3">
+                    <td class="p-4 m-4">${contributor.getAttributes().orgName}</td>
+                    <td class="p-4 m-4">$${contributor.getAttributes().pacs}</td>
+                    <td class="p-4 m-4">$${contributor.getAttributes().indivs}</td>
+                    <td class="p-4 m-4">$${contributor.getAttributes().total}</td>
+                </tr>
+            <%--</c:forEach>--%>
+
+        </c:forEach>
+    </table>
+<%--<h3>${contributors.notice}</h3>--%>
+<br/>
+<br/>
 </div>
 </body>
 </html>
