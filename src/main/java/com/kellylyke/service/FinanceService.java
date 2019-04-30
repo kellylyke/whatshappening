@@ -50,21 +50,12 @@ public class FinanceService {
         Response response = invocationBuilder.get();
         String responseData = response.readEntity(String.class);
 
-      //  logger.info(responseData);
-//        XmlMapper xmlMapper = new XmlMapper();
-//        com.kellylyke.service.finance.Response results = xmlMapper.readValue(responseData, com.kellylyke.service.finance.Response.class);
-//
-//        ObjectMapper mapper = new ObjectMapper();
-//        String jsonString = mapper.writeValueAsString(responseData);
 
         ObjectMapper mapper = new ObjectMapper();
 
         com.kellylyke.service.finance.Response results = mapper.readValue(responseData, com.kellylyke.service.finance.Response.class);
 
-        //results.getResponse() people = results.getContributors();
-       // List<ContributorItem> list = people.getContributor();
-        //logger.info(results.getResponse().getContributors());
-        //logger.info(results);
+
         return results.getResponse().getContributors();
 
     }

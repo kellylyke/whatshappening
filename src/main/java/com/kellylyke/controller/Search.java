@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.kellylyke.service.FinanceService;
@@ -22,43 +24,52 @@ import org.apache.logging.log4j.Logger;
 )
 
 public class Search extends HttpServlet {
-    Properties properties = new Properties();
+    private Properties properties = new Properties();
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String unformattedTerm = req.getParameter("searchTerm");
-        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1);
+        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1).toLowerCase();
 
-
-        logger.info(searchTerm);
         loadProperties();
-        String key = properties.getProperty("propublica_key");
         MemberService service = new MemberService();
-        MembersItem member = new MembersItem();
+        List<MembersItem> members = new ArrayList<MembersItem>();
         try {
-            member = service.getSpecificMember(searchTerm);
-            req.setAttribute("member", member);
-            if (member != null) {
-                //get recent votes
-                //finance used fec_id
-                String id = member.getCrpId();
-
-                FinanceService financeService = new FinanceService();
-                Contributors contributors =  financeService.getFinancialDataForCandidate(id);
-                // List<Contributors> c = contributors.getContributors();
-                req.setAttribute("contributors", contributors.getContributor());
-
-            }
+            members = service.getSpecificMember(searchTerm);
+            logger.info(members);
+            req.setAttribute("members", members);
+//            if (member != null) {
+//                String id = member.getCrpId();
+//                FinanceService financeService = new FinanceService();
+//                Contributors contributors =  financeService.getFinancialDataForCandidate(id);
+//                req.setAttribute("contributors", contributors.getContributor());
+//
+//            }
         } catch (Exception e) {
-            logger.error("Error getting member" + e);
+            logger.error("Error getting member " + e);
             //probably say no results found or something??
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchResults.jsp");
         dispatcher.forward(req, resp);
     }
+
+//    @Override
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//
+//        if (req.getParameter("submit").equals("search")) {
+//            req.setAttribute("users", userData.getUsersByLastName(req.getParameter("searchTerm")));
+//        } else {
+//            req.setAttribute("users", userData.getAllUsers());
+//        }
+//        RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
+//        dispatcher.forward(req, resp);
+//    }
+
+
 
     private void loadProperties() {
         properties = new Properties();

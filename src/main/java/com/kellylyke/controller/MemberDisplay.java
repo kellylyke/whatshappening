@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.QueryParam;
 
 import com.kellylyke.service.congress.MembersItem;
 import com.kellylyke.service.finance.Contributors;
@@ -35,12 +36,12 @@ public class MemberDisplay extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //get query parameter
 
         MemberService memberService = new MemberService();
         VoteService voteService = new VoteService();
         FinanceService financeService = new FinanceService();
-        MembersItem member = new MembersItem();
-        VotesItem votes = new VotesItem();
+        List<MembersItem> member = new ArrayList<MembersItem>();
         try {
             member = memberService.getSpecificMember("Baldwin");
            // logger.info(member);
@@ -48,34 +49,22 @@ public class MemberDisplay extends HttpServlet {
         } catch (Exception e) {
             logger.error("Error getting member " + e);
         }
-
-        if (member != null) {
-            //get recent votes
-            //finance used fec_id
-            String id = member.getCrpId();
-
-            Contributors contributors =  financeService.getFinancialDataForCandidate(id);
-           // List<Contributors> c = contributors.getContributors();
-            logger.info(contributors.getContributor());
-            req.setAttribute("contributors", contributors.getContributor());
-
-        }
+//
+//        if (member != null) {
+//            String id = member.getCrpId();
+//
+//            Contributors contributors =  financeService.getFinancialDataForCandidate(id);
+//
+//            logger.info(contributors.getContributor());
+//            req.setAttribute("contributors", contributors.getContributor());
+//
+//        }
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");
         dispatcher.forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        //have link to add to favorites??
-
-        //req.setAttribute("member", member);
-
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");
-        dispatcher.forward(req, resp);
-    }
 
 
 }
