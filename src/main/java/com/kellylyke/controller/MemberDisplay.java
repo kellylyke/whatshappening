@@ -15,7 +15,6 @@ import javax.ws.rs.QueryParam;
 import com.kellylyke.service.congress.MembersItem;
 import com.kellylyke.service.finance.Contributors;
 import com.kellylyke.service.finance.Response;
-import com.kellylyke.service.vote.VotesItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,7 +38,7 @@ public class MemberDisplay extends HttpServlet {
         //get query parameter
 
         MemberService memberService = new MemberService();
-        VoteService voteService = new VoteService();
+
         FinanceService financeService = new FinanceService();
         List<MembersItem> member = new ArrayList<MembersItem>();
         try {

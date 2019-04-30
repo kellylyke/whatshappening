@@ -28,23 +28,7 @@ public class UserService {
         List<User> users = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
 
-  /*      if (id == null) {
-            id = "0";
-        }
-        try {
-            if (id.equals("0")){
-                users = userDao.getAll();
-                logger.debug(users);
-
-                return Response.status(200).entity(users.toString()).build();
-            } else {
-
-                User user = userDao.getById(Integer.parseInt(id));
-                return Response.status(200).entity(user.toString()).build();
-
-            }*/
-
-  try {
+   try {
       users = userDao.getAll();
       logger.debug(users);
 
@@ -56,6 +40,32 @@ public class UserService {
         logger.error("Error getting all users" + e);
         return Response.status(500).entity(e).build();
   }
+
+        //return Response.status(200).entity(output).build();
+   }
+
+
+    @GET
+    @Path("/delete/{id}")
+    @Consumes("text/plain")
+    public void deleteUser(@PathParam("id") int id) {
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+
+        List<User> users = new ArrayList<>();
+        try {
+            users = userDao.getAll();
+            logger.debug(users);
+        } catch (Exception e) {
+            logger.error("Error getting all users for delete " + e);
+        }
+
+        for(User user : users) {
+            if(user.getId() == id) {
+                userDao.delete(user);
+            }
+        }
+        //something should redirect here
+
 
         //return Response.status(200).entity(output).build();
     }

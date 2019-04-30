@@ -20,7 +20,7 @@ public class UserApplication extends Application {
         h.add(JacksonFeature.class);
         h.add(UserService.class );
         h.add(MemberService.class);
-        h.add(VoteService.class);
+
         return h;
     }
 }

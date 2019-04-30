@@ -45,3 +45,4 @@
 | 4/24/19| displays member to jsp page, looked at other apis, building search |2.5| cannot link properties file relatively, wasted a lot of time |
 | 4/28/19| working on member jsp, trying to get finance data | 4.5 | the json coming back from api is a mess|
 | 4/29/19 | delighted to get my financial json data to display on the members page | 3.5| |
+| 4/30/19| delete user implemented in service|1| need to reload page or show confirmation |

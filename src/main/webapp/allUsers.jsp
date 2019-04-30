@@ -37,8 +37,7 @@
             <td>${user.lastName}</td>
             <td>${user.username}</td>
             <td>${user.email}</td>
-            <td>${user.zipcode}</td>
-
+            <td><a href="service/users/delete/${user.id}">Delete User</a></td>
 
         </tr>
         </c:forEach>
