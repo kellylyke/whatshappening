@@ -19,13 +19,30 @@
 <body>
 
 <div class="container after-heading">
-    <h3>${member.shortTitle} ${member.firstName}  ${member.lastName} - ${member.party}  </h3>
+    <h3>${member.shortTitle} ${member.firstName}  ${member.lastName} - ${member.party}
+
+
+<%--<c:choose>--%>
+    <%--<c:when test="${member.party == 'D'}">--%>
+        <%--<span class="blue">${member.party}</span>--%>
+    <%--</c:when>--%>
+    <%--<c:when test="${member.party.equals('R')}">--%>
+        <%--<span class="red">${member.party}</span>--%>
+    <%--</c:when>--%>
+    <%--<c:otherwise>--%>
+        <%--${member.party}--%>
+    <%--</c:otherwise>--%>
+<%--</c:choose>--%>
+    </h3>
     <ul>
         <li>State: ${member.state} </li>
         <li>Votes with Party: ${member.votesWithPartyPct}% </li>
         <li>Next Election: ${member.nextElection} </li>
         <li><a href="http://twitter.com/${member.twitterAccount}" alt="twitter" target="_blank">Twitter</a></li>
     </ul>
+    <c:if test = "${user != null}">
+        <p><a href="#" role="button" class="btn btn-primary">Add to My Watch List</a></p>
+    </c:if>
 
     <table class="table-striped">
         <tr><th class="p-4 m-4">Contributor</th><th class="p-4 m-4" >PACs</th><th class="p-4 m-4">Individuals</th><th class="p-4 m-4">Total Amount</th></tr>

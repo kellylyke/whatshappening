@@ -36,28 +36,32 @@ public class MemberDisplay extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //get query parameter
-
+        String lastName = req.getParameter("lastName");
+        logger.info(lastName);
         MemberService memberService = new MemberService();
 
         FinanceService financeService = new FinanceService();
         List<MembersItem> member = new ArrayList<MembersItem>();
         try {
-            member = memberService.getSpecificMember("Baldwin");
+            member = memberService.getSpecificMember(lastName);
            // logger.info(member);
-            req.setAttribute("member", member);
+            req.setAttribute("member", member.get(0));
         } catch (Exception e) {
             logger.error("Error getting member " + e);
         }
-//
-//        if (member != null) {
-//            String id = member.getCrpId();
-//
-//            Contributors contributors =  financeService.getFinancialDataForCandidate(id);
-//
-//            logger.info(contributors.getContributor());
-//            req.setAttribute("contributors", contributors.getContributor());
-//
-//        }
+
+        if (member != null) {
+            String id = member.get(0).getCrpId();
+
+            Contributors contributors = financeService.getFinancialDataForCandidate(id);
+
+            logger.info(contributors.getContributor());
+            req.setAttribute("contributors", contributors.getContributor());
+        }
+
+        if (req.getRemoteUser() != null) {
+            req.setAttribute("user", req.getRemoteUser());
+        }
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");

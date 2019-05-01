@@ -1075,3 +1075,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .after-heading {
   margin-top: 80px;
 }
+
+.red {
+  color: darkred;
+}
+
+.blue {
+  color: darkblue;
+}

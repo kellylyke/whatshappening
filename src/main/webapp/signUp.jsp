@@ -52,6 +52,7 @@
             <div class="input-field col s7 offset-s1">
                 <label class="control-label" for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required="required">
+                <span id='message'></span>
             </div>
         </div>
 
@@ -67,5 +68,16 @@
     </form>
 </div>
 </body>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $('#password, #confirmPassword').on('keyup', function () {
+            if ($('#password').val() === $('#confirmPassword').val()) {
+                $('#message').html('Passwords match').css('color', 'green');
+            }
+            else {
+                $('#message').html('Passwords do not match').css('color', 'red');
+            }
+        });
+        // https://stackoverflow.com/questions/27498084/check-if-passwords-match
+    </script>
 </html>

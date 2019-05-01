@@ -2,6 +2,7 @@ package com.kellylyke.controller;
 
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
+import com.kellylyke.persistence.PasswordHash;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,7 +28,7 @@ import java.util.List;
 
 public class MyAccount extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
-    GenericDao<User> userDao = new GenericDao<>(User.class);
+    private GenericDao<User> userDao = new GenericDao<>(User.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -44,22 +45,22 @@ public class MyAccount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userDao.getById(Integer.parseInt(req.getParameter("id")));
-
+        PasswordHash ph = new PasswordHash();
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
-        //user.setUsername(req.getParameter("username"));
+
         user.setEmail(req.getParameter("email"));
         String newPassword = req.getParameter("password");
         String confirmPassword = req.getParameter("confirmPassword");
-       if (newPassword.equals(confirmPassword)) {
-           user.setPassword(newPassword);
-       } else {
-           //session.setAttribute("passwordError", )
+
+        if (newPassword.equals(confirmPassword)) {
+            String hashedPassword = ph.sha256(newPassword);
+            user.setPassword(hashedPassword);
+        } else {
+            //session.setAttribute("passwordError", )
        }
-       // user.setPassword(req.getParameter("id"));
 
         userDao.saveOrUpdate(user);
-
 
     }
 
