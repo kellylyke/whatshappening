@@ -43,7 +43,12 @@
                 <div class="col-lg-6 content order-lg-1 order-2">
                     <h2 class="title">Few Words About Us</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        "If everyone who took money in return for promising to do something if they were
+                        re-elected [was prosecuted], we wouldn’t have anyone left in Congress" – Brigid Harrison,
+                        Professor of Political Science and Law at Montclair State University
+
+                        Our goal is to keep you informed about candidates and who/what is putting money in to them.
+                        Does it sway their votes? Do they take business dollars? We give you the facts. You be the judge.
                     </p>
 
                     <div class="icon-box wow fadeInUp">
@@ -79,28 +84,28 @@
         <div class="container wow fadeIn">
             <div class="section-header">
                 <h3 class="section-title">Facts</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <p class="section-description">These are facts</p>
             </div>
             <div class="row counters">
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">232</span>
-                    <p>Clients</p>
+                    <span data-toggle="counter-up">535</span>
+                    <p>Members of Congress</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">521</span>
-                    <p>Projects</p>
+                    <span data-toggle="counter-up">99</span>
+                    <p>Percent of Donors giving less than $200</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">1,463</span>
-                    <p>Hours Of Support</p>
+                    <span data-toggle="counter-up">29</span>
+                    <p>Percent of Total $$$ from Donors giving less than $200</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">15</span>
-                    <p>Hard Workers</p>
+                    <span data-toggle="counter-up">1</span>
+                    <p>People it takes to make a difference (it's you!)</p>
                 </div>
 
             </div>
@@ -117,10 +122,10 @@
             <div class="row">
                 <div class="col-lg-9 text-center text-lg-left">
                     <h3 class="cta-title">Call To Action</h3>
-                    <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="cta-text"> Don't take it from me. Investigate yourself. Keep politicians accountable.</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                    <a class="cta-btn align-middle" href="https://www.google.com/search?q=money+in+politics">Call To Action</a>
                 </div>
             </div>
 
@@ -136,7 +141,7 @@
         <div class="container wow fadeInUp">
             <div class="section-header">
                 <h3 class="section-title">Featured</h3>
-                <p class="section-description">See how popular members voted recently</p>
+                <p class="section-description">Check out some popular members of congress</p>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -146,8 +151,8 @@
                         <span>House of Representatives - New York 14th District</span>
                         <div class="social">
                             <a href="https://twitter.com/AOC"><i class="fa fa-twitter"></i></a>
+
                             <br/>
-                            <a href=""><i class="">Voting Record</i></a>
                         </div>
                     </div>
                 </div>
@@ -160,7 +165,7 @@
                         <div class="social">
                             <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>
                             <br/>
-                            <a href=""><i class=""></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -173,7 +178,6 @@
                         <div class="social">
                             <a href="https://twitter.com/senrobportman"><i class="fa fa-twitter"></i></a>
                             <br/>
-                            <a href=""><i class="">Voting Record</i></a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +190,6 @@
                         <div class="social">
                             <a href="https://twitter.com/repmarkpocan"><i class="fa fa-twitter"></i></a>
                             <br/>
-                            <a href=""><i class="">Voting Record</i></a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +205,7 @@
         <div class="container wow fadeInUp">
             <div class="section-header">
                 <h3 class="section-title">Contact</h3>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <p class="section-description">We suggest the old ding dong ditch but do what you must.</p>
             </div>
         </div>
 

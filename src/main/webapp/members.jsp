@@ -41,8 +41,24 @@
         <li><a href="http://twitter.com/${member.twitterAccount}" target="_blank">Twitter</a></li>
     </ul>
     <c:if test = "${user != null}">
-        <p><a href="add?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Add to My Watch List</a></p>
+        <c:choose>
+        <c:when  test = "${onList == 'yes'}">
+            <p><a href="delete?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-danger">Delete from My Watch List</a></p>
+        </c:when>
+        <c:otherwise>
+            <p><a href="add?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Add to My Watch List</a></p>
+        </c:otherwise>
+        </c:choose>
+
+        <%--<p><a href="add?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Add to My Watch List</a></p>--%>
+    <%--</c:if>--%>
+    <%--<c:if test = "${onList == 'yes'}">--%>
+        <%--<p><a href="delete?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Delete from My Watch List</a></p>--%>
     </c:if>
+
+
+
+
 
     <table class="table-striped">
         <tr><th class="p-4 m-4">Contributor</th><th class="p-4 m-4" >PACs</th><th class="p-4 m-4">Individuals</th><th class="p-4 m-4">Total Amount</th></tr>

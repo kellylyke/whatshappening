@@ -47,3 +47,4 @@
 | 4/29/19 | delighted to get my financial json data to display on the members page | 3.5| |
 | 4/30/19| delete user implemented in service|1| need to reload page or show confirmation |
 | 5/1/19| deployed to AWS and fixed api errors I ran into | 3.5 | |
+| 5/2/19| got preferences to save, working on editing table to take in name, formatting css | 3 | |

@@ -90,7 +90,7 @@
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
-        <button type="submit" class="btn btn-default">Update</button>
+        <button type="submit" class="btn btn-outline-primary pull-right">Update</button>
         </form>
     </div>
 

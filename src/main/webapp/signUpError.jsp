@@ -22,7 +22,7 @@
     <h3 class="center-align after-heading">Uh oh...</h3>
     <br/>
     <p>It looks like the username you wanted has already been snatched up. Please try again.</p><br/><br/>
-    <a href="signUp.jsp" role="button" class="btn btn-danger">Okay, I'll try again!</a>
+    <a href="signUp.jsp" role="button" class="btn btn-danger">Okay, I'll try again!</a><br/><br/>
 <img src="images/sorry.gif" alt="sorry">
 
 </div>

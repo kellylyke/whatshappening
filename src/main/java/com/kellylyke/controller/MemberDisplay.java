@@ -1,5 +1,6 @@
 package com.kellylyke.controller;
 
+import com.kellylyke.entity.Preference;
 import com.kellylyke.service.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @WebServlet(
         name = "members",
@@ -33,12 +35,34 @@ import java.util.List;
  */
 public class MemberDisplay extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private GenericDao<User> userDao = new GenericDao<>(User.class);
+    private GenericDao<Preference> dao = new GenericDao<>(Preference.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //get query parameter
+        List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
         String id = req.getParameter("id");
         logger.info(id);
+        if (users.size() > 0) {
+            User user = users.get(0);
+            Set<Preference> preferences = user.getPreferences();
+
+            String onList = "no";
+            Preference pref = new Preference(id, user);
+
+            for (Preference preference : preferences) {
+                if (preference.getShow().equals(id)) {
+                    onList = "yes";
+                }
+            }
+
+            logger.info(pref);
+            logger.info(preferences);
+            logger.info(onList);
+            req.setAttribute("onList", onList);
+        }
+
         MemberService memberService = new MemberService();
 
         FinanceService financeService = new FinanceService();
