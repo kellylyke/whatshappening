@@ -24,6 +24,9 @@ public class Preference {
 
     @Column(name = "show_me")
     private String show;
+//
+//    @Column(name = "candidate_name")
+//    private String candidateName;
 
     @JsonIgnore
     @ManyToOne

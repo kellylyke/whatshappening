@@ -14,8 +14,7 @@
 <c:import url="navbar.jsp"/>
 <br/>
 <br/>
-<br/>
-<br/>
+
 <body>
 <div class="container">
     <h3 class="center-align after-heading">Update Your Account</h3>
@@ -24,8 +23,11 @@
         <div class="card-form">
 
             <div class="card-body">--%>
-    <form id="updateUser" action="myAccount" method="post">
+    <div class="row">
         <div class="col-md-8">
+
+        <form id="updateUser" action="myAccount" method="post">
+        <%--<div class="col-md-8">--%>
         <div class="row">
             <div class="col-3">
                 <label class="control-label" for="firstName">First Name</label>&nbsp;&nbsp;
@@ -33,9 +35,9 @@
             <div class="col-5">
                 <input class="form-control"  type="text" id="firstName" name="firstName" required="required" value="${user.firstName}">
             </div>
+
         </div>
-        </div>
-        <div class="col-md-8">
+        <%--<div class="col-md-8">--%>
             <div class="row">
                 <div class="col-3">
                      <label class="control-label" for="lastName">Last Name</label>&nbsp;&nbsp;
@@ -44,19 +46,16 @@
                     <input class="form-control" type="text" id="lastName" name="lastName" required="required" value="${user.lastName}">
                  </div>
             </div>
-        </div>
-        <div class="col-md-8">
-              <div class="row">
+        <div class="row">
                    <div class="col-3">
                     <label class="control-label" for="email">Email</label>&nbsp;&nbsp;
                    </div>
                   <div class="col-5">
                     <input class="form-control"  type="text" id="email" name="email" required="required" value="${user.email}">
                 </div>
-              </div>
+
             </div>
-        <div class="col-md-8">
-            <div class="row">
+         <div class="row">
                 <div class="col-3">
                     <label class="form-check-label" for="zipcode">Zipcode</label>&nbsp;&nbsp;
                 </div>
@@ -64,8 +63,8 @@
                     <input class="form-control"  type="text" id="zipcode" name="zipcode" required="required" value="${user.zipcode}">
                 </div>
             </div>
-           </div>
-        <div class="col-md-8">
+
+
             <div class="row">
                 <div class="col-3">
                     <label class="form-check-label" for="password"> New Password</label>&nbsp;&nbsp;
@@ -74,8 +73,8 @@
                     <input class="form-control"  type="password" id="password" name="password" required="required">
                 </div>
             </div>
-        </div>
-        <div class="col-md-8">
+
+
         <div class="row">
                 <div class="col-3">
                     <label class="control-label" for="confirmPassword">Confirm Password</label>&nbsp;&nbsp;
@@ -85,19 +84,32 @@
                     <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required="required">
                 </div>
         </div>
-        </div>
+
 
         <br/>
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
         <button type="submit" class="btn btn-default">Update</button>
-    </form>
-            </div>
+        </form>
+    </div>
+
+        <div class="col-md-4">
+        <ul>
+            <c:forEach items="${preferences}" var="member">
+                <li>${member.show}</li>
+
+            </c:forEach>
+            </ul>
+        </div>
+    </div>
+
    <%--     </div>
 
 </div>
+<a href="members?id=${member.crpId}">
 </div>--%>
+
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>

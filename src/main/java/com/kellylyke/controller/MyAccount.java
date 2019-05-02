@@ -1,5 +1,7 @@
 package com.kellylyke.controller;
 
+import com.kellylyke.entity.Preference;
+import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
 import com.kellylyke.persistence.PasswordHash;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -35,8 +38,9 @@ public class MyAccount extends HttpServlet {
 
         List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
         User user = users.get(0);
-
+        Set<Preference> preferences = user.getPreferences();
         req.setAttribute("user", user);
+        req.setAttribute("preferences", preferences);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         dispatcher.forward(req, resp);
 

@@ -41,7 +41,7 @@
         <li><a href="http://twitter.com/${member.twitterAccount}" target="_blank">Twitter</a></li>
     </ul>
     <c:if test = "${user != null}">
-        <p><a href="#" role="button" class="btn btn-primary">Add to My Watch List</a></p>
+        <p><a href="add?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Add to My Watch List</a></p>
     </c:if>
 
     <table class="table-striped">
