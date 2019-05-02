@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import com.kellylyke.service.FinanceService;
 import com.kellylyke.service.MemberService;
+import com.kellylyke.service.PropertiesLoader;
 import com.kellylyke.service.congress.MembersItem;
 import com.kellylyke.service.finance.Contributors;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +24,7 @@ import org.apache.logging.log4j.Logger;
         urlPatterns = {"/search"}
 )
 
-public class Search extends HttpServlet {
+public class Search extends HttpServlet implements PropertiesLoader {
     private Properties properties = new Properties();
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -33,7 +34,7 @@ public class Search extends HttpServlet {
         String unformattedTerm = req.getParameter("searchTerm");
         String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1).toLowerCase();
 
-        loadProperties();
+        //prop = getProperties();
         MemberService service = new MemberService();
         List<MembersItem> members = new ArrayList<MembersItem>();
         try {
@@ -69,18 +70,38 @@ public class Search extends HttpServlet {
 //        dispatcher.forward(req, resp);
 //    }
 
+//
+//
+//    private void loadProperties() {
+//        properties = new Properties();
+//        try {
+//            properties.load(this.getClass().getResourceAsStream("/apiKey.properties"));
+//        } catch (IOException ioe) {
+//            logger.error("Database.loadProperties()...Cannot load the properties file");
+//            ioe.printStackTrace();
+//        } catch (Exception e) {
+//            logger.error("Database.loadProperties()..." + e);
+//            e.printStackTrace();
+//        }
+//    }
 
+    /**
+     * Loads properties for the application
+     *
+     * @return properties for the application
+     */
+    private Properties getProperties() {
+        // Load properties
+        Properties prop = new Properties();
 
-    private void loadProperties() {
-        properties = new Properties();
         try {
-            properties.load(this.getClass().getResourceAsStream("/apiKey.properties"));
-        } catch (IOException ioe) {
-            logger.error("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
-        } catch (Exception e) {
-            logger.error("Database.loadProperties()..." + e);
-            e.printStackTrace();
+            prop = loadProperties("/apiKey.properties");
+        } catch (IOException ioException) {
+            logger.error(ioException.getMessage());
+        } catch (Exception exception) {
+            logger.error(exception.getMessage());
         }
+
+        return prop;
     }
 }

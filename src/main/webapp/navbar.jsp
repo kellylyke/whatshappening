@@ -42,14 +42,17 @@
     <nav id="nav-menu-container">
 
             <ul class="nav-menu">
+                <li><a href="search.jsp">Search</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.user != null}">
+
                         <li><a href="myAccount">My Account</a></li>
                         <li><a href="allUsers">View Users</a></li>
                         <li><a href="logout.jsp">Log Out</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="signUp.jsp">Sign Up</a></li>
+
                         <li><a href="redirect">Log In</a></li>
 
                     </c:otherwise>

@@ -14,36 +14,33 @@ import javax.ws.rs.core.Response;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Properties;
 
-public class FinanceService {
-    private String firstLink;
-    private String secondLink;
-
-    private Properties prop = new Properties();
+public class FinanceService implements PropertiesLoader{
+    private Properties prop;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
-    private void getKey() { //TODO:refactor to take param of prop name and return link
-        String propFile = "/home/klyke/student/IdeaProjects/whatshappening/src/main/resources/apiKey.properties"; //obivously change this
-
-        try (InputStream input = new FileInputStream(propFile)) {
-            prop.load(input);
-            firstLink = prop.getProperty("open_secrets_first");
-            secondLink =  prop.getProperty("open_secrets_last");
-
-        } catch (Exception exception) {
-            logger.error("There was an error getting properties. " + exception);
-        }
-
-    }
-
-    public Contributors getFinancialDataForCandidate(String id) throws IOException {
-       // String hardid = "N00007360";
+    public Contributors getFinancialDataForCandidate(String id) throws IOException, URISyntaxException {
+        String firstLink;
+        String secondLink;
+        //String hardid = "N00007360";
         Client client = ClientBuilder.newClient();
-        getKey();
+         prop = getProperties();
+        firstLink = prop.getProperty("open_secrets_first");
+        secondLink = prop.getProperty("open_secrets_last");
+
+        String uri = firstLink + id + secondLink;
+
+
+        logger.info(uri);
+
         WebTarget target =
-               client.target(firstLink + id + secondLink);
+               client.target(uri);
                 //client.target("https://www.opensecrets.org/api/?method=candContrib&cid=N00007360&output=json&cycle=2018&apikey=c23c1c3c25533552d3db11fbdb1389dc");
         Invocation.Builder invocationBuilder = target.request(MediaType.APPLICATION_JSON);
 
@@ -58,5 +55,26 @@ public class FinanceService {
 
         return results.getResponse().getContributors();
 
+   }
+
+
+    /**
+     * Loads properties for the application
+     *
+     * @return properties for the application
+     */
+    private Properties getProperties() {
+        // Load properties
+        Properties prop = new Properties();
+
+        try {
+            prop = loadProperties("/apiKey.properties");
+        } catch (IOException ioException) {
+            logger.error(ioException.getMessage());
+        } catch (Exception exception) {
+            logger.error(exception.getMessage());
+        }
+
+        return prop;
     }
 }

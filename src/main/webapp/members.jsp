@@ -38,7 +38,7 @@
         <li>State: ${member.state} </li>
         <li>Votes with Party: ${member.votesWithPartyPct}% </li>
         <li>Next Election: ${member.nextElection} </li>
-        <li><a href="http://twitter.com/${member.twitterAccount}" alt="twitter" target="_blank">Twitter</a></li>
+        <li><a href="http://twitter.com/${member.twitterAccount}" target="_blank">Twitter</a></li>
     </ul>
     <c:if test = "${user != null}">
         <p><a href="#" role="button" class="btn btn-primary">Add to My Watch List</a></p>

@@ -119,7 +119,26 @@ public class MemberService {
 
     }
 
-    public void getMemberJSON() {
+    public MembersItem getMemberByID(String id) throws Exception {
+        MembersItem chosenMember = null;
+        logger.info(id);
+        List<MembersItem> senateList = getSenateMembersJSON();
+        List<MembersItem> houseList = getHouseMembersJSON();
+
+        for(MembersItem member : senateList) {
+            if(id.equals(member.getCrpId())) {
+                chosenMember = member;
+            }
+        }
+        for(MembersItem member : houseList) {
+            if(id.equals(member.getCrpId())) {
+                chosenMember = member;
+            }
+        }
+
+
+        return chosenMember;
+
 
     }
     public List<ContributorItem> getFinanceData(MembersItem member) {

@@ -160,7 +160,7 @@
                         <div class="social">
                             <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>
                             <br/>
-                            <a href=""><i class="">Voting Record</i></a>
+                            <a href=""><i class=""></i></a>
                         </div>
                     </div>
                 </div>

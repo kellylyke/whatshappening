@@ -20,7 +20,7 @@
 <div class="container after-heading">
     <h3>Search Results</h3>
 <c:forEach items="${members}" var="member">
-    <a href="members?lastName=${member.lastName}">${member.firstName} ${member.lastName} </a><br/><br/>
+    <a href="members?id=${member.crpId}">${member.firstName} ${member.lastName} </a><br/><br/>
     <%--this will need to be id--%>
 </c:forEach>
 </div>

@@ -19,6 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +27,9 @@ import java.util.List;
         name = "members",
         urlPatterns = {"/members"}
 )
-/**
- * servlet for display member data from API
- * @author klyke
+/*
+  servlet for display member data from API
+  @author klyke
  */
 public class MemberDisplay extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
@@ -36,32 +37,38 @@ public class MemberDisplay extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //get query parameter
-        String lastName = req.getParameter("lastName");
-        logger.info(lastName);
+        String id = req.getParameter("id");
+        logger.info(id);
         MemberService memberService = new MemberService();
 
         FinanceService financeService = new FinanceService();
-        List<MembersItem> member = new ArrayList<MembersItem>();
+        MembersItem member = new MembersItem();
         try {
-            member = memberService.getSpecificMember(lastName);
+            member = memberService.getMemberByID(id);
            // logger.info(member);
-            req.setAttribute("member", member.get(0));
+            req.setAttribute("member", member);
         } catch (Exception e) {
             logger.error("Error getting member " + e);
         }
 
         if (member != null) {
-            String id = member.get(0).getCrpId();
 
-            Contributors contributors = financeService.getFinancialDataForCandidate(id);
+            Contributors contributors = null;
+            try {
+                contributors = financeService.getFinancialDataForCandidate(id);
+                req.setAttribute("contributors", contributors.getContributor());
 
-            logger.info(contributors.getContributor());
-            req.setAttribute("contributors", contributors.getContributor());
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+
+           // logger.info(contributors.getContributor());
+           // req.setAttribute("contributors", contributors.getContributor());
         }
 
-        if (req.getRemoteUser() != null) {
-            req.setAttribute("user", req.getRemoteUser());
-        }
+//        if (req.getRemoteUser() != null) {
+//            req.setAttribute("user", req.getRemoteUser());
+//        }
 
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");
