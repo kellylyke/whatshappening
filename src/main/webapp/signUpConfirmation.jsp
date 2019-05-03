@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: klyke
-  Date: 5/1/19
-  Time: 9:06 AM
+  Date: 5/3/19
+  Time: 5:40 PM
   To change this template use File | Settings | File Templates.
 --%>
 
@@ -14,17 +14,14 @@
 
 <c:import url="navbar.jsp"/>
 <br/>
-<br/>
-<br/>
-<br/>
+
 <body>
 <div class="container">
-    <h3 class="center-align after-heading">Uh oh...</h3>
-    <br/>
-    <p>It looks like the username you wanted has already been snatched up. Please try again.</p><br/>
-    <a href="signUp.jsp" role="button" class="btn btn-danger">Okay, I'll try again!</a><br/><br/>
-<img src="images/sorry.gif" alt="sorry">
+    <h3 class="center-align after-heading">YAY! You did it.&nbsp;&nbsp; <a href="redirect" role="button" class="btn btn-primary">Log In</a><br/><br/></h3>
+    <p>Welcome Aboard.</p><br/><br/>
+    <img src="images/tina.gif" alt="tina">
 <br/><br/>
 </div>
 </body>
 </html>
+

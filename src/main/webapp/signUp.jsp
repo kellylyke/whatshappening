@@ -59,7 +59,7 @@
         <div class="row">
             <div class="input-field col s7 offset-s1">
                 <label class="control-label" for="zipcode">Zipcode</label>
-                <input type="text" id="zipcode" name="zipcode">
+                <input type="number" id="zipcode" name="zipcode">
             </div>
         </div>
         <br/>

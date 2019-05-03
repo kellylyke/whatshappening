@@ -15,6 +15,7 @@
 <body>
 
 <div class="container after-heading">
+
 <h3>All Registered Users</h3>
 
      <table class="table table-striped">
@@ -37,7 +38,7 @@
             <td>${user.lastName}</td>
             <td>${user.username}</td>
             <td>${user.email}</td>
-            <td><a href="service/users/delete/${user.id}">Delete User</a></td>
+            <td><a href="delete?id=${user.id}"  onclick="return confirm('Are you sure you want to delete ${user.username}?')">Delete User</a></td>
 
         </tr>
         </c:forEach>

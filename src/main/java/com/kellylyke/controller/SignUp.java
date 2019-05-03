@@ -57,7 +57,7 @@ public class SignUp extends HttpServlet {
             role.setDateCreated(new Date());
             user.addRole(role);
             userDao.insert(user);
-            dispatcher = req.getRequestDispatcher("/signUp.jsp");
+            dispatcher = req.getRequestDispatcher("/signUpConfirmation.jsp");
         }
 
         dispatcher.forward(req, resp);

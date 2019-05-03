@@ -35,7 +35,7 @@ public class DisplayUsers extends HttpServlet {
         List<User> users = new ArrayList<>();
         try {
             users = userDao.getAll();
-            logger.debug(users);
+            //logger.debug(users);
         } catch (Exception e) {
             logger.error("Error getting all users" + e);
         }

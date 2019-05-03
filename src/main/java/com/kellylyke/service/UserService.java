@@ -50,20 +50,21 @@ public class UserService {
     @Consumes("text/plain")
     public void deleteUser(@PathParam("id") int id) {
         GenericDao<User> userDao = new GenericDao<>(User.class);
-
-        List<User> users = new ArrayList<>();
+        User user;
+       // List<User> users = new ArrayList<>();
         try {
-            users = userDao.getAll();
-            logger.debug(users);
+            user = userDao.getById(id);
+            userDao.delete(user);
+            logger.debug(user);
         } catch (Exception e) {
             logger.error("Error getting all users for delete " + e);
         }
 
-        for(User user : users) {
-            if(user.getId() == id) {
-                userDao.delete(user);
-            }
-        }
+//        for(User user : users) {
+//            if(user.getId() == id) {
+//                userDao.delete(user);
+//            }
+//        }
         //something should redirect here
 
 
