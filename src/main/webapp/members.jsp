@@ -43,7 +43,7 @@
     <c:if test = "${user != null}">
         <c:choose>
         <c:when  test = "${onList == 'yes'}">
-            <p><a href="delete?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-danger">Delete from My Watch List</a></p>
+            <p><a href="remove?id=${member.crpId}" role="button" class="btn btn-danger">Delete from My Watch List</a></p>
         </c:when>
         <c:otherwise>
             <p><a href="add?id=${member.crpId}&firstName=${member.firstName}&lastName=${member.lastName}" role="button" class="btn btn-primary">Add to My Watch List</a></p>

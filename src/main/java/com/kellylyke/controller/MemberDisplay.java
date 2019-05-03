@@ -100,5 +100,9 @@ public class MemberDisplay extends HttpServlet {
     }
 
 
+    public void delete(String id) {
+
+    }
+
 
 }
