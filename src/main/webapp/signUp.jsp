@@ -115,7 +115,6 @@
                         <input type="text" class="form-control" id="username" name="username" required="required">
                     </div>
                 </div>
-            </div>
 
 
 
@@ -126,7 +125,7 @@
                     </div>
 
                 </div>
-
+            </div>
             <div class="col-6">
                 <div class="form-group row">
                     <label for="password" class="col-sm-4 col-form-label text-right">Password:</label>
@@ -143,6 +142,7 @@
                             <span id="message"></span>
                         </div>
                     </div>
+                </div>
 
                     <div class="form-group row">
                         <label for="zipcode" class="col-sm-4 col-form-label text-right">Zipcode:</label>
@@ -155,9 +155,6 @@
 
 
 
-
-
-            </div><!--right side -->
 
 
         </div>

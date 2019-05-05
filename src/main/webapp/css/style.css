@@ -1083,3 +1083,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 .blue {
   color: darkblue;
 }
+
+.navy {
+  color: navy;
+}
+
+.inline-block {
+  display: inline-block;
+}
