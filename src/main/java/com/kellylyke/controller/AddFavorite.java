@@ -39,7 +39,7 @@ public class AddFavorite extends HttpServlet {
         Preference newPreference = new Preference();
         newPreference.setShow(id);
         newPreference.setUser(user);
-       // newPreference.setCandidateName(name);
+        newPreference.setCandidateName(name);
         user.addPreference(newPreference);
         dao.insert(newPreference);
 

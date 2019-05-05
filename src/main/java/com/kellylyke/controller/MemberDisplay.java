@@ -4,6 +4,8 @@ import com.kellylyke.entity.Preference;
 import com.kellylyke.service.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
+import com.kellylyke.service.congress.MembersItem;
+import com.kellylyke.service.finance.Contributors;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,98 +13,117 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.QueryParam;
 
-import com.kellylyke.service.congress.MembersItem;
-import com.kellylyke.service.finance.Contributors;
-import com.kellylyke.service.finance.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The servlet that displays congress member with financial data
+ */
 @WebServlet(
         name = "members",
         urlPatterns = {"/members"}
 )
-/*
-  servlet for display member data from API
-  @author klyke
- */
+
 public class MemberDisplay extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
-    private GenericDao<Preference> dao = new GenericDao<>(Preference.class);
+    private Contributors contributors = null;
+    private MembersItem member = null;
 
+    /**
+     * Calls to apis go get congress member and financial data
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //get query parameter
         List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
+        User user = new User();
         String id = req.getParameter("id");
         logger.info(id);
         if (users.size() > 0) {
-            User user = users.get(0);
-            Set<Preference> preferences = user.getPreferences();
-
-            String onList = "no";
-            Preference pref = new Preference(id, user);
-
-            for (Preference preference : preferences) {
-                if (preference.getShow().equals(id)) {
-                    onList = "yes";
-                }
-            }
-
-            logger.info(pref);
-            logger.info(preferences);
-            logger.info(onList);
-            req.setAttribute("onList", onList);
+            user = users.get(0);
         }
 
-        MemberService memberService = new MemberService();
-
-        FinanceService financeService = new FinanceService();
-        MembersItem member = new MembersItem();
-        try {
-            member = memberService.getMemberByID(id);
-           // logger.info(member);
+         member = getMember(id);
             req.setAttribute("member", member);
-        } catch (Exception e) {
-            logger.error("Error getting member " + e);
-        }
 
         if (member != null) {
-
-            Contributors contributors = null;
-            try {
-                contributors = financeService.getFinancialDataForCandidate(id);
-                req.setAttribute("contributors", contributors.getContributor());
-
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
-
-           // logger.info(contributors.getContributor());
-           // req.setAttribute("contributors", contributors.getContributor());
+            contributors = getContributorForCandidate(id);
+            req.setAttribute("contributors", contributors.getContributor());
         }
 
-//        if (req.getRemoteUser() != null) {
-//            req.setAttribute("user", req.getRemoteUser());
-//        }
 
+        req.setAttribute("onList", checkIfOnList(user, id));
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/members.jsp");
         dispatcher.forward(req, resp);
     }
 
+    /**
+     * gets congress member data from api
+     * @param id candidate's id
+     * @return member data
+     */
+    public MembersItem getMember(String id) {
+        MemberService memberService = new MemberService();
+        MembersItem member = new MembersItem();
 
-    public void delete(String id) {
+        try {
+            member = memberService.getMemberByID(id);
+
+        } catch (Exception e) {
+            logger.error("Error getting member " + e);
+        }
+        return member;
+    }
+
+    /**
+     * calls api to get financial data for candidate
+     *
+     * @param id candidate's id
+     * @return list of contributors and values
+     */
+    private Contributors getContributorForCandidate(String id) {
+
+        FinanceService financeService = new FinanceService();
+        try {
+            contributors = financeService.getFinancialDataForCandidate(id);
+
+        } catch (Exception e) {
+            logger.error("Error getting contributors " + e);
+        }
+        return contributors;
 
     }
+
+    /**
+     * checks if user has added current member to list already
+     *
+     * @param user current user logged in
+     * @param id
+     * @return
+     */
+    private String checkIfOnList(User user, String id) {
+        Set<Preference> preferences = user.getPreferences();
+        String onList = "no";
+        for (Preference preference : preferences) {
+            if (preference.getShow().equals(id)) {
+                onList = "yes";
+            }
+        }
+        return onList;
+    }
+
 
 
 }

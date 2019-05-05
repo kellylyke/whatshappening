@@ -125,6 +125,15 @@ jQuery(document).ready(function ($) {
     time: 1000
   });
 
+  $('#password, #confirmPassword').on('keyup', function () {
+    if ($('#password').val() === $('#confirmPassword').val()) {
+      $('#message').html('Passwords match').css('color', 'green');
+    }
+    else {
+      $('#message').html('Passwords do not match').css('color', 'red');
+    }
+  });
+
   // custom code
 
 });

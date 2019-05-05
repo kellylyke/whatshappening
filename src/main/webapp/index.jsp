@@ -173,8 +173,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
                         <div class="pic"><img src="images/portman.jpg" alt=""></div>
-                        <h4>Rob Portman</h4>
+                        <a href="members?id=N00003682"><h4>Rob Portman</h4></a>
                         <span>Senator - Ohio</span>
+
                         <div class="social">
                             <a href="https://twitter.com/senrobportman"><i class="fa fa-twitter"></i></a>
                             <br/>
@@ -185,7 +186,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
                         <div class="pic"><img src="images/mark.jpg" alt=""></div>
-                        <h4>Mark Pocan</h4>
+                        <a href="members?id=N00033549"><h4>Mark Pocan</h4></a>
                         <span>House of Representatives - Wisconsin 2nd District </span>
                         <div class="social">
                             <a href="https://twitter.com/repmarkpocan"><i class="fa fa-twitter"></i></a>
@@ -205,7 +206,7 @@
         <div class="container wow fadeInUp">
             <div class="section-header">
                 <h3 class="section-title">Contact</h3>
-                <p class="section-description">We suggest the old ding dong ditch but do what you must.</p>
+                <p class="section-description">We suggest the old ding dong ditch but you do you.</p>
             </div>
         </div>
 

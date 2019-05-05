@@ -41,6 +41,7 @@ public class MyAccount extends HttpServlet {
         Set<Preference> preferences = user.getPreferences();
         req.setAttribute("user", user);
         req.setAttribute("preferences", preferences);
+       // logger.debug(preferences);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         dispatcher.forward(req, resp);
 
@@ -58,7 +59,7 @@ public class MyAccount extends HttpServlet {
         String confirmPassword = req.getParameter("confirmPassword");
 
         if (newPassword.equals(confirmPassword)) {
-            String hashedPassword = ph.sha256(newPassword);
+            String hashedPassword = PasswordHash.sha256(newPassword);
             user.setPassword(hashedPassword);
         } else {
             //session.setAttribute("passwordError", )

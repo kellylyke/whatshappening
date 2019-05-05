@@ -35,19 +35,20 @@ public class SignUp extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User user = new User();
-        PasswordHash ph = new PasswordHash();
-        RequestDispatcher dispatcher;
+               RequestDispatcher dispatcher;
 
         List<User> userList =  userDao.getByPropertyEqual("username", req.getParameter("username"));
         if (userList.size() > 0) {
             req.setAttribute("usernameTaken", "That username is not available. Please try another.");
             dispatcher = req.getRequestDispatcher("/signUpError.jsp");
+        } else if (!req.getParameter("password").equals(req.getParameter("confirmPassword"))) {
+            dispatcher = req.getRequestDispatcher("/passwordError.jsp");
         } else {
             user.setFirstName(req.getParameter("firstName"));
             user.setUsername(req.getParameter("username"));
             user.setLastName(req.getParameter("lastName"));
             user.setEmail(req.getParameter("email"));
-            String hashedPassword = ph.sha256(req.getParameter("password"));
+            String hashedPassword = PasswordHash.sha256(req.getParameter("password"));
             user.setPassword(hashedPassword);
             user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
             logger.debug("User to be added: " + user);

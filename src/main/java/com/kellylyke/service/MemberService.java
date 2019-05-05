@@ -48,7 +48,7 @@ public class MemberService {
 //    }
 
 
-    public List<MembersItem> getSenateMembersJSON() throws Exception { //TODO: handle this
+    private List<MembersItem> getSenateMembersJSON() throws Exception { //TODO: handle this
         Client client = ClientBuilder.newClient();
         loadProperties();
         WebTarget target =
@@ -93,7 +93,7 @@ public class MemberService {
         return searchedMembers;
     }
 
-    public List<MembersItem> getHouseMembersJSON() throws Exception { //TODO: handle this and reuse code
+    private List<MembersItem> getHouseMembersJSON() throws Exception { //TODO: handle this and reuse code
 
         Client client = ClientBuilder.newClient();
 

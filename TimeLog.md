@@ -48,3 +48,5 @@
 | 4/30/19| delete user implemented in service|1| need to reload page or show confirmation |
 | 5/1/19| deployed to AWS and fixed api errors I ran into | 3.5 | |
 | 5/2/19| got preferences to save, working on editing table to take in name, formatting css | 3 | |
+| 5/3/19|implemented delete user functionality, added error pages, starting to refactor | 2.5 | |
+| 5/5/19| edited table to take name, worked on trying to format forms, update my account | 3 | |

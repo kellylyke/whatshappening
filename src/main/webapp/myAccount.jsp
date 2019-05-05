@@ -78,26 +78,29 @@
         <div class="row">
                 <div class="col-3">
                     <label class="control-label" for="confirmPassword">Confirm Password</label>&nbsp;&nbsp;
-                    <span id='message'></span>
+
                 </div>
             <div class="col-5">
                     <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required="required">
+                     <span id='message'></span>
                 </div>
         </div>
 
-
-        <br/>
+            <div class="row">
+                <div class="col-4 offset-2">
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
-        <button type="submit" class="btn btn-outline-primary pull-right">Update</button>
+        <button type="submit" class="btn btn-outline-primary pull-right">Update Account</button>
+                </div>
+            </div>
         </form>
     </div>
 
         <div class="col-md-4">
         <ul>
             <c:forEach items="${preferences}" var="member">
-                <li>${member.show}</li>
+                <li><a href="members?id=${member.show}">${member.candidateName}</a></li>
 
             </c:forEach>
             </ul>
