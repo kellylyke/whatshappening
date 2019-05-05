@@ -31,9 +31,10 @@ public class Search extends HttpServlet implements PropertiesLoader {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String unformattedTerm = req.getParameter("searchTerm");
-        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1).toLowerCase();
-
+      //  String unformattedTerm = req.getParameter("searchTerm");
+//        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1).toLowerCase();
+        String searchTerm = req.getParameter("searchTerm");
+        logger.info(searchTerm);
         //prop = getProperties();
         MemberService service = new MemberService();
         List<MembersItem> members = new ArrayList<MembersItem>();

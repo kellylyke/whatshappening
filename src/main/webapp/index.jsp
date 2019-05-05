@@ -42,31 +42,29 @@
 
                 <div class="col-lg-6 content order-lg-1 order-2">
                     <h2 class="title">Few Words About Us</h2>
-                    <p>
-                        "If everyone who took money in return for promising to do something if they were
-                        re-elected [was prosecuted], we wouldn’t have anyone left in Congress" – Brigid Harrison,
-                        Professor of Political Science and Law at Montclair State University
 
-                        Our goal is to keep you informed about candidates and who/what is putting money in to them.
-                        Does it sway their votes? Do they take business dollars? We give you the facts. You be the judge.
-                    </p>
+                        <p class="navy">"If everyone who took money in return for promising to do something if they were
+                        re-elected [was prosecuted], we wouldn’t have anyone left in Congress" <br/>
+                        – Brigid Harrison,
+                        Professor of Political Science and Law at Montclair State University</p>
+
+
 
                     <div class="icon-box wow fadeInUp">
-                        <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                        <div class="icon"><i class="fa fa-money"></i></div>
+                        <h4 class="title"><a href="">Money</a></h4>
+                        <p class="description">Our goal is to keep you informed about candidates and who/what is putting money in to them.</p>
                     </div>
 
                     <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="icon"><i class="fa fa-photo"></i></div>
-                        <h4 class="title"><a href="">Magni Dolores</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                        <h4 class="title"><a href="">Influence</a></h4>
+                        <p class="description">Does it sway their votes? Do they take business dollars? We give you the facts. You be the judge.</p>
                     </div>
-
                     <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="icon"><i class="fa fa-bar-chart"></i></div>
-                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        <div class="icon"><i class="fa fa-university"></i></div>
+                        <h4 class="title"><a href="">Shameless Plug ¯\_(ツ)_/¯</a></h4>
+                        <p class="description"><img src="images/fish.gif" alt="pete"/></p>
                     </div>
 
                 </div>
@@ -75,6 +73,8 @@
             </div>
 
         </div>
+
+
     </section><!-- #about -->
 
     <!--==========================
@@ -147,7 +147,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
                         <div class="pic"><img src="images/aoc.jpg" alt=""></div>
-                        <h4>Alexandria Ocasio-Cortez</h4>
+                        <a href="https://www.opensecrets.org/members-of-congress/summary?cid=N00041162&cycle=2018"><h4>Alexandria Ocasio-Cortez</h4></a>
                         <span>House of Representatives - New York 14th District</span>
                         <div class="social">
                             <a href="https://twitter.com/AOC"><i class="fa fa-twitter"></i></a>
@@ -160,7 +160,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
                         <div class="pic"><img src="images/harris.jpeg" alt=""></div>
-                        <h4>Kamala Harris</h4>
+                       <a href="members?id=N00036915"><h4>Kamala Harris</h4></a>
                         <span>Senator - California</span>
                         <div class="social">
                             <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>

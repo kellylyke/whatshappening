@@ -103,35 +103,21 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="lastName" class="col-sm-4 col-form-label text-right">Last Name:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="lastName" name="lastName" required="required">
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="username" class="col-sm-4 col-form-label text-right">Username:</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="username" name="username" required="required">
                     </div>
                 </div>
-
-            <div class="form-group row">
-                <label for="password" class="col-sm-4 col-form-label text-right">Password:</label>
-                <div class="col-sm-8">
-                    <input type="password" class="form-control" id="password" name="password" required="required">
-                </div>
             </div>
 
-                <div class="form-group row">
-                    <label for="zipcode" class="col-sm-4 col-form-label text-right">Zipcode:</label>
-                    <div class="col-sm-8">
-                        <input type="number" class="form-control" name="zipcode" id="zipcode">
-                    </div>
-                </div>
 
-            </div>
-
-            <div class="col-6">
-            <div class="form-group row">
-                <label for="lastName" class="col-sm-4 col-form-label text-right">Last Name:</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="lastName" name="lastName" required="required">
-                </div>
-            </div>
 
                 <div class="form-group row">
                     <label for="email" class="col-sm-4 col-form-label text-right">Email:</label>
@@ -139,6 +125,14 @@
                         <input type="email" class="form-control" id="email" name="email" required="required">
                     </div>
 
+                </div>
+
+            <div class="col-6">
+                <div class="form-group row">
+                    <label for="password" class="col-sm-4 col-form-label text-right">Password:</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="password" name="password" required="required">
+                    </div>
                 </div>
 
                 <div class="form-group row">
@@ -150,8 +144,17 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="zipcode" class="col-sm-4 col-form-label text-right">Zipcode:</label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="zipcode" id="zipcode">
+                        </div>
+                    </div>
 
-                </div>
+            </div>
+
+
+
 
 
             </div><!--right side -->
@@ -167,23 +170,7 @@
 </div>
 <br/><br/>
 </body>
-    <%--&lt;%&ndash;<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>&ndash;%&gt;--%>
-    <%--<!-- JavaScript Libraries -->--%>
-    <%--<script src="lib/jquery/jquery.min.js"></script>--%>
-    <%--<script src="lib/jquery/jquery-migrate.min.js"></script>--%>
-    <%--<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>--%>
-    <%--<script src="lib/easing/easing.min.js"></script>--%>
-    <%--<script src="lib/wow/wow.min.js"></script>--%>
-    <%--<script src="lib/waypoints/waypoints.min.js"></script>--%>
-    <%--<script src="lib/counterup/counterup.min.js"></script>--%>
-    <%--<script src="lib/superfish/hoverIntent.js"></script>--%>
-    <%--<script src="lib/superfish/superfish.min.js"></script>--%>
 
-    <%--<!-- Contact Form JavaScript File -->--%>
-    <%--<script src="contactform/contactform.js"></script>--%>
-
-    <%--<!-- Template Main Javascript File -->--%>
-    <%--<script src="js/main.js"></script>--%>
     <script>
         $('#password, #confirmPassword').on('keyup', function () {
             if ($('#password').val() === $('#confirmPassword').val()) {

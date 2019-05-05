@@ -18,15 +18,16 @@
 <div class="container after-heading">
 
 <br/>
-<h3 class="center-align">Track candidates by searching below</h3>
+<h3 class="center-align">Track Candidates by Searching Below</h3>
 
-<form id="searchForm" class="col s10 center-align" action="search" method="post">
+<form id="searchForm" class="col-s10 center-align form-inline" action="search" method="post">
     <div class="row">
-        <div class="input-field col s4 offset-s4">
-            <input type="text" id="searchTerm" name="searchTerm" required="required">
+        <div class="col-s6 offset-2">
+            <input type="text" class="form-control" id="searchTerm" name="searchTerm" required="required" placeholder="Last Name">
+
+        <button type="submit" class="btn blue darken-4 m-3">Search<i class="material-icons">search</i></button>
         </div>
     </div>
-       <button type="submit" class="btn blue darken-4">Search<i class="material-icons">search</i></button>
 
 </form>
 </div>

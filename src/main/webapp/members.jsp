@@ -38,6 +38,7 @@
         <li>State: ${member.state} </li>
         <li>Votes with Party: ${member.votesWithPartyPct}% </li>
         <li>Next Election: ${member.nextElection} </li>
+        <li><a href="${member.url}" target="_blank">Website</a></li>
         <li><a href="http://twitter.com/${member.twitterAccount}" target="_blank">Twitter</a></li>
     </ul>
     <c:if test = "${user != null}">
@@ -61,10 +62,10 @@
 
 
     <table class="table-striped">
-        <tr><th class="p-4 m-4">Contributor</th><th class="p-4 m-4" >PACs</th><th class="p-4 m-4">Individuals</th><th class="p-4 m-4">Total Amount</th></tr>
+        <tr><th class="p-4 m-2">Contributor</th><th class="p-4 m-2">PACs</th><th class="p-4 m-2">Individuals</th><th class="p-4 m-2">Total Amount</th></tr>
         <c:forEach items="${contributors}" var="contributor">
             <%--<c:forEach items="${contributor.getAttributes()}" var="org">&ndash;%&gt;--%>
-                <tr class="p-3 m-3">
+                <tr class="">
                     <td class="p-4 m-4">${contributor.getAttributes().orgName}</td>
                     <td class="p-4 m-4">$${contributor.getAttributes().pacs}</td>
                     <td class="p-4 m-4">$${contributor.getAttributes().indivs}</td>
