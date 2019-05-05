@@ -27,8 +27,8 @@ import javax.persistence.criteria.Root;
  */
 public class RoleDaoTest {
 
-    GenericDao dao;
-    GenericDao userDao;
+    private GenericDao dao;
+    private GenericDao userDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 

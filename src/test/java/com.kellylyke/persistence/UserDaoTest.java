@@ -4,6 +4,7 @@ import com.kellylyke.entity.Preference;
 import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -25,8 +26,8 @@ import org.junit.jupiter.api.Test;
  */
 public class UserDaoTest {
 
-    GenericDao dao;
-    List<User> users;
+    private GenericDao dao;
+    private List<User> users;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
 
@@ -131,7 +132,7 @@ public class UserDaoTest {
     public static String sha256(String base) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(base.getBytes("UTF-8"));
+            byte[] hash = digest.digest(base.getBytes(StandardCharsets.UTF_8));
             StringBuffer hexString = new StringBuffer();
 
             for (int i = 0; i < hash.length; i++) {
@@ -153,14 +154,15 @@ public class UserDaoTest {
     @Test
     public void insertWithPreferenceSuccess() {
 
-        String show = "Washington";
+        String show = "1776";
+        String candidateName = "George Washington";
         User newUser = new User("Joey", "Tribbiani", "joe", 90210, "drakeramoray@daysofourlives.com", "pizza");
         Role role = new Role();
         role.setRole("admin");
         role.setDateCreated(new Date());
         role.setUser(newUser);
         newUser.addRole(role);
-        Preference preference = new Preference(show, newUser);
+        Preference preference = new Preference(show, candidateName, newUser);
         newUser.addPreference(preference);
 
         int id = dao.insert(newUser);

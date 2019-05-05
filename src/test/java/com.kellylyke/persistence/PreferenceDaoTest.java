@@ -26,8 +26,8 @@ import javax.persistence.criteria.Root;
  */
 public class PreferenceDaoTest {
 
-    GenericDao dao;
-    GenericDao userDao;
+    private GenericDao dao;
+    private GenericDao userDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -80,7 +80,7 @@ public class PreferenceDaoTest {
     public void getByIdSuccess() {
 
         Preference retrievedPreference = (Preference)dao.getById(1);
-        assertEquals("Washington", retrievedPreference.getShow());
+        assertEquals("Washington", retrievedPreference.getCandidateName());
     }
 
     /**
@@ -89,7 +89,7 @@ public class PreferenceDaoTest {
     @Test
     public void insertSuccess() {
         User user = (User)userDao.getById(3);
-        Preference newPreference = new Preference("Kennedy", user);
+        Preference newPreference = new Preference("12", "Kennedy", user);
         user.addPreference(newPreference);
 
         int id = dao.insert(newPreference);
@@ -115,7 +115,7 @@ public class PreferenceDaoTest {
      */
     @Test
     public void getByPropertyEqualSuccess() {
-        List<Preference> preferences = dao.getByPropertyEqual("show", "Lincoln");
+        List<Preference> preferences = dao.getByPropertyEqual("candidateName", "Lincoln");
         assertEquals(1, preferences.size());
         assertEquals(2, preferences.get(0).getId());
     }
