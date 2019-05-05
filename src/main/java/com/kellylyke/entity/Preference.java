@@ -24,9 +24,9 @@ public class Preference {
 
     @Column(name = "show_me")
     private String show;
-//
-//    @Column(name = "candidate_name")
-//    private String candidateName;
+
+    @Column(name = "candidate_name")
+    private String candidateName;
 
     @JsonIgnore
     @ManyToOne
@@ -45,8 +45,9 @@ public class Preference {
      * @param show the show
      * @param user the user
      */
-    public Preference(String show, User user) {
+    public Preference(String show, String candidateName,  User user) {
         this.user = user;
+        this.candidateName = candidateName;
         this.show = show;
     }
 
@@ -68,6 +69,7 @@ public class Preference {
         Preference that = (Preference) o;
         return id == that.id &&
                 Objects.equals(show, that.show) &&
+                Objects.equals(candidateName, that.candidateName) &&
                 Objects.equals(user, that.user);
     }
 
