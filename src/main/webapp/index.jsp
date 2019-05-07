@@ -43,9 +43,10 @@
                 <div class="col-lg-6 content order-lg-1 order-2">
                     <h2 class="title">Few Words About Us</h2>
 
-                        <p class="navy">"If everyone who took money in return for promising to do something if they were
-                        re-elected [was prosecuted], we wouldn’t have anyone left in Congress" <br/>
-                        – Brigid Harrison,
+                        <p><span class="navy">If everyone who took money in return for promising to do something if they were
+                            re-elected [was prosecuted], we wouldn’t have anyone left in Congress."</span><br/>
+
+                       &nbsp;&nbsp;&nbsp;– Brigid Harrison,
                         Professor of Political Science and Law at Montclair State University</p>
 
 
@@ -95,12 +96,12 @@
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-toggle="counter-up">99</span>
-                    <p>Percent of Donors giving less than $200</p>
+                    <p>Percent of donors who gave less than $200</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-toggle="counter-up">29</span>
-                    <p>Percent of Total $$$ from Donors giving less than $200</p>
+                    <p>Percent of total from donors who gave than $200</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">

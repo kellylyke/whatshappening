@@ -32,17 +32,20 @@ import java.util.Set;
 public class MyAccount extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
+    private static final String REDIRECT_URL = "/myAccount.jsp";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
         User user = users.get(0);
+        req.setAttribute("admin", checkIfAdmin(user));
+
         Set<Preference> preferences = user.getPreferences();
         req.setAttribute("user", user);
         req.setAttribute("preferences", preferences);
-       // logger.debug(preferences);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
+        // logger.debug(preferences);
+        RequestDispatcher dispatcher = req.getRequestDispatcher(REDIRECT_URL);
         dispatcher.forward(req, resp);
 
     }
@@ -50,7 +53,8 @@ public class MyAccount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userDao.getById(Integer.parseInt(req.getParameter("id")));
-        PasswordHash ph = new PasswordHash();
+        RequestDispatcher dispatcher = null;
+
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
 
@@ -58,16 +62,38 @@ public class MyAccount extends HttpServlet {
         String newPassword = req.getParameter("password");
         String confirmPassword = req.getParameter("confirmPassword");
 
+
         if (newPassword.equals(confirmPassword)) {
             String hashedPassword = PasswordHash.sha256(newPassword);
             user.setPassword(hashedPassword);
+            req.getRequestDispatcher(REDIRECT_URL);
         } else {
-            //session.setAttribute("passwordError", )
-       }
+            req.setAttribute("passwordError", "Your passwords did not match. Try again.");
+            dispatcher = req.getRequestDispatcher(REDIRECT_URL);
+        }
 
         userDao.saveOrUpdate(user);
+        try {
+            dispatcher.forward(req, resp);
+        } catch (Exception e) {
+            logger.error("Problem forwarding: " + e);
+        }
+
 
     }
+
+    public boolean checkIfAdmin(User user) {
+        boolean admin = false;
+        Set<Role> roles = user.getRoles();
+        for (Role role : roles) {
+            if (role.getRole().equals("admin")) {
+                admin = true;
+            }
+
+        }
+        return admin;
+    }
+
 
 
 }

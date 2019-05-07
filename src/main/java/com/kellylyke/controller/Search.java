@@ -25,22 +25,21 @@ import org.apache.logging.log4j.Logger;
 )
 
 public class Search extends HttpServlet implements PropertiesLoader {
-    private Properties properties = new Properties();
     private final Logger logger = LogManager.getLogger(this.getClass());
-
+    String propFile = "/apiKey.properties";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       //  String unformattedTerm = req.getParameter("searchTerm");
 //        String searchTerm = unformattedTerm.substring(0, 1).toUpperCase() + unformattedTerm.substring(1).toLowerCase();
         String searchTerm = req.getParameter("searchTerm");
-        logger.info(searchTerm);
+        //logger.info(searchTerm);
         //prop = getProperties();
         MemberService service = new MemberService();
         List<MembersItem> members = new ArrayList<MembersItem>();
         try {
             members = service.getSpecificMember(searchTerm);
-            logger.info(members);
+           // logger.info(members);
             req.setAttribute("members", members);
 //            if (member != null) {
 //                String id = member.getCrpId();
@@ -96,7 +95,7 @@ public class Search extends HttpServlet implements PropertiesLoader {
         Properties prop = new Properties();
 
         try {
-            prop = loadProperties("/apiKey.properties");
+            prop = loadProperties(propFile);
         } catch (IOException ioException) {
             logger.error(ioException.getMessage());
         } catch (Exception exception) {

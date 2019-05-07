@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(
         name = "add",
@@ -43,10 +42,14 @@ public class AddFavorite extends HttpServlet {
         user.addPreference(newPreference);
         dao.insert(newPreference);
 
-        logger.debug(user.getPreferences());
 
         //RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
-        resp.sendRedirect("myAccount");
+
+       try {
+           resp.sendRedirect("myAccount");
+       } catch (Exception e) {
+           logger.error("Problem redirecting to account" + e);
+        }
 
 
     }

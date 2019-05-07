@@ -29,7 +29,6 @@ import static com.kellylyke.persistence.SessionFactoryProvider.getSessionFactory
 public class DeleteUser extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
-    private GenericDao<Preference> dao = new GenericDao<>(Preference.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

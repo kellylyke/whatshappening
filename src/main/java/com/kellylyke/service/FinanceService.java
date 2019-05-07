@@ -23,6 +23,7 @@ import java.util.Properties;
 public class FinanceService implements PropertiesLoader{
     private Properties prop;
     private final Logger logger = LogManager.getLogger(this.getClass());
+    private final String PROP_FILE = "/apiKey.properties";
 
 
     public Contributors getFinancialDataForCandidate(String id) throws IOException, URISyntaxException {
@@ -30,14 +31,14 @@ public class FinanceService implements PropertiesLoader{
         String secondLink;
         //String hardid = "N00007360";
         Client client = ClientBuilder.newClient();
-         prop = getProperties();
+        prop = getProperties();
         firstLink = prop.getProperty("open_secrets_first");
         secondLink = prop.getProperty("open_secrets_last");
 
         String uri = firstLink + id + secondLink;
 
 
-        logger.info(uri);
+      //  logger.info(uri);
 
         WebTarget target =
                client.target(uri);
@@ -68,7 +69,7 @@ public class FinanceService implements PropertiesLoader{
         Properties prop = new Properties();
 
         try {
-            prop = loadProperties("/apiKey.properties");
+            prop = loadProperties(PROP_FILE);
         } catch (IOException ioException) {
             logger.error(ioException.getMessage());
         } catch (Exception exception) {

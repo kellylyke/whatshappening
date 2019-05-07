@@ -17,8 +17,7 @@
 
 <body>
 <div class="container">
-    <h3 class="center-align after-heading">Update Your Account</h3>
-    <br/>
+    <h3 class="text-center after-heading">Update Account   <a href="allUsers" role="button" class="btn btn-info pull-right">Admin Page</a></h3> <br/>
    <%-- <div class="d-flex justify-content-center h-100">
         <div class="card-form">
 
@@ -87,7 +86,9 @@
         </div>
 
             <div class="row">
+
                 <div class="col-4 offset-2">
+
         <input type="hidden" id="id" name="id" value="${user.id}"/>
         <input type="hidden" id="username" name="username" value="${user.username}"/>
 
@@ -98,10 +99,12 @@
     </div>
 
         <div class="col-md-4">
+            <h3 class="navy">Watch List</h3>
+            <hr/>
+
         <ul>
             <c:forEach items="${preferences}" var="member">
                 <li><a href="members?id=${member.show}">${member.candidateName}</a></li>
-
             </c:forEach>
             </ul>
         </div>

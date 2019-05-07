@@ -11,8 +11,17 @@
 <c:import url="header.jsp"/>
 
 <c:import url="navbar.jsp"/>
+<br/>
+
 <body>
-<p>Log in failed - Try again</p>
-<a href="login.jsp">Log In</a>
+<div class="container">
+    <h3 class="center-align after-heading">Login Error</h3>
+    <br/>
+    <p>Whoops... that's not your password </p>
+     <img src="images/steve.gif" alt="steve"><br/><br/>
+    <a href="redirect" role="button" class="btn btn-danger">You did. Try again.</a><br/><br/>
+    <br/><br/><br/>
+</div>
 </body>
 </html>
+

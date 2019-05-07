@@ -167,8 +167,10 @@
 </div>
 <br/><br/>
 </body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <script>
+
         $('#password, #confirmPassword').on('keyup', function () {
             if ($('#password').val() === $('#confirmPassword').val()) {
                 $('#message').html('Passwords match').css('color', 'green');

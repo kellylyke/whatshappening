@@ -79,7 +79,7 @@ public class User implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
-        this.id = id;
+       // this.id = id;
         this.zipcode = zipcode;
         this.email = email;
         this.password = password;

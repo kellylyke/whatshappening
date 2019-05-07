@@ -33,19 +33,14 @@ public class MemberService {
             senateMembersLink = properties.getProperty("senate_members_link");
             houseMembersLink = properties.getProperty("house_members_link");
         } catch (IOException ioe) {
-            logger.error("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
+            logger.error("Database.loadProperties()...Cannot load the properties file" + ioe);
         } catch (Exception e) {
             logger.error("Database.loadProperties()..." + e);
-            e.printStackTrace();
+
         }
 
     }
 
-//    public void getMemberInformation(String searchTerm) throws Exception{
-//        MembersItem member = getSpecificMember(searchTerm);
-//        List<ContributorItem> items = getFinanceData(member);
-//    }
 
 
     private List<MembersItem> getSenateMembersJSON() throws Exception { //TODO: handle this

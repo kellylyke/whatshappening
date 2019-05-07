@@ -51,7 +51,7 @@ public class SignUp extends HttpServlet {
             String hashedPassword = PasswordHash.sha256(req.getParameter("password"));
             user.setPassword(hashedPassword);
             user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
-            logger.debug("User to be added: " + user);
+          //  logger.debug("User to be added: " + user);
             Role role = new Role();
             role.setUser(user);
             role.setRole("user");

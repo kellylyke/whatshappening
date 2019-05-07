@@ -73,8 +73,8 @@ public class Preference {
                 Objects.equals(user, that.user);
     }
 
-   /* @Override
+   @Override
     public int hashCode() {
-        return Objects.hash(id, show, user);
-    }*/
+        return Objects.hash(id, show, candidateName, user);
+    }
 }

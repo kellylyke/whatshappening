@@ -47,7 +47,7 @@
                     <c:when test="${sessionScope.user != null}">
 
                         <li><a href="myAccount">My Account</a></li>
-                        <li><a href="allUsers">View Users</a></li>
+
                         <li><a href="logout.jsp">Log Out</a></li>
                     </c:when>
                     <c:otherwise>

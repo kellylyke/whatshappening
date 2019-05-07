@@ -49,7 +49,7 @@ public class MemberDisplay extends HttpServlet {
         List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
         User user = new User();
         String id = req.getParameter("id");
-        logger.info(id);
+       // logger.info(id);
         if (users.size() > 0) {
             user = users.get(0);
         }
@@ -59,6 +59,7 @@ public class MemberDisplay extends HttpServlet {
 
         if (member != null) {
             contributors = getContributorForCandidate(id);
+            logger.info(contributors.getContributor());
             req.setAttribute("contributors", contributors.getContributor());
         }
 

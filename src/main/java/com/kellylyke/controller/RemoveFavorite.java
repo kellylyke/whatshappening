@@ -42,7 +42,7 @@ public class RemoveFavorite extends HttpServlet {
 
         // newPreference.setCandidateName(name);
 
-        logger.debug(user.getPreferences());
+       // logger.debug(user.getPreferences());
 
         //RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         resp.sendRedirect("myAccount");
