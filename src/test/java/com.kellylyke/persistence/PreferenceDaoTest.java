@@ -6,17 +6,10 @@ import java.util.List;
 import static org.junit.Assert.*;
 import com.kellylyke.entity.User;
 import com.kellylyke.test.util.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
-import org.hibernate.Session;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
 
 
 /**
@@ -28,8 +21,6 @@ public class PreferenceDaoTest {
 
     private GenericDao dao;
     private GenericDao userDao;
-
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
 
      /**

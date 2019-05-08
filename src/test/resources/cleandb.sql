@@ -7,5 +7,5 @@ INSERT INTO `users` VALUES ('Rachel','Green','rgreen',1,10001,'rgreen3@hotmail.c
 CREATE TABLE `user_roles` (`username` varchar(50) NOT NULL, `role` varchar(15) NOT NULL, `created` date DEFAULT NULL,  `id` int(11) NOT NULL AUTO_INCREMENT,  PRIMARY KEY (`id`) ,  CONSTRAINT `user_roles_users_username_fk` FOREIGN KEY (`username`) REFERENCES `users` (`username`));
 INSERT INTO `user_roles` VALUES ('drgeller', 'admin', null, 1), ('mgeller', 'admin', null, 2);
 CREATE TABLE `user_preferences` ( `id` int(11) NOT NULL AUTO_INCREMENT, `user_id` int(11) NOT NULL, `show_me` varchar(100) DEFAULT NULL,  `candidate_name` varchar(250) DEFAULT NULL, PRIMARY KEY (`id`),  KEY `user_preferences_users_id_fk` (`user_id`));
-INSERT INTO `user_preferences` VALUES (1, 1, '22', 'Washington'), (2, 2,  '22', 'Lincoln'), (3, 1, '12', 'Adams'), (4, 5, null, 'Jackson'), (5, 3, null, 'Nixon');
+INSERT INTO `user_preferences` VALUES (1, 1, '22', 'Washington'), (2, 2,  '22', 'Lincoln'), (3, 1, '12', 'Adams'), (4, 5, 'e13', 'Jackson'), (5, 3, '1243', 'Nixon');
 SET foreign_key_checks = 1;

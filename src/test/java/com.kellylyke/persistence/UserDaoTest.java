@@ -7,6 +7,7 @@ import com.kellylyke.entity.User;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -27,6 +28,7 @@ import org.junit.jupiter.api.Test;
 public class UserDaoTest {
 
     private GenericDao dao;
+    private GenericDao preferenceDao;
     private List<User> users;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -46,6 +48,7 @@ public class UserDaoTest {
 
 
        dao = new GenericDao(User.class);
+       preferenceDao = new GenericDao(Preference.class);
        users = dao.getAll();
     }
 
@@ -202,24 +205,24 @@ public class UserDaoTest {
 
 
     /**
-     * Verify successful delete of user
+     * Verify successful delete of user with delete of preferences
      */
     @Test
     public void deleteSuccessWithPreference() {
-       /* User userToDelete = new User();
-        userToDelete.setUser(dao.getById(5));
-        dao.delete(dao.getById(5));
-        User deletedUser = new User();
-        deletedUser = (User)dao.getById(5);
-        assertNull(deletedUser);*/
 
         User userToDelete = users.get(4);
         int id = userToDelete.getId();
-        //dao.delete(userToDelete);
+
         Set<Preference> userPreferences = userToDelete.getPreferences();
+        assertTrue(userPreferences.size() > 0);
+        List<Preference> preferences = new ArrayList<Preference>(userPreferences);
+        Preference pref = preferences.get(0);
+        int prefID = pref.getId();
+
         dao.delete(userToDelete);
         User deletedUser = (User) dao.getById(id);
         assertNull(deletedUser);
+        assertNull(preferenceDao.getById(prefID));
     }
 
 
