@@ -17,7 +17,11 @@
 
 <body>
 <div class="container">
-    <h3 class="text-center after-heading">Update Account   <a href="allUsers" role="button" class="btn btn-info pull-right">Admin Page</a></h3> <br/>
+    <h3 class="text-center after-heading">Update Account
+        <c:if test="${admin}">
+            <a href="allUsers" role="button" class="btn btn-info pull-right">Admin Page</a>
+        </c:if>
+    </h3> <br/>
    <%-- <div class="d-flex justify-content-center h-100">
         <div class="card-form">
 

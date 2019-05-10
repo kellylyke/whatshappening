@@ -64,8 +64,8 @@
                     </div>
                     <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
                         <div class="icon"><i class="fa fa-university"></i></div>
-                        <h4 class="title"><a href="">Shameless Plug ¯\_(ツ)_/¯</a></h4>
-                        <p class="description"><img src="images/fish.gif" alt="pete"/></p>
+                        <h4 class="title">Shameless Plug ¯\_(ツ)_/¯</h4>
+                        <p class="description"><a href="https://www.opensecrets.org/2020-presidential-race/candidate?id=N00044183"><img src="images/fish.gif" alt="pete"/></a></p>
                     </div>
 
                 </div>
@@ -101,7 +101,7 @@
 
                 <div class="col-lg-3 col-6 text-center">
                     <span data-toggle="counter-up">29</span>
-                    <p>Percent of total from donors who gave than $200</p>
+                    <p>Percent of total from donors who gave less than $200</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">

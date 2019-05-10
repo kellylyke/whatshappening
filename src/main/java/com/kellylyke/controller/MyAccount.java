@@ -82,7 +82,7 @@ public class MyAccount extends HttpServlet {
 
     }
 
-    public boolean checkIfAdmin(User user) {
+    private boolean checkIfAdmin(User user) {
         boolean admin = false;
         Set<Role> roles = user.getRoles();
         for (Role role : roles) {

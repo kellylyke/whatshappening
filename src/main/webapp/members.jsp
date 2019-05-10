@@ -59,7 +59,11 @@
 
 
 
-
+<c:choose>
+    <c:when test="${contributors == null}">
+    <h5>Unfortunately, the finance service is unavailable at the moment or your chosen candidate has no financial data. Check back soon!</h5>
+</c:when>
+<c:otherwise>
 
     <table class="table-striped">
         <tr><th class="p-4 m-2">Contributor</th><th class="p-4 m-2">PACs</th><th class="p-4 m-2">Individuals</th><th class="p-4 m-2">Total Amount</th></tr>
@@ -75,6 +79,10 @@
 
         </c:forEach>
     </table>
+
+
+    </c:otherwise>
+   </c:choose>
 <%--<h3>${contributors.notice}</h3>--%>
 <br/>
 <br/>
