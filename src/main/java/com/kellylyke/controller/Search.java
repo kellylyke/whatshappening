@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kellylyke.service.MemberService;
-import com.kellylyke.service.PropertiesLoader;
 import com.kellylyke.service.congress.MembersItem;
 
 import org.apache.logging.log4j.LogManager;
@@ -24,7 +23,6 @@ import org.apache.logging.log4j.Logger;
 
 public class Search extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
-   // private static final String PROP_FILE = "/apiKey.properties";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

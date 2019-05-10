@@ -23,6 +23,10 @@
     <p>No members found</p>
 </c:if>
 
+    <c:if test = "${members.get(0).lastName == null}">
+        <p>Service currently unavailable</p>
+    </c:if>
+
 <c:forEach items="${members}" var="member">
     <a href="members?id=${member.crpId}">${member.firstName} ${member.lastName} </a><br/><br/>
     <%--this will need to be id--%>

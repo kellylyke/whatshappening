@@ -11,31 +11,20 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Properties;
 
 public class FinanceService implements PropertiesLoader {
-    private Properties prop;
     private final Logger logger = LogManager.getLogger(this.getClass());
     private static final String PROP_FILE = "/apiKey.properties";
 
 
     public Contributors getFinancialDataForCandidate(String id) throws Exception {
-        String firstLink;
-        String secondLink;
-
         Client client = ClientBuilder.newClient();
-        prop = loadProperties(PROP_FILE);
-        firstLink = prop.getProperty("open_secrets_first");
-        secondLink = prop.getProperty("open_secrets_last");
+        Properties prop = loadProperties(PROP_FILE);
 
-        String uri = firstLink + id + secondLink;
+        String uri = prop.getProperty("open_secrets_first") + id + prop.getProperty("open_secrets_last");
 
-
-        WebTarget target =
-                client.target(uri);
-        //client.target("https://www.opensecrets.org/api/?method=candContrib&cid=N00007360&output=json&cycle=2018&apikey=c23c1c3c25533552d3db11fbdb1389dc");
+        WebTarget target = client.target(uri);
         Invocation.Builder invocationBuilder = target.request(MediaType.APPLICATION_JSON);
 
         Response response = invocationBuilder.get();
@@ -49,6 +38,7 @@ public class FinanceService implements PropertiesLoader {
 
             return results.getResponse().getContributors();
         } else {
+            logger.error("Service returned error: " + response.getStatus());
             return new Contributors();
         }
 

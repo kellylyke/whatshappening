@@ -92,16 +92,23 @@ public class MemberService implements PropertiesLoader {
         invocationBuilder.header("x-api-key", key);
 
         Response response = invocationBuilder.get();
-        String responseData = response.readEntity(String.class);
+        if (response.getStatus() == 200) {
+            String responseData = response.readEntity(String.class);
 
-        ObjectMapper mapper = new ObjectMapper();
-        Results results = mapper.readValue(responseData, Results.class);
+            ObjectMapper mapper = new ObjectMapper();
+            Results results = mapper.readValue(responseData, Results.class);
 
-        List<ResultsItem> resultsItem = new ArrayList<ResultsItem>();
-        resultsItem = results.getResults();
-        List<MembersItem> members = new ArrayList<MembersItem>();
-        members = resultsItem.get(0).getMembers();
-        return members;
+            List<ResultsItem> resultsItem = new ArrayList<ResultsItem>();
+            resultsItem = results.getResults();
+            List<MembersItem> members = new ArrayList<MembersItem>();
+            members = resultsItem.get(0).getMembers();
+            return members;
+        } else {
+            List<MembersItem> members = new ArrayList<MembersItem>();
+            MembersItem empty = new MembersItem();
+            members.add(empty);
+            return members;
+        }
     }
 
 
