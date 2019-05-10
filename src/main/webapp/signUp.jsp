@@ -20,78 +20,7 @@
 <div class="container after-heading">
     <br/>
 <h3 class="text-center">Register</h3>
-<%--<br/>--%>
-<%--<div class="col-sm-8>">--%>
-    <%--<form id="signUpForm" class="form-inline" action="signUp" method="post">--%>
-        <%--&lt;%&ndash;<div class="row">&ndash;%&gt;--%>
-            <%--<div class="form-group col-sm-4 pull-right">--%>
-                         <%--<label class="control-label" for="firstName">First Name</label>--%>
-            <%--</div>--%>
 
-            <%--<div class="form-group col-sm-4">--%>
-                <%--<input class="form-control" type="text" id="firstName" name="firstName" required="required">--%>
-            <%--</div>--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-             <%--&lt;%&ndash;<div class="row">&ndash;%&gt;--%>
-                        <%--<div class="form-group col-sm-4">--%>
-                              <%--<label class="control-label pull-right" for="lastName">Last Name</label>--%>
-                        <%--</div>--%>
-                        <%--<div class="form-group col-sm-4 pull-right">--%>
-                            <%--<input class="form-control" type="text" id="lastName" name="lastName" required="required">--%>
-                        <%--</div>--%>
-             <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-
-                <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-                      <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--<div class="row">--%>
-            <%--&lt;%&ndash;<div class="input-field">&ndash;%&gt;--%>
-            <%--<div class="form-group col-sm-4">--%>
-                <%--<label class="control-label"  for="username">Username</label>--%>
-            <%--</div>--%>
-            <%--<div class="form-group col-sm-4">--%>
-                <%--<input  class="form-control" type="text" id="username" name="username" required="required">--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<div class="row">--%>
-            <%--<div class="form-group col-sm-4">--%>
-                <%--<label class="control-label pull-right" for="email">Email</label>--%>
-            <%--</div>--%>
-            <%--<div class="for-group col-sm-4">--%>
-                <%--<input  class="form-control" type="text" id="email" name="email" required="required">--%>
-            <%--</div>--%>
-
-        <%--</div>--%>
-
-
-
-        <%--<div class="row">--%>
-            <%--<div class="form-group col-sm-4">--%>
-                    <%--<label class="control-label" for="password">Password</label>--%>
-                    <%--<input class="form-control" type="password" id="password" name="password" required="required">--%>
-             <%--</div>--%>
-            <%--<div class="form-group col-sm-4">--%>
-
-                    <%--<label class="control-label" for="confirmPassword">Confirm Password</label>--%>
-                    <%--<input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required="required">--%>
-                    <%--<span id="message"></span>--%>
-
-            <%--</div>--%>
-        <%--</div>--%>
-
-        <%--<div class="row">--%>
-            <%--<div class="col-sm-4">--%>
-                <%--<div class="input-field">--%>
-                    <%--<label class="control-label" for="zipcode">Zipcode</label>--%>
-                    <%--<input class="form-control" type="number" id="zipcode" name="zipcode">--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-        <%--<br/>--%>
-
-        <%--<button type="submit" class="btn btn-default ">Sign Up</button>--%>
-    <%--</form>--%>
-<%--</div>--%>
     <form id="signUpForm" action="signUp" method="post">
         <div class="row">
             <div class="col-6"><!--left side -->
@@ -147,7 +76,7 @@
                     <div class="form-group row">
                         <label for="zipcode" class="col-sm-4 col-form-label text-right">Zipcode:</label>
                         <div class="col-sm-8">
-                            <input type="number" class="form-control" name="zipcode" id="zipcode">
+                            <input type="number" class="form-control" name="zipcode" id="zipcode" required="required">
                         </div>
                     </div>
 

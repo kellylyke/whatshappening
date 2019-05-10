@@ -6,7 +6,6 @@ import com.kellylyke.entity.User;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -106,8 +105,8 @@ public class UserDaoTest {
      */
     @Test
     public void insertSuccess()  {
-        User newUser = new User("Joey", "Tribbiani", "joey", 90210, "drakeramoray@daysofourlives.com", sha256("ilovepizza"));
-       // newUser.setPassword(sha256("ilovepizza"));
+
+        User newUser = new User("Joey", "Tribbiani", "joey", 90210, "drakeramoray@daysofourlives.com", PasswordHash.sha256("ilovepizza"));
         Role role = new Role();
         role.setRole("admin");
 
@@ -123,32 +122,11 @@ public class UserDaoTest {
         assertTrue(insertedUser.getId() > 0);
         assertEquals(newUser, insertedUser);
         assertEquals(1, insertedUser.getRoles().size());
-        //logger.debug(insertedUser.getRoles());
         Set<Role> userRoles = insertedUser.getRoles();
         assertTrue(userRoles.contains(role));
-        //assertTrue(insertedUser.getRoles().contains(role)); //this does not work with eager, but correct data shows up in table
-
 
     }
 
-
-    public static String sha256(String base) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(base.getBytes(StandardCharsets.UTF_8));
-            StringBuffer hexString = new StringBuffer();
-
-            for (int i = 0; i < hash.length; i++) {
-                String hex = Integer.toHexString(0xff & hash[i]);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-            }
-
-            return hexString.toString();
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
-    }
 
 
     /**

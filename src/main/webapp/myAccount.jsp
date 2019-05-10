@@ -73,7 +73,7 @@
                     <label class="form-check-label" for="password"> New Password</label>&nbsp;&nbsp;
                 </div>
                 <div class="col-5">
-                    <input class="form-control"  type="password" id="password" name="password" required="required">
+                    <input class="form-control"  type="password" id="password" name="password" >
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
 
                 </div>
             <div class="col-5">
-                    <input class="form-control" type="password" id="confirmPassword" name="confirmPassword" required="required">
+                    <input class="form-control" type="password" id="confirmPassword" name="confirmPassword">
                      <span id='message'></span>
                 </div>
         </div>

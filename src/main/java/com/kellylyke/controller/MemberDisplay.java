@@ -32,9 +32,7 @@ import java.util.Set;
 public class MemberDisplay extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
-    private Contributors contributors = null;
-    private MembersItem member = null;
-
+    private Contributors contributors;
     /**
      * Calls to apis go get congress member and financial data
      *
@@ -45,16 +43,16 @@ public class MemberDisplay extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //get query parameter
+
         List<User> users = userDao.getByPropertyEqual("username", req.getRemoteUser());
         User user = new User();
         String id = req.getParameter("id");
-       // logger.info(id);
+
         if (users.size() > 0) {
             user = users.get(0);
         }
 
-         member = getMember(id);
+        MembersItem member = getMember(id);
             req.setAttribute("member", member);
 
         if (member != null) {
@@ -111,8 +109,8 @@ public class MemberDisplay extends HttpServlet {
      * checks if user has added current member to list already
      *
      * @param user current user logged in
-     * @param id
-     * @return
+     * @param id id of candidate
+     * @return if selected candidate already on user's list
      */
     private String checkIfOnList(User user, String id) {
         Set<Preference> preferences = user.getPreferences();

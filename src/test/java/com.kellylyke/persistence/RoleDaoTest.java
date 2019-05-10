@@ -10,7 +10,6 @@ import com.kellylyke.test.util.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import org.hibernate.Session;
 import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,23 +27,18 @@ import javax.persistence.criteria.Root;
 public class RoleDaoTest {
 
     private GenericDao dao;
-    private GenericDao userDao;
-
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
      * Sets up dao, creates fresh database
      *
-     * @throws Exception the exception
      */
     @BeforeEach
-    void setUp() throws Exception {
-
+    void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
         dao = new GenericDao(Role.class);
-        userDao = new GenericDao(User.class);
+
 
     }
 

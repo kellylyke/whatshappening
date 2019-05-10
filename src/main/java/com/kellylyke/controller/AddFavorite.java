@@ -6,7 +6,6 @@ import com.kellylyke.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,22 +13,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(
-        name = "add",
-        urlPatterns = {"/add"}
-)
 /*
   servlet for adding favorite candidate to user preferences
   @author klyke
   */
+@WebServlet(
+        name = "add",
+        urlPatterns = {"/add"}
+)
 
 public class AddFavorite extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
     private GenericDao<Preference> dao = new GenericDao<>(Preference.class);
 
-
-
+    /**
+     * Sets the preference to the user's account
+     *
+     * @param req http request
+     * @param resp http response
+     * @throws ServletException any servlet exception
+     * @throws IOException any io exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
@@ -42,15 +47,11 @@ public class AddFavorite extends HttpServlet {
         user.addPreference(newPreference);
         dao.insert(newPreference);
 
-
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
-
        try {
            resp.sendRedirect("myAccount");
        } catch (Exception e) {
            logger.error("Problem redirecting to account" + e);
         }
-
 
     }
 

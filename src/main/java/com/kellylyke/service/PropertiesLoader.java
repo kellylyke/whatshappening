@@ -1,6 +1,9 @@
 package com.kellylyke.service;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -21,16 +24,16 @@ public interface PropertiesLoader {
      * if the file path was not found
      * @throws Exception if there is a problem loading the properties file
      */
-    default Properties loadProperties(String propertiesFilePath) throws Exception {
-        // TODO I just used the red lightbulb to switch language to level 8 --- will that mess anything up??
-        //  The application seems to work...
+    default Properties loadProperties(String propertiesFilePath) {
+        final Logger logger = LogManager.getLogger(this.getClass());
+
 
         Properties properties = new Properties();
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (IOException ioException) {
-            ioException.printStackTrace();
-            throw ioException;
+            logger.error("Error loading properties: " + ioException);
+           // throw ioException;
         } catch (Exception exception) {
             exception.printStackTrace();
             throw exception;

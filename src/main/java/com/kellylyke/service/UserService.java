@@ -2,7 +2,6 @@ package com.kellylyke.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.google.gson.Gson;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;

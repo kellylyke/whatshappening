@@ -23,7 +23,7 @@
 <form id="searchForm" class="col-s10 center-align form-inline" action="search" method="post">
     <div class="row">
         <%--<div class="col-s6 offset-2">--%>
-            <input type="text" class="form-control" id="searchTerm" name="searchTerm" required="required" placeholder="Last Name">
+            <input type="text" class="form-control" id="searchTerm" name="searchTerm" required="required" placeholder="Last Name (case-sensitive)">
 
         <button type="submit" class="btn blue darken-4 ml-3 pull-right inline-block">Search<i class="material-icons">search</i></button>
         </div>

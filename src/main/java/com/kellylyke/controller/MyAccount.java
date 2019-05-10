@@ -32,7 +32,7 @@ import java.util.Set;
 public class MyAccount extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
-    private static final String REDIRECT_URL = "/myAccount.jsp";
+    //private static final String REDIRECT_URL = "/updateSuccess.jsp";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -45,7 +45,7 @@ public class MyAccount extends HttpServlet {
         req.setAttribute("user", user);
         req.setAttribute("preferences", preferences);
         // logger.debug(preferences);
-        RequestDispatcher dispatcher = req.getRequestDispatcher(REDIRECT_URL);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         dispatcher.forward(req, resp);
 
     }
@@ -53,31 +53,33 @@ public class MyAccount extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userDao.getById(Integer.parseInt(req.getParameter("id")));
-        RequestDispatcher dispatcher = null;
+
 
         user.setFirstName(req.getParameter("firstName"));
         user.setLastName(req.getParameter("lastName"));
 
         user.setEmail(req.getParameter("email"));
+        user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
         String newPassword = req.getParameter("password");
-        String confirmPassword = req.getParameter("confirmPassword");
 
-
-        if (newPassword.equals(confirmPassword)) {
+        if (!newPassword.equals(req.getParameter("confirmPassword"))) {
+            req.getRequestDispatcher("/updateError.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/updateError.jsp");
+            dispatcher.forward(req, resp);
+        } else {
+            userDao.saveOrUpdate(user);
             String hashedPassword = PasswordHash.sha256(newPassword);
             user.setPassword(hashedPassword);
-            req.getRequestDispatcher(REDIRECT_URL);
-        } else {
-            req.setAttribute("passwordError", "Your passwords did not match. Try again.");
-            dispatcher = req.getRequestDispatcher(REDIRECT_URL);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/updateSuccess.jsp");
+            dispatcher.forward(req, resp);
         }
 
-        userDao.saveOrUpdate(user);
-        try {
-            dispatcher.forward(req, resp);
-        } catch (Exception e) {
-            logger.error("Problem forwarding: " + e);
-        }
+//        userDao.saveOrUpdate(user);
+//       // try {
+//            dispatcher.forward(req, resp);
+       // } catch (Exception e) {
+           // logger.error("Problem forwarding: " + e);
+       // }
 
 
     }

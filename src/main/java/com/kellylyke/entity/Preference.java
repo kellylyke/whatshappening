@@ -5,7 +5,6 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.util.Objects;
 
 /**

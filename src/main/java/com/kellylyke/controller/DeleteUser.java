@@ -1,7 +1,6 @@
 package com.kellylyke.controller;
 
 
-import com.kellylyke.entity.Preference;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
