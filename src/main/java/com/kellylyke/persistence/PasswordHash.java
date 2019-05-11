@@ -2,8 +2,16 @@ package com.kellylyke.persistence;
 
 import java.security.MessageDigest;
 
+/**
+ * class for hashing passwords
+ */
 public class PasswordHash {
 
+    /**
+     * hashes password using sha256 with help from https://stackoverflow.com/questions/5531455/how-to-hash-some-string-with-sha256-in-java
+     * @param base original password
+     * @return hashed password
+     */
     public static String sha256(String base) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

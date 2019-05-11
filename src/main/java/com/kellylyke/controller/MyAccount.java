@@ -73,14 +73,14 @@ public class MyAccount extends HttpServlet {
         user.setZipcode(Integer.parseInt(req.getParameter("zipcode")));
         String newPassword = req.getParameter("password");
 
-        if (!newPassword.equals(req.getParameter("confirmPassword"))) {
+        if (!req.getParameter("password").equals(req.getParameter("confirmPassword"))) {
             req.getRequestDispatcher("/updateError.jsp");
             RequestDispatcher dispatcher = req.getRequestDispatcher("/updateError.jsp");
             dispatcher.forward(req, resp);
         } else {
-            userDao.saveOrUpdate(user);
             String hashedPassword = PasswordHash.sha256(newPassword);
             user.setPassword(hashedPassword);
+            userDao.saveOrUpdate(user);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/updateSuccess.jsp");
             dispatcher.forward(req, resp);
         }

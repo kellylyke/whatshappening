@@ -10,7 +10,7 @@ import java.io.IOException;
 
 
 /**
- * servlet for signing up users
+ * servlet redirects to home page
  * @author klyke
  */
 
@@ -21,6 +21,13 @@ import java.io.IOException;
 
 public class Redirect extends HttpServlet {
 
+    /**
+     * redirects to index
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = "index.jsp";

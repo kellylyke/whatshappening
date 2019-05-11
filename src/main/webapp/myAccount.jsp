@@ -17,7 +17,7 @@
 
 <body>
 <div class="container">
-    <h3 class="text-center after-heading">Update Account
+    <h3 class="text-center after-heading">My Account
         <c:if test="${admin}">
             <a href="allUsers" role="button" class="btn btn-info pull-right">Admin Page</a>
         </c:if>

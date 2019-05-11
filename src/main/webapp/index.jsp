@@ -126,7 +126,7 @@
                     <p class="cta-text"> Don't take it from me. Investigate yourself. Keep politicians accountable.</p>
                 </div>
                 <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="https://www.google.com/search?q=money+in+politics">Call To Action</a>
+                    <a class="cta-btn align-middle" href="https://www.google.com/search?q=money+in+politics" target="blank">Call To Action</a>
                 </div>
             </div>
 
@@ -148,10 +148,10 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="member">
                         <div class="pic"><img src="images/aoc.jpg" alt=""></div>
-                        <a href="https://www.opensecrets.org/members-of-congress/summary?cid=N00041162&cycle=2018"><h4>Alexandria Ocasio-Cortez</h4></a>
+                        <a href="https://www.opensecrets.org/members-of-congress/summary?cid=N00041162&cycle=2018" target="blank"><h4>Alexandria Ocasio-Cortez</h4></a>
                         <span>House of Representatives - New York 14th District</span>
                         <div class="social">
-                            <a href="https://twitter.com/AOC"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/AOC" target="blank"><i class="fa fa-twitter"></i></a>
 
                             <br/>
                         </div>
@@ -164,7 +164,7 @@
                        <a href="members?id=N00036915"><h4>Kamala Harris</h4></a>
                         <span>Senator - California</span>
                         <div class="social">
-                            <a href="https://twitter.com/KamalaHarris"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/KamalaHarris" target="blank"><i class="fa fa-twitter"></i></a>
                             <br/>
 
                         </div>
@@ -178,7 +178,7 @@
                         <span>Senator - Ohio</span>
 
                         <div class="social">
-                            <a href="https://twitter.com/senrobportman"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/senrobportman" target="blank"><i class="fa fa-twitter"></i></a>
                             <br/>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
                         <a href="members?id=N00033549"><h4>Mark Pocan</h4></a>
                         <span>House of Representatives - Wisconsin 2nd District </span>
                         <div class="social">
-                            <a href="https://twitter.com/repmarkpocan"><i class="fa fa-twitter"></i></a>
+                            <a href="https://twitter.com/repmarkpocan" target="blank"><i class="fa fa-twitter"></i></a>
                             <br/>
                         </div>
                     </div>

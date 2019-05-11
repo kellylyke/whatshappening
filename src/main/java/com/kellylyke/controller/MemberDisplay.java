@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * The servlet that displays congress member with financial data
+ * The servlet that displays selected congress member with financial data
  */
 @WebServlet(
         name = "members",
@@ -33,13 +33,14 @@ public class MemberDisplay extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
     private Contributors contributors;
+
     /**
      * Calls to apis go get congress member and financial data
      *
-     * @param req
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -57,7 +58,6 @@ public class MemberDisplay extends HttpServlet {
 
         if (member != null) {
             contributors = getContributorForCandidate(id);
-            //logger.info(contributors.getContributor());
             req.setAttribute("contributors", contributors.getContributor());
         }
 
@@ -73,7 +73,7 @@ public class MemberDisplay extends HttpServlet {
      * @param id candidate's id
      * @return member data
      */
-    public MembersItem getMember(String id) {
+    private MembersItem getMember(String id) {
         MemberService memberService = new MemberService();
         MembersItem member = new MembersItem();
 

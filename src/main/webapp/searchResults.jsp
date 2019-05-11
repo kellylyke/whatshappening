@@ -34,7 +34,6 @@
 
         <c:forEach items="${members}" var="member">
             <a href="members?id=${member.crpId}">${member.firstName} ${member.lastName} </a><br/><br/>
-            <%--this will need to be id--%>
         </c:forEach>
     </c:otherwise>
 </c:choose>

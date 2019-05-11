@@ -16,6 +16,10 @@ import com.kellylyke.service.congress.MembersItem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Servlet that searches for candidate
+ * @author klyke
+ */
 @WebServlet(
         name = "search",
         urlPatterns = {"/search"}
@@ -24,6 +28,14 @@ import org.apache.logging.log4j.Logger;
 public class Search extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Calls to api for member matching search term
+     *
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String searchTerm = req.getParameter("searchTerm");
@@ -42,7 +54,6 @@ public class Search extends HttpServlet {
         }
 
 
-        //req.setAttribute("members", members);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchResults.jsp");
         dispatcher.forward(req, resp);
 

@@ -16,7 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * servlet for getting all users
+ * Servlet for getting all users
  * @author klyke
  */
 
@@ -28,6 +28,14 @@ import org.apache.logging.log4j.Logger;
 public class DisplayUsers extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * \Retrieves all users from database and sends to jsp
+     *
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<User> userDao = new GenericDao<>(User.class);
@@ -35,7 +43,7 @@ public class DisplayUsers extends HttpServlet {
         List<User> users = new ArrayList<>();
         try {
             users = userDao.getAll();
-            //logger.debug(users);
+
         } catch (Exception e) {
             logger.error("Error getting all users" + e);
         }

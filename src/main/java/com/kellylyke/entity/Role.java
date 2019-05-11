@@ -52,7 +52,7 @@ public class Role {
         return id == role1.id &&
                 role.equals(role1.role) &&
                 Objects.equals(dateCreated, role1.dateCreated);
-                //&& user.equals(role1.user);
+
     }
 
     @Override

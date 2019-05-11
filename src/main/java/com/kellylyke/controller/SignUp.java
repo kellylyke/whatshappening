@@ -22,15 +22,21 @@ import java.util.List;
  * servlet for signing up users
  * @author klyke
  */
-
 @WebServlet(
         name = "signUp",
         urlPatterns = {"/signUp"}
 )
+
 public class SignUp extends HttpServlet {
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
-
+    /**
+     * validates data and signs user up
+     *
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao<User> userDao = new GenericDao<>(User.class);

@@ -15,20 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
 
+/**
+ *   servlet for adding favorite candidate to user preferences
+ * @author klyke
+ */
 @WebServlet(
         name = "remove",
         urlPatterns = {"/remove"}
 )
-/*
-  servlet for adding favorite candidate to user preferences
-  @author klyke
-  */
 
 public class RemoveFavorite extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
     private GenericDao<Preference> dao = new GenericDao<>(Preference.class);
 
+    /**
+     * deletes candidate from user's preferences (list)
+     *
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException servlet exception
+     * @throws IOException read/write exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
@@ -40,13 +48,7 @@ public class RemoveFavorite extends HttpServlet {
             }
         }
 
-        // newPreference.setCandidateName(name);
-
-       // logger.debug(user.getPreferences());
-
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         resp.sendRedirect("myAccount");
-
 
     }
 

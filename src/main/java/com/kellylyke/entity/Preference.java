@@ -41,8 +41,9 @@ public class Preference {
     /**
      * Instantiates a new Preference.
      *
-     * @param show the show
-     * @param user the user
+     * @param show          the show
+     * @param candidateName the candidate name
+     * @param user          the user
      */
     public Preference(String show, String candidateName,  User user) {
         this.user = user;
@@ -51,7 +52,7 @@ public class Preference {
     }
 
 
-/*
+
     @Override
     public String toString() {
         return "Preference{" +
@@ -59,7 +60,7 @@ public class Preference {
                 ", show='" + show + '\'' +
                 ", user=" + user +
                 '}';
-    }*/
+    }
 
     @Override
     public boolean equals(Object o) {

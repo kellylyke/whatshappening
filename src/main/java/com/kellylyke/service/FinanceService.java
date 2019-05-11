@@ -11,14 +11,25 @@ import javax.ws.rs.client.Invocation;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.util.Properties;
 
+/**
+ * service that calls to the financial data api
+ * @author klyke
+ */
 public class FinanceService implements PropertiesLoader {
     private final Logger logger = LogManager.getLogger(this.getClass());
     private static final String PROP_FILE = "/apiKey.properties";
 
-
-    public Contributors getFinancialDataForCandidate(String id) throws Exception {
+    /**
+     * calls api to get data for candidate
+     *
+     * @param id of candidate
+     * @return contributors to candidate
+     * @throws IOException read/write exception
+     */
+    public Contributors getFinancialDataForCandidate(String id) throws IOException {
         Client client = ClientBuilder.newClient();
         Properties prop = loadProperties(PROP_FILE);
 

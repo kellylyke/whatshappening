@@ -13,10 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/*
-  servlet for adding favorite candidate to user preferences
-  @author klyke
-  */
+
+
+/**
+ * Servlet for adding candidate to watch list
+ * @author klyke
+ */
 @WebServlet(
         name = "add",
         urlPatterns = {"/add"}
