@@ -57,7 +57,7 @@ public class MemberDisplay extends HttpServlet {
 
         if (member != null) {
             contributors = getContributorForCandidate(id);
-            logger.info(contributors.getContributor());
+            //logger.info(contributors.getContributor());
             req.setAttribute("contributors", contributors.getContributor());
         }
 

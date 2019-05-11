@@ -29,18 +29,24 @@ public class Search extends HttpServlet {
         String searchTerm = req.getParameter("searchTerm");
 
         MemberService service = new MemberService();
-        List<MembersItem> members = new ArrayList<MembersItem>();
-        try {
-            members = service.getSpecificMember(searchTerm);
 
+
+        try {
+            List<MembersItem> members = new ArrayList<MembersItem>();
+            members = service.getSpecificMember(searchTerm);
             req.setAttribute("members", members);
+
 
         } catch (Exception e) {
             logger.error("Error getting member " + e);
         }
 
+
+        //req.setAttribute("members", members);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/searchResults.jsp");
         dispatcher.forward(req, resp);
+
+
     }
 }
 

@@ -5,8 +5,6 @@ import com.kellylyke.entity.Role;
 import com.kellylyke.entity.User;
 import com.kellylyke.persistence.GenericDao;
 import com.kellylyke.persistence.PasswordHash;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,17 +21,22 @@ import java.util.Set;
  * servlet for getting/updating user account information
  * @author klyke
  */
-
 @WebServlet(
         name = "myAccount",
         urlPatterns = {"/myAccount"}
 )
 
 public class MyAccount extends HttpServlet {
-    private final Logger logger = LogManager.getLogger(this.getClass());
     private GenericDao<User> userDao = new GenericDao<>(User.class);
-    //private static final String REDIRECT_URL = "/updateSuccess.jsp";
 
+    /**
+     *  Retrieves user account info and displays it to page
+     *
+     * @param req http request object
+     * @param resp http response object
+     * @throws ServletException any servlet exception
+     * @throws IOException an io exception
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -44,12 +47,20 @@ public class MyAccount extends HttpServlet {
         Set<Preference> preferences = user.getPreferences();
         req.setAttribute("user", user);
         req.setAttribute("preferences", preferences);
-        // logger.debug(preferences);
+
         RequestDispatcher dispatcher = req.getRequestDispatcher("/myAccount.jsp");
         dispatcher.forward(req, resp);
 
     }
 
+    /**
+     * Updates account data from form post
+     *
+     * @param req the http request object
+     * @param resp the htt resp object
+     * @throws ServletException any servlet exception
+     * @throws IOException any io exception
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = userDao.getById(Integer.parseInt(req.getParameter("id")));
@@ -74,16 +85,15 @@ public class MyAccount extends HttpServlet {
             dispatcher.forward(req, resp);
         }
 
-//        userDao.saveOrUpdate(user);
-//       // try {
-//            dispatcher.forward(req, resp);
-       // } catch (Exception e) {
-           // logger.error("Problem forwarding: " + e);
-       // }
-
 
     }
 
+    /**
+     * Determines if user has admin role
+     *
+     * @param user user logged in
+     * @return if admin
+     */
     private boolean checkIfAdmin(User user) {
         boolean admin = false;
         Set<Role> roles = user.getRoles();
