@@ -51,6 +51,7 @@
 | 5/3/19|implemented delete user functionality, added error pages, starting to refactor | 2.5 | |
 | 5/5/19| edited table to take name, worked on trying to format forms, update my account | 6 | |
 | 5/6/19| checked out week 13, watched videos, gave up on exercise, fixed some jsps in project | |
-| 5/8/19|updated tests for preference delete, finished peer review |1 | |
+| 5/8/19|updated tests for preference delete, finished peer review |1| |
 |5/10/19|refactored, worked around errors with service, added some javadoc, added update success page|4||
-|5/11/19||||
+|5/11/19|finished javadocs, updated/cleaned up code, dealt with errors|2.5||
+|5/13/19|made video, took screenshots, edited problem statement|2.5| |
