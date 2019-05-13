@@ -56,8 +56,8 @@
 
 ### Week 8
 
-- [ ] Create unit tests
-- [ ] Create admin directory
+- [x] Create unit tests
+- [x] Create admin ~~directory~~ page
 - [x] Add delete functionality in jsp for user preferences
 - [x] Set up API
 - [x] Prepare for Checkpoint 3: Deployed to AWS, at least one JSP that displays data from the database is implemented.
@@ -70,35 +70,35 @@
 
 
 ### Week 10
-- [ ] Unit test all api integrations
-- [ ] Carefully review code for standards and best practices - use a code quality tool?
+- [x] Unit test all api integrations
+- [x] Carefully review code for standards and best practices - use a code quality tool?
 
 
 ### Week 11 - Team project work week
-- [ ] Review indie project and create list of todos
+- [x] Review indie project and create list of todos
 - [x] Make sure data is updating from api
 - [ ] ~~Implement paging of search results~~
 
 ### Week 12 - Team project due
 - [x] Complete todos identified in week 11
 - [x] Prepare for week 13 peer code reviews
-- [ ] Code quality check
-- [ ] Review rubric to make sure I'm on target
+- [x] Code quality check
+- [x] Review rubric to make sure I'm on target
 - [ ] ~~Add the user block table~~
 - [ ] ~~Add the user block entity~~
 - [ ] ~~Create the user block unit tests~~
 
 
 ### Week 13
-- [ ] Create final presentation
+- [x] Create final presentation
 
 ### Week 14
 - [ ] Finalize all documentation
-- [ ] Code quality check
+- [x] Code quality check
 
 ### Week 15
 - [ ] Final Presentation
-- [ ] Create video
+- [x] Create video
 
 
 

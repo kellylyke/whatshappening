@@ -55,7 +55,6 @@ public class MemberService implements PropertiesLoader {
             searchedMembers.add(dummy);
         }
 
-        logger.info(searchedMembers);
         return searchedMembers;
     }
 
