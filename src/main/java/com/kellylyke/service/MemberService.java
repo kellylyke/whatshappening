@@ -34,7 +34,6 @@ public class MemberService implements PropertiesLoader {
      * @return list of members matching the term
        */
     public List<MembersItem> getSpecificMember(String searchTerm) {
-        logger.info(searchTerm);
         List<MembersItem> searchedMembers = new ArrayList<>();
         List<MembersItem> senateList = getMemberJSON(getSenateLink());
         List<MembersItem> houseList = getMemberJSON(getHouseLink());

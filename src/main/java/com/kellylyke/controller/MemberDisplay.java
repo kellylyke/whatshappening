@@ -78,7 +78,7 @@ public class MemberDisplay extends HttpServlet {
         MembersItem member = new MembersItem();
 
         try {
-            member = memberService.getMemberByID(id);
+            member = memberService.getMemberByID("000");
 
         } catch (Exception e) {
             logger.error("Error getting member " + e);
